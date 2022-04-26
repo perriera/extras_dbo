@@ -22,7 +22,7 @@
 ### Wish Case
 
  1. [How to setup a development environment (on Linux, Windows or Mac)](https://github.com/perriera/extras_oci/blob/dev/docs/ENVIRONMENT.md)
- 2. [How to setup a Linux Platform (Ubuntu 20.04.4) on macOS (Parallels Desktop)](https://github.com/perriera/extras_oci/blob/dev/docs/MAC.md)
+ 2. [How to setup a Linux Platform (Ubuntu 20.04.4) on macOS (Parallels Desktop)](https://github.com/perriera/extras_oci/blob/dev/docs/ubuntu/macos/parallels/MACOS.md)
  3. [How to setup a Linux Platform (Ubuntu 20.04.4) on Windows 10/11 (VirtualBox)](https://github.com/perriera/extras_oci/blob/dev/docs/VIRTUALBOX.md)
  4. [How to setup a Linux Platform (Ubuntu 20.04.4) on Windows 10/11 (WSL/WSL2](https://github.com/perriera/extras_oci/blob/dev/docs/WSLWSL2.md)
  5. [How to setup a Linux Platform (Ubuntu 20.04.4) on Linux](https://github.com/perriera/extras_oci/blob/dev/docs/LINUX.md)
