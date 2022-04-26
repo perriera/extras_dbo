@@ -1,4 +1,5 @@
 
+
 ## How to install the tools necessary for C++11/17 projects
 > In this step we need to install all the tools used by this project (that you may or may not already have installed.
 
@@ -14,7 +15,7 @@
 ### Wish Case
 Now that you have your project cloned we need to make sure you have the tools necessary to compile properly:
 
-  - [ ] First put **sudo** into ready accept mode
+  - [ ] First put **sudo** into ready-to-accept mode
 	
 		sudo ls
 	
@@ -23,7 +24,7 @@ Now that you have your project cloned we need to make sure you have the tools ne
 		sudo apt update
 		sudo apt install -y build-essential libtool autotools-dev automake pkg-config git clangd cppcheck clang-tidy python3-pip checkinstall
 
- - [ ] Install CMake 3.21
+ - [ ] Assuming that was successful, install CMake 3.21
 
 		pip install clang-format
 		pip install cmake-format
