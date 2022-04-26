@@ -14,7 +14,11 @@
 ### Wish Case
 Now that you have your project cloned we need to make sure you have the tools necessary to compile properly:
 
- - [ ] Install C++11/17 packages for a Linux environment
+  - [ ] First put **sudo** into ready accept mode
+	
+		sudo ls
+	
+ - [ ] Now copy and paste the following for a Linux environment
 
 		sudo apt update
 		sudo apt install -y build-essential libtool autotools-dev automake pkg-config git clangd cppcheck clang-tidy python3-pip checkinstall
