@@ -30,6 +30,10 @@ Now that you have your project cloned we need to make sure you have the tools ne
 		pip install cmake-format
 		pip install cmake
 
+ - [ ] Now open the vi editor 
+
+		vi ~/.bashrc
+		
  - [ ] Add these enironment variables (aka.  `vi ~/.bashrc `)
 
 		
