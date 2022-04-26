@@ -53,8 +53,8 @@ public:
 
 SCENARIO("Verify Oracle Instant Client SDK can be compiled", "[OracleSDK]")
 {
-    cpp::ChessGame game;
-    cpp::ChessGameInterface& i = game;
+    oci::ChessGame game;
+    oci::ChessGameInterface& i = game;
     i.moves();
     REQUIRE(true);
 }
