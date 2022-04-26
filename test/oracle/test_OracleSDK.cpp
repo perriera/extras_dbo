@@ -20,7 +20,7 @@
  // #include <oracle/19.14/client64/occi.h>
 #include <occi.h>
 #include <bits/c++config.h>
-#include <extras_cpp/game/ChessGame.hpp>
+#include <extras_oci/game/ChessGame.hpp>
 #include <pthread.h>
 
 #include "../vendor/catch.hpp"
