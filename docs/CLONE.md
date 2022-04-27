@@ -87,6 +87,20 @@ From here you have created a new project with the **(perriera) extras** template
  10. Execute **mv extras_oci-dev <name of your project>**
  11. Execute **code .** 
 
+### Alternate Case
+#### You already have created a clone from the extras_cpp template
+ 1. There should be a green Code button, click it
+ 2. Select the SSH tab (default)
+ 3. Copy the URL to the clipboard
+ 4. Open a Terminal box
+ 5. Make/create a general projects directory 
+ 6. (aka. `mkdir ~/Projects`)
+ 7. (aka. `cd ~/Projects`)
+ 8. Execute **git clone <url>** (paste the clipboard)
+ 9. cd into your project directory 
+ 10. (aka. `cd <project_name>`)
+ 11. Execute **code .** 
+
 ### Summary 
 Now you have both cloned the project as well as renamed everything to your projects name. 
 
