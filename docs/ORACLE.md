@@ -14,5 +14,12 @@
 - [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
 
 ### Resources
-  
 [Ubuntu documentation: Oracle Instant Client](https://help.ubuntu.com/community/Oracle%20Instant%20Client)
+
+### Wish Case
+
+ 1. Go to [Oracle Instant Client](https://help.ubuntu.com/community/Oracle%20Instant%20Client) and download a specific version of Oracle Instant Client
+ 2. Download the .rpm files for everything under that specific version
+ 3. Open a Terminal box 
+ 4. Execute **sudo apt-get install alien**
+
