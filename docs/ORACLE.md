@@ -22,4 +22,12 @@
  2. Download the .rpm files for everything under that specific version
  3. Open a Terminal box 
  4. Execute **sudo apt-get install alien**
+ 5. Using the alien installer install each of the .rpm files.
+ 6. (aka. in this case version 12 was downloaded)
 
+		alien -i oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
+		alien -i oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm
+		alien -i oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm
+
+7. then
+8. 
