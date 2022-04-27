@@ -1,3 +1,4 @@
+
 ## How to clone your project with (perriera) extras_oci template
 > This is a basic step-by-step process whereby you can quickly setup a C++17 based project using CMake 3.21 (or above) including a properly setup changelog.md file (that will help you keep track of changes to your github.com repository).
 
@@ -31,25 +32,28 @@ As you already using github.com it therefore perfectly logical for you to merely
  11. Select the SSH tab (default)
  12. Copy the URL to the clipboard
  13. Open a Terminal box
- 14. Make/create a projects directory
- 15. Cd into that directory
+ 14. Make/create a general projects directory 
+ 15. (aka. `mkdir ~/Projects`)
+ 15. (aka. `cd ~/Projects`)
  16. Execute **git clone <url>** (paste the clipboard)
- 17. cd into your projects directory
- 18. Execute **code .** 
- 19. Now you need to do a simple search and replace
- 20. In Visual Studio Code top menu do  *Edit->Replace In Files*
- 21. Highlight the *Aa* option as this is going to be case sensitive
- 22. Replace *extras_oci* with *<your_project_name>* (all lowercase)
- 23. (You will see a small icon to the right of the replace field)
- 24. Replace *EXTRAS_OCI* with *<YOUR_PROJECT_NAME>* (all caps)
- 25. Click the replace icon again
- 24. Replace *oci::* with *<your projects three letter acronym>* (lowercase)
- 25. Click the replace icon again
- 24. Replace *namespace oci* with *namespace <your projects three letter acronym>* (lowercase)
- 25. Click the replace icon again
- 26. Now click on the Visual Studio Code Explorer window 
- 27. Open up the include directory
- 28. Change *extras_oci* directory name to your *<your_project_name>*
+ 17. cd into your project directory 
+ 18. (aka. `cd <project_name>`)
+ 19. Execute **code .** 
+ 20. Now you need to do a simple search and replace
+ 21. In Visual Studio Code top menu do  *Edit->Replace In Files*
+ 22. Highlight the *Aa* option as this is going to be case sensitive
+ 23. Replace *extras_oci* with *<your_project_name>* (all lowercase)
+ 24. (You will see a small icon to the right of the replace field)
+ 25. Replace *EXTRAS_OCI* with *<YOUR_PROJECT_NAME>* (all caps)
+ 26. Click the replace icon again
+ 27. Replace *oci::* with *<your projects three letter acronym>* (lowercase)
+ 28. Click the replace icon again
+ 29. Replace *namespace oci* with *namespace <your projects three letter acronym>* (lowercase)
+ 30. Click the replace icon again
+ 31. Now click on the Visual Studio Code Explorer window 
+ 32. Open up the include directory
+ 33. Change *include/extras_oci* directory name to your *include/<your_project_name>*
+ 34. Now build your project with a *Ctrl-B*
 
 From here you have created a new project with the **(perriera) extras** template for C++17. 
 
@@ -84,7 +88,7 @@ From here you have created a new project with the **(perriera) extras** template
  11. Execute **code .** 
 
 ### Summary 
-This has been a basic example of how to clone the *(perriera) extras_oci* repository (and rename it for your purposes). However, you are not really done yet. You will probably want to change all the *extras_oci* references to your project name.
+Now you have both cloned the project as well as renamed everything to your projects name. 
 
 ### Next Steps
  - [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
