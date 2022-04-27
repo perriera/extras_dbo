@@ -98,7 +98,28 @@ Hit enter and repeat that for all the .rpm files you downloaded
 		Enter user-name:
 > Add the C++ include path for the Oracle Instant Client SDK
 	
+	ls $ORACLE_HOME
+
+This should show the following:
+
+	bin lib
+
+It should have be
+
+	bin include lib
+
+So add it in:
+
 	sudo ln -s /usr/include/oracle/19.15/client64/ $ORACLE_HOME/include
+
+Now do  it again:
+
+	ls $ORACLE_HOME
+
+And make sure it says:
+
+	bin include lib
+
 
 18. In your CMakeLists.txt add ${ORACLE_INCLUDE} to any targets that need them
 
