@@ -18,7 +18,7 @@ Assuming you have a GitHub.com account:
 
 		ssh-keygen -t ed25519 -C "your_email@example.com"
 
-2. where you supply the same email address used for your GitHub.com account (instead of "your_email@example.com")
+2. Where you supply the same email address used for your GitHub.com account (instead of "your_email@example.com") and do not supply a pass phrase unless you want a popup to show up all the time asking it (sometimes you want this extra layer of security but generally it is not required).
 3. Now show the contents of your public key:
 
 		cat ~/.ssh/id_ed25519.pub
