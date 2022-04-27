@@ -167,7 +167,7 @@ So add it back:
 
 Then when that is successful, commit it using *ldconfig*
 
-		sudo ldconfig
+	sudo ldconfig
 
 > Review the Oracle Instant Client SDK installation:
 
