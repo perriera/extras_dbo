@@ -161,7 +161,7 @@ The program should compile, make, run and land on that break point.
 
 ### Alternate Case
 > **How to remove RED SQUIGGLY LINES in Visual Studio Code**<br/>
-> Inside the editor press *Shift-Ctrl-P* and type in *CMake: Build* (enter)<br/>
+> Inside the editor press ***Shift-Ctrl-P*** and type in ***CMake: Build*** (enter)<br/>
 > This will cause the editor to rescan it's header includes and attempt to resolve the red squiggly lines (without having to restart the editor)
 
 ### Summary
