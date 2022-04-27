@@ -50,7 +50,6 @@ Now that you have your project cloned we need to make sure you have the tools ne
 
  - [ ] Now start Visual Studio Code
 
-		cd <into your project directory>
 		code .
 
 ### Summary 
