@@ -160,7 +160,7 @@ The program should compile, make, run and land on that break point.
 35. The above are cmake 3.21 instructions that allow the CMake to be able to find the Oracle installation. It is all based on the environment variable *$ORACLE_HOME*. 
 
 ### Alternate Case
-> How to remove RED SQUIGGLY LINES in Visual Studio Code<br/>
+> **How to remove RED SQUIGGLY LINES in Visual Studio Code**<br/>
 > Inside the editor press *Shift-Ctrl-P* and type in *CMake: Build*<br/>
 > This will cause the editor to rescan it's header includes and attempt to resolve the red squiggly lines (without having to restart the editor)
 
