@@ -92,23 +92,23 @@ For example:
 	perry@ubuntu:~/Projects/extras_oci$ ls /usr/lib/oracle/19.15/client64/lib/libocci*
 	/usr/lib/oracle/19.15/client64/lib/libocci.so  /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1
 
-31. Now inside Visual Studio Code do a Ctrl-B and see a successful build
+31. Now inside Visual Studio Code do a **Ctrl-B** and see a successful build
 32. Then inside Visual Studio Code put a break point on a test case that uses *occi.h* (see *test_OracleSDK.cpp* and place a break point on line 43) and run the interactive debugger (aka. the green arrow next to *run-unittests*)
 33. The program should compile, make, run and land on that break point.
-34. In this project there is a file called FileOracle.cmake (which gets included in CMakeLists.txt. It may contain the following:
+34. In this project there is a file called *FileOracle.cmake* (which gets included in *CMakeLists.txt*. It may contain the following:
 
 		set(ORACLE_HOME $ENV{ORACLE_HOME})
 		set(ORACLE_INCLUDE "${ORACLE_HOME}/include")
 		set(ORACLE_LIB "${ORACLE_HOME}/lib")
 		set(ORACLE_BIN "${ORACLE_HOME}/bin")
 		link_directories(BEFORE "${ORACLE_LIB}" )
-35. The above are cmake 3.21 instructions that allow the CMake to be able to find the Oracle installation. It is all based on the value of ${ORACLE_HOME}. 
+35. The above are cmake 3.21 instructions that allow the CMake to be able to find the Oracle installation. It is all based on the environment variable *$ORACLE_HOME*. 
 
 
 ### Summary
 > This shows the Oracle Instant Client has been installed successfully however you still need to see if the development portion is setup correctly. These instructions would be great if the entire process could be automated, but for now being able to install Oracle Instant Client at all with just the instructions in this markdown file is a milestone (as material on this process is rather sporatric across the Internet at this point in time).
 
 ### Next Steps
-- How to setup Oracle Instant Client Development tools for C++17
+- How to setup a local Oracle database (for testing purposes)
 
 
