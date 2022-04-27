@@ -1,4 +1,5 @@
 
+
 ## How to setup Oracle Instant Client (on Linux, Windows or Mac)
 > This is a basic step-by-step guide to how to successfully install the Oracle Instant Client on your Ubuntu instance. The material provided by Ubuntu is good well researched but recent upgrades to Oracle Instant Client appear to need some refinements as listed in this article.
 
@@ -71,14 +72,15 @@
 
 		target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
 
-24. Execute **sudo vi /etc/ld.so.conf.d/oracle.conf** 
-25. Add a single line */usr/lib/oracle/ your version /client64/lib/* 
-26. Execute **sudo chmod o+r /etc/ld.so.conf.d/oracle.conf**
-27. Execute **sudo ln -s /usr/lib/oracle/(your version)/client64/lib/libocci.so.19.1 /usr/lib/oracle/(your version)/client64/lib/libocci.so**
-28. Execute **sudo ldconfig** 
-29. Now inside Visual Studio Code do a Ctrl-B and see a successful build
-30. Then inside Visual Studio Code put a break point on a test case that uses *occi.h* (see *test_OracleSDK.cpp* and place a break point on line 43) and run the interactive debugger (aka. the green arrow next to *run-unittests*)
-31. The program should compile, make, run and land on that break point.
+25. Execute **sudo vi /etc/ld.so.conf.d/oracle.conf** 
+26. Add a single line */usr/lib/oracle/ your version /client64/lib/* 
+27. Execute **sudo chmod o+r /etc/ld.so.conf.d/oracle.conf**
+28. There is a quirk in the installation where by **libocci.so** has to be symbollically linked to the version that was actually installed, (oddly enough the symbolic link for **libchntsh.so** is already there)
+29. Execute **sudo ln -s /usr/lib/oracle/(your version)/client64/lib/libocci.so.19.1 /usr/lib/oracle/(your version)/client64/lib/libocci.so**
+30. Execute **sudo ldconfig** 
+31. Now inside Visual Studio Code do a Ctrl-B and see a successful build
+32. Then inside Visual Studio Code put a break point on a test case that uses *occi.h* (see *test_OracleSDK.cpp* and place a break point on line 43) and run the interactive debugger (aka. the green arrow next to *run-unittests*)
+33. The program should compile, make, run and land on that break point.
 
 
 ### Summary
