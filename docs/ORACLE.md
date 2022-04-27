@@ -145,9 +145,9 @@ Change it's permissions
 
 > Fix a missing link
 
-24. There is a quirk in the installation where by **libocci.so** has to be symbollically linked to the version that was actually installed, (oddly enough the symbolic link for **libchntsh.so** is already there)
+24. There is a quirk in the installation where by **libocci.so** has to be symbollically linked to the version that was actually installed, (oddly enough the symbolic link for **libclntsh.so** is already there)
 
-		ls $ORACLE_HOME/lib/libchntsh.so
+		ls $ORACLE_HOME/lib/libclntsh.so
 
 It should show up as:
 
