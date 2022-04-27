@@ -58,7 +58,7 @@
 		Version 19.15.0.0.0
 		Copyright (c) 1982, 2022, Oracle.  All rights reserved.
 		Enter user-name:
-21. Now to link up your *C++ include path search*:
+21. Now to link up your *C++ include path* search:
 	
 		sudo ln -s /usr/include/oracle/19.15/client64/ $ORACLE_HOME/include
 
@@ -66,7 +66,7 @@ In your CMakeLists.txt add ${ORACLE_INCLUDE} to any targets that need them
 
 		target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES}  ${ORACLE_INCLUDE})
 
-22. Now to link up your *C++ link  path search*:
+22. Now to link up your *C++ link  path* search:
 23. In your CMakeLists.txt add **occi**  **chntsh** and **Threads::Threads** to any targets that need them
 
 		target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
