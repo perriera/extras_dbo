@@ -27,8 +27,8 @@ Assuming you have a GitHub.com account:
 5. You should be good to go on any git clone operations needing a SSH key for your current Ubuntu instance
 
 ### Alternate Case
-> **user.email not specified**
-> **user.name not specified**
+> **user.email not specified**<br/>
+> **user.name not specified**<br/>
 > You must specify your name and email for the git client to work<br/>
 >  `git config --global user.name "My Name"`<br/>
 > `git config --global user.email "myemail@example.com"`
