@@ -34,18 +34,18 @@
 7. As soon as those are completed 
 8. Execute **ls /usr/lib/oracle**
 9. You should see a number, (it should be the version number you selected for install)
-10. Execute **ls /usr/lib/oracle/_version_**
+10. Execute **ls /usr/lib/oracle/(your version)**
 11. You should see a directory called **client64**
 12. The entire path is known as ORACLE_HOME
 13. You must declare this environment variable in your .bashrc
 14. Execute **vi ~/.bashrc** 
 15. Append this to the end of the file:
 
-		export ORACLE_HOME=/usr/lib/oracle/12.1/client64
+		export ORACLE_HOME=/usr/lib/oracle/(your version)/client64
 		export PATH=$PATH:$ORACLE_HOME/bin
 		export LD_LIBRARY_PATH=$ORACLE_HOME/lib:${LD_LIBRARY_PATH}
 
-16. In your case use the version number you installed instead of the *12.1*
+16. In your case replace (your version) with the version you installed
 17. Execute **sudo apt-get install libaio1**
 18. Execute **source ~/.bashrc** 
 19. Now test the client:
@@ -55,12 +55,12 @@
 20. Output should be similar to the following:
 
 		SQL*Plus: Release 19.0.0.0.0 - Production on Tue Apr 26 20:43:08 2022
-		Version 19.15.0.0.0
+		Version (your version).0.0.0
 		Copyright (c) 1982, 2022, Oracle.  All rights reserved.
 		Enter user-name:
 21. Now to link up your *C++ include path* search:
 	
-		sudo ln -s /usr/include/oracle/19.15/client64/ $ORACLE_HOME/include
+		sudo ln -s /usr/include/oracle/(your version)/client64/ $ORACLE_HOME/include
 
 22. In your CMakeLists.txt add ${ORACLE_INCLUDE} to any targets that need them
 
@@ -72,9 +72,9 @@
 		target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
 
 24. Execute **sudo vi /etc/ld.so.conf.d/oracle.conf** 
-25. Add a single line */usr/lib/oracle/_version_/client64/lib/* 
+25. Add a single line */usr/lib/oracle/ your version /client64/lib/* 
 26. Execute **sudo chmod o+r /etc/ld.so.conf.d/oracle.conf**
-27. Execute **sudo ln -s /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1 /usr/lib/oracle/19.15/client64/lib/libocci.so**
+27. Execute **sudo ln -s /usr/lib/oracle/(your version)/client64/lib/libocci.so.19.1 /usr/lib/oracle/(your version)/client64/lib/libocci.so**
 28. Execute **sudo ldconfig** 
 29. Now inside Visual Studio Code do a Ctrl-B and see a successful build
 30. Then inside Visual Studio Code put a break point on a test case that uses *occi.h* (see *test_OracleSDK.cpp* and place a break point on line 43) and run the interactive debugger (aka. the green arrow next to *run-unittests*)
