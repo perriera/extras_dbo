@@ -1,6 +1,6 @@
 
 ## How to setup Oracle Instant Client (on Linux, Windows or Mac)
-> This is a basic step-by-step guide to how to successfully install the Oracle Instant Client on your Ubuntu instance.
+> This is a basic step-by-step guide to how to successfully install the Oracle Instant Client on your Ubuntu instance. The material provided by Ubuntu is good well researched but recent upgrades to Oracle Instant Client appear to need some refinements as listed in this article.
 
  1. GIVEN we need to support apps that need Oracle database support
  2. WHEN we install the Oracle Instant Client
@@ -76,6 +76,9 @@ In your CMakeLists.txt add ${ORACLE_INCLUDE} and **Threads::Threads** to any tar
 26. Execute **sudo chmod o+r /etc/ld.so.conf.d/oracle.conf**
 27. Execute **sudo ln -s /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1 /usr/lib/oracle/19.15/client64/lib/libocci.so**
 28. Execute **sudo ldconfig** 
+29. Now inside Visual Studio Code do a Ctrl-B and see a successful build
+30. Then inside Visual Studio Code put a break point on a test case that uses *occi.h* (see *test_OracleSDK.cpp* and place a break point on line 43) and run the interactive debugger (aka. the green arrow next to *run-unittests*)
+31. The program should compile, make, run and land on that break point.
 
 
 ### Summary
