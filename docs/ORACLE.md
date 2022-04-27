@@ -205,7 +205,7 @@ The program should compile, make, run and land on that break point.
 > This shows the Oracle Instant Client has been installed successfully however you still need to see if the development portion is setup correctly. These instructions would be great if the entire process could be automated, but for now being able to install Oracle Instant Client at all with just the instructions in this markdown file is a milestone (as material on this process is rather sporatric across the Internet at this point in time).
 
 ### Next Steps
-- How to setup a local Oracle database (for testing purposes)
+- [How to setup a local Oracle database (for testing purposes)](https://www2.hawaii.edu/~lipyeow/ics321/2015spr/installoracle11g.html)
 - How to setup JDBC connectivity to Oracle
 - How to setup ODBC connectivity to Oracle
 
