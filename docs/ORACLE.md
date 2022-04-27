@@ -1,6 +1,3 @@
-
-
-
 ## How to setup Oracle Instant Client (on Linux, Windows or Mac)
 > This is a basic step-by-step guide to how to successfully install the Oracle Instant Client on your Ubuntu instance. The material provided by Ubuntu is good and well researched but recent upgrades to Oracle Instant Client appear to need some refinements as listed in this article.
 
@@ -19,82 +16,127 @@
 [Ubuntu documentation: Oracle Instant Client](https://help.ubuntu.com/community/Oracle%20Instant%20Client)
 
 ### Wish Case
-
+> Download the RPM files
  1. Go to [Oracle Instant Client](https://help.ubuntu.com/community/Oracle%20Instant%20Client) and download a specific version of Oracle Instant Client
  2. Select either *Basic* or *Basic Lite* (just one)
  3. Download all supporting .rpm files for everything under that specific version (ignore the _Precompiler Downloads_)
+> Install the RPM files
  4. Open a Terminal box 
  5. Execute **sudo apt-get install alien**
  6. Execute **cd ~/Downloads**
- 7. Using the alien installer install each of the .rpm files.
+ 7. Using the alien installer install each of the .rpm files, (do **not** use the *--scripts* parameter).
  8. (aka. in this case version 12 was downloaded)
 
-		sudo alien -i oracle-instantclient12.1-basic-12.1.0.2.0-1.x86_64.rpm
-		sudo alien -i oracle-instantclient12.1-sqlplus-12.1.0.2.0-1.x86_64.rpm
-		sudo alien -i oracle-instantclient12.1-devel-12.1.0.2.0-1.x86_64.rpm
+		cd ~/Downloads
+		ls 
+This will show you all your .rpm files (for example):
+
+	oracle-instantclient19.15-basic-19.15.0.0.0-1.x86_64.rpm
+	oracle-instantclient19.15-devel-19.15.0.0.0-1.x86_64.rpm
+	oracle-instantclient19.15-jdbc-19.15.0.0.0-1.x86_64.rpm
+	oracle-instantclient19.15-sqlplus-19.15.0.0.0-1.x86_64.rpm
+	oracle-instantclient19.15-tools-19.15.0.0.0-1.x86_64.rpm
+
+After which you can type in:
+
+	sudo alien -i oracle-ins
+
+Then press TAB to where it will complete the line up to a point:
+
+	sudo alien -i oracle-instantclient12.1-
+
+From here enter the first letter, in this case it is a '**b**' and press TAB again
+
+	sudo alien -i oracle-instantclient19.15-basic-19.15.0.0.0-1.x86_64.rpm
+
+Hit enter and repeat that for all the .rpm files you downloaded
+> Set the ORACLE_HOME environment variable
 
 7. As soon as those are completed 
-8. Execute **ls /usr/lib/oracle**
-9. You should see a number, (it should be the version number you selected for install)
-10. Execute **ls /usr/lib/oracle/(your version)**
-11. You should see a directory called **client64**
-12. The entire path is known as ORACLE_HOME
-13. You must declare this environment variable in your .bashrc
-14. Execute **vi ~/.bashrc** 
-15. Append this to the end of the file:
 
-		export ORACLE_HOME=/usr/lib/oracle/(your version)/client64
+		ls /usr/lib/oracle
+
+8. You should see a number, (it should be the version number you selected for install). In this case the version number is 19.15:
+
+		ls /usr/lib/oracle/19.15
+
+9. You should see a directory called **client64**
+
+		ls /usr/lib/oracle/19.15/client64
+
+10. That entire path is known as your ORACLE_HOME directory and you must declare this environment variable somewhere during your session initialization. The .bashrc is an idea place (other tools might use .profile, it's up to you).
+
+		vi ~/.bashrc
+
+11. Append this to the end of the file:
+
+		export ORACLE_HOME=/usr/lib/oracle/19.15/client64
 		export PATH=$PATH:$ORACLE_HOME/bin
 		export LD_LIBRARY_PATH=$ORACLE_HOME/lib:${LD_LIBRARY_PATH}
 
-16. In your case replace (your version) with the version you installed
-17. Execute **sudo apt-get install libaio1**
-18. Execute **source ~/.bashrc** 
-19. Now test the client:
+12. In your case replace 19.15 with the version you installed (if required.
+13. Also install a required library: 
+
+		sudo apt-get install libaio1
+
+14. And source ~/.bashrc
+
+		source ~/.bashrc
+
+> Test the Oracle Instant Client installation
+15. Now test the client:
 
 		sqlplus username/password@//dbhost:1521/SID
 
-20. Output should be similar to the following:
+16. Output should be similar to the following:
 
 		SQL*Plus: Release 19.0.0.0.0 - Production on Tue Apr 26 20:43:08 2022
-		Version (your version).0.0.0
+		Version 19.1.0.0.0
 		Copyright (c) 1982, 2022, Oracle.  All rights reserved.
 		Enter user-name:
-21. Now to link up your *C++ include path* search:
+> Add the C++ include path for the Oracle Instant Client SDK
 	
-		sudo ln -s /usr/include/oracle/(your version)/client64/ $ORACLE_HOME/include
+		sudo ln -s /usr/include/oracle/19.15/client64/ $ORACLE_HOME/include
 
-22. In your CMakeLists.txt add ${ORACLE_INCLUDE} to any targets that need them
+18. In your CMakeLists.txt add ${ORACLE_INCLUDE} to any targets that need them
 
 		target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES}  ${ORACLE_INCLUDE})
 
-23. Now to link up your *C++ link  path* search:
-24. In your CMakeLists.txt add **occi**  **chntsh** and **Threads::Threads** to any targets that need them
+> Add the C++ link path for the Oracle Instant Client SDK
+
+]20. In your CMakeLists.txt add **occi**  **chntsh** and **Threads::Threads** to any targets that need them
 
 		target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
 
-25. Execute **sudo vi /etc/ld.so.conf.d/oracle.conf** 
-26. Add a single line */usr/lib/oracle/(your version)/client64/lib/* 
-27. Execute **sudo chmod o+r /etc/ld.so.conf.d/oracle.conf**
-28. There is a quirk in the installation where by **libocci.so** has to be symbollically linked to the version that was actually installed, (oddly enough the symbolic link for **libchntsh.so** is already there)
+21. Execute **sudo vi /etc/ld.so.conf.d/oracle.conf** 
+22. Add a single line */usr/lib/oracle/(your version)/client64/lib/* 
+23. Execute **sudo chmod o+r /etc/ld.so.conf.d/oracle.conf**
+24. There is a quirk in the installation where by **libocci.so** has to be symbollically linked to the version that was actually installed, (oddly enough the symbolic link for **libchntsh.so** is already there)
 
-		sudo ln -s /usr/lib/oracle/(your version)/client64/lib/libocci.so.(your version major number).1 /usr/lib/oracle/(your version)/client64/lib/libocci.so
+		sudo ln -s /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1 /usr/lib/oracle/(your version)/client64/lib/libocci.so
+
+	Then when that is successful, commit it using *ldconfig*
+
 		sudo ldconfig
 
-For example:
+> Review the Oracle Instant Client SDK installation:
 
-	perry@ubuntu:~/Projects/extras_oci$ ls /usr/lib/oracle/19.15/client64/lib/libclntsh*
-	/usr/lib/oracle/19.15/client64/lib/libclntshcore.so       /usr/lib/oracle/19.15/client64/lib/libclntsh.so.11.1
-	/usr/lib/oracle/19.15/client64/lib/libclntshcore.so.19.1  /usr/lib/oracle/19.15/client64/lib/libclntsh.so.12.1
-	/usr/lib/oracle/19.15/client64/lib/libclntsh.so           /usr/lib/oracle/19.15/client64/lib/libclntsh.so.18.1
-	/usr/lib/oracle/19.15/client64/lib/libclntsh.so.10.1      /usr/lib/oracle/19.15/client64/lib/libclntsh.so.19.1
+	ls $ORACLE_HOME/bin
+	ls $ORACLE_HOME/include
+	ls $ORACLE_HOME/lib
+	ls $ORACLE_HOME/lib/libchntsh*
+	ls $ORACLE_HOME/lib/libocci*
 
-	perry@ubuntu:~/Projects/extras_oci$ ls /usr/lib/oracle/19.15/client64/lib/libocci*
-	/usr/lib/oracle/19.15/client64/lib/libocci.so  /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1
+> Now check the interactive debugging capabiltites of Visual Studio Code
 
-31. Now inside Visual Studio Code do a **Ctrl-B** and see a successful build
-32. Then inside Visual Studio Code put a break point on a test case that uses *occi.h* (see *test_OracleSDK.cpp* and place a break point on line 43) and run the interactive debugger (aka. the green arrow next to *run-unittests*)
-33. The program should compile, make, run and land on that break point.
+	cd ~/Projects/extras_oci
+	code .
+
+Now inside Visual Studio Code do a **Ctrl-B** and see a successful build then put a break point on a test case that uses *occi.h* (see *test_OracleSDK.cpp* and place a break point on line 43) and run the interactive debugger (aka. the green arrow next to *run-unittests*)
+
+The program should compile, make, run and land on that break point.
+
+> Review the contents of cmake/FindOracle.cmake
 34. In this project there is a file called *FileOracle.cmake* (which gets included in *CMakeLists.txt*. It may contain the following:
 
 		set(ORACLE_HOME $ENV{ORACLE_HOME})
@@ -110,5 +152,8 @@ For example:
 
 ### Next Steps
 - How to setup a local Oracle database (for testing purposes)
+- How to setup JDBC connectivity to Oracle
+- How to setup ODBC connectivity to Oracle
+
 
 
