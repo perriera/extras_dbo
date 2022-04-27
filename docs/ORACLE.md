@@ -104,7 +104,7 @@ This should show the following:
 
 	bin lib
 
-It should have be
+It should be
 
 	bin include lib
 
