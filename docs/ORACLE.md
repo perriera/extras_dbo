@@ -23,7 +23,7 @@
 > Install the RPM files
  4. Open a Terminal box:
  
-		 sudo apt-get install alien
+		sudo apt-get install alien
 		 
  8. Using the alien installer install each of the .rpm files, (do **not** use the *--scripts* parameter).
  9. (aka. in this case version 12 was downloaded)
@@ -46,7 +46,7 @@ Then press TAB to where it will complete the line up to a point:
 
 	sudo alien -i oracle-instantclient12.1-
 
-From here enter the first letter, in this case it is a '**b**' and press TAB again
+From here enter the first letter, in this case it is a '**b**' and press TAB again, (again do **not** use the *--scripts* parameter).
 
 	sudo alien -i oracle-instantclient19.15-basic-19.15.0.0.0-1.x86_64.rpm
 
