@@ -206,6 +206,7 @@ The program should compile, make, run and land on that break point.
 
 ### Next Steps
 - [How to setup a local Oracle database (for testing purposes)](https://www2.hawaii.edu/~lipyeow/ics321/2015spr/installoracle11g.html)
+- [How to install Oracle 11gR2 on Ubuntu 14.04?](https://askubuntu.com/questions/566734/how-to-install-oracle-11gr2-on-ubuntu-14-04)
 - How to setup JDBC connectivity to Oracle
 - How to setup ODBC connectivity to Oracle
 
