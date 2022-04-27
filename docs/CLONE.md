@@ -43,6 +43,10 @@ As you already using github.com it therefore perfectly logical for you to merely
  23. (You will see a small icon to the right of the replace field)
  24. Replace *EXTRAS_OCI* with *<YOUR_PROJECT_NAME>* (all caps)
  25. Click the replace icon again
+ 24. Replace *oci::* with *<your projects three letter acronym>* (lowercase)
+ 25. Click the replace icon again
+ 24. Replace *namespace oci* with *namespace <your projects three letter acronym>* (lowercase)
+ 25. Click the replace icon again
  26. Now click on the Visual Studio Code Explorer window 
  27. Open up the include directory
  28. Change *extras_oci* directory name to your *<your_project_name>*
@@ -83,12 +87,6 @@ From here you have created a new project with the **(perriera) extras** template
 This has been a basic example of how to clone the *(perriera) extras_oci* repository (and rename it for your purposes). However, you are not really done yet. You will probably want to change all the *extras_oci* references to your project name.
 
 ### Next Steps
- - [How to setup your project with (perriera) extras_oci template](https://github.com/perriera/extras_oci/blob/dev/docs/SETUP.md)
-- [How to install C++17, CMake, PIP and other tools for your project](https://github.com/perriera/extras_oci/blob/dev/docs/INSTALL.md)
+ - [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
 
-### Copyright (see [LICENSE.md](https://github.com/perriera/extras_oci/blob/dev/LICENSE.md))
-> The "MIT/X Consortium License", (adapted for EXPARX.COM)<br/>
-> Copyright (C) November 22, 2021 EXPARX INCORPORATED<br/>
-> Markup Language created/edited with [SlackEdit.io](https://stackedit.io/app#)<br/>
-> CPM support made possible by [Matt Williams](Matt@programmer)<br/>
 
