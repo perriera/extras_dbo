@@ -22,7 +22,7 @@
 
  1. Go to [Oracle Instant Client](https://help.ubuntu.com/community/Oracle%20Instant%20Client) and download a specific version of Oracle Instant Client
  2. Select either *Basic* or *Basic Lite* (just one)
- 3. Download all supporting .rpm files for everything under that specific version (ignore the Precompiler Downloads)
+ 3. Download all supporting .rpm files for everything under that specific version (ignore the _Precompiler Downloads_)
  4. Open a Terminal box 
  5. Execute **sudo apt-get install alien**
  6. Execute **cd ~/Downloads**
