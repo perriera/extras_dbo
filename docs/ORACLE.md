@@ -155,7 +155,7 @@ It should show up as:
 
 Now do the same for the -locci error:
  
-		ls $ORACLE_HOME/lib/libocci.so 
+	ls $ORACLE_HOME/lib/libocci.so 
 
 It is missing:
 
