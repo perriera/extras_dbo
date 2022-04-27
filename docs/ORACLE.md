@@ -21,11 +21,12 @@
  2. Select either *Basic* or *Basic Lite* (just one)
  3. Download all supporting .rpm files for everything under that specific version (ignore the _Precompiler Downloads_)
 > Install the RPM files
- 4. Open a Terminal box 
- 5. Execute **sudo apt-get install alien**
- 6. Execute **cd ~/Downloads**
- 7. Using the alien installer install each of the .rpm files, (do **not** use the *--scripts* parameter).
- 8. (aka. in this case version 12 was downloaded)
+ 4. Open a Terminal box:
+ 
+		 sudo apt-get install alien
+		 
+ 8. Using the alien installer install each of the .rpm files, (do **not** use the *--scripts* parameter).
+ 9. (aka. in this case version 12 was downloaded)
 
 		cd ~/Downloads
 		ls 
@@ -124,9 +125,6 @@ Change it's permissions
 
 24. There is a quirk in the installation where by **libocci.so** has to be symbollically linked to the version that was actually installed, (oddly enough the symbolic link for **libchntsh.so** is already there)
 
-		ls $ORACLE_HOME/lib/libchntsh*
-		ls $ORACLE_HOME/lib/libocci*
-
 		sudo ln -s /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1 /usr/lib/oracle/(your version)/client64/lib/libocci.so
 
 	Then when that is successful, commit it using *ldconfig*
@@ -135,10 +133,11 @@ Change it's permissions
 
 > Review the Oracle Instant Client SDK installation:
 
-	ls $ORACLE_HOME/
 	ls $ORACLE_HOME/bin
 	ls $ORACLE_HOME/include
 	ls $ORACLE_HOME/lib
+	ls $ORACLE_HOME/lib/libchntsh*
+	ls $ORACLE_HOME/lib/libocci*
 
 > Now check the interactive debugging capabiltites of Visual Studio Code
 
