@@ -30,7 +30,7 @@ Assuming you have a GitHub.com account:
 > **user.email not specified**
 > **user.name not specified**
 > You must specify your name and email for the git client to work
->  `git config --global user.name "My Name"`
+>  `git config --global user.name "My Name"`<br/>
 > `git config --global user.email "myemail@example.com"`
 
 ### Summary
