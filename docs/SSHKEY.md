@@ -37,7 +37,7 @@ Assuming you have a GitHub.com account:
 > This should setup your SSH keys for your command line git client access to your GitHub.com account
 
 ### Next Steps
-- See how to use the git client
+- [How to clone your project (with this template)](https://github.com/perriera/extras_oci/blob/dev/docs/CLONE.md)
 
 
 
