@@ -34,7 +34,7 @@
 7. As soon as those are completed 
 8. Execute **ls /usr/lib/oracle**
 9. You should see a number, (it should be the version number you selected for install)
-10. Execute **ls /usr/lib/oracle/<version>**
+10. Execute **ls /usr/lib/oracle/_version_**
 11. You should see a directory called **client64**
 12. The entire path is known as ORACLE_HOME
 13. You must declare this environment variable in your .bashrc
