@@ -135,11 +135,10 @@ Change it's permissions
 
 > Review the Oracle Instant Client SDK installation:
 
+	ls $ORACLE_HOME/
 	ls $ORACLE_HOME/bin
 	ls $ORACLE_HOME/include
 	ls $ORACLE_HOME/lib
-	ls $ORACLE_HOME/lib/libchntsh*
-	ls $ORACLE_HOME/lib/libocci*
 
 > Now check the interactive debugging capabiltites of Visual Studio Code
 
