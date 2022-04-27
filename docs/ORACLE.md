@@ -147,7 +147,23 @@ Change it's permissions
 
 24. There is a quirk in the installation where by **libocci.so** has to be symbollically linked to the version that was actually installed, (oddly enough the symbolic link for **libchntsh.so** is already there)
 
-		sudo ln -s /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1 /usr/lib/oracle/19.15/client64/lib/libocci.so
+		ls $ORACLE_HOME/lib/libchntsh.so
+
+It should show up as:
+
+	/usr/lib/oracle/19.15/client64/lib/libclntsh.so
+
+Now do the same for the -locci error:
+ 
+		ls $ORACLE_HOME/lib/libocci.so 
+
+It is missing:
+
+	ls: cannot access '/usr/lib/oracle/19.15/client64/lib/libocci.so': No such file or directory
+
+So add it back:
+
+	sudo ln -s /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1 /usr/lib/oracle/19.15/client64/lib/libocci.so
 
 	Then when that is successful, commit it using *ldconfig*
 
