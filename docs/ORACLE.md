@@ -62,7 +62,7 @@
 	
 		sudo ln -s /usr/include/oracle/19.15/client64/ $ORACLE_HOME/include
 
-In your CMakeLists.txt add ${ORACLE_INCLUDE} and **Threads::Threads** to any targets that need them
+In your CMakeLists.txt add ${ORACLE_INCLUDE} to any targets that need them
 
 		target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES}  ${ORACLE_INCLUDE})
 
