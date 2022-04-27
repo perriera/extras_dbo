@@ -165,7 +165,7 @@ So add it back:
 
 	sudo ln -s /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1 /usr/lib/oracle/19.15/client64/lib/libocci.so
 
-	Then when that is successful, commit it using *ldconfig*
+Then when that is successful, commit it using *ldconfig*
 
 		sudo ldconfig
 
