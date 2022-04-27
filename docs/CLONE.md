@@ -106,5 +106,6 @@ Now you have both cloned the project as well as renamed everything to your proje
 
 ### Next Steps
  - [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
+- [How to setup Oracle Instant Client (on Linux, Windows or Mac)](https://github.com/perriera/extras_oci/blob/dev/docs/ORACLE.md)
 
 
