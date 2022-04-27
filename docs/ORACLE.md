@@ -96,7 +96,7 @@ Hit enter and repeat that for all the .rpm files you downloaded
 		Enter user-name:
 > Add the C++ include path for the Oracle Instant Client SDK
 	
-		sudo ln -s /usr/include/oracle/19.15/client64/ $ORACLE_HOME/include
+	sudo ln -s /usr/include/oracle/19.15/client64/ $ORACLE_HOME/include
 
 18. In your CMakeLists.txt add ${ORACLE_INCLUDE} to any targets that need them
 
@@ -106,7 +106,7 @@ Hit enter and repeat that for all the .rpm files you downloaded
 
 ]20. In your CMakeLists.txt add **occi**  **chntsh** and **Threads::Threads** to any targets that need them
 
-		target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
+	target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
 
 21. Execute **sudo vi /etc/ld.so.conf.d/oracle.conf** 
 22. Add a single line */usr/lib/oracle/(your version)/client64/lib/* 
@@ -154,6 +154,3 @@ The program should compile, make, run and land on that break point.
 - How to setup a local Oracle database (for testing purposes)
 - How to setup JDBC connectivity to Oracle
 - How to setup ODBC connectivity to Oracle
-
-
-
