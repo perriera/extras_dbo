@@ -73,7 +73,7 @@
 		target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
 
 25. Execute **sudo vi /etc/ld.so.conf.d/oracle.conf** 
-26. Add a single line */usr/lib/oracle/ your version /client64/lib/* 
+26. Add a single line */usr/lib/oracle/(your version)/client64/lib/* 
 27. Execute **sudo chmod o+r /etc/ld.so.conf.d/oracle.conf**
 28. There is a quirk in the installation where by **libocci.so** has to be symbollically linked to the version that was actually installed, (oddly enough the symbolic link for **libchntsh.so** is already there)
 29. Execute **sudo ln -s /usr/lib/oracle/(your version)/client64/lib/libocci.so.19.1 /usr/lib/oracle/(your version)/client64/lib/libocci.so**
