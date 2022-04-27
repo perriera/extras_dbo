@@ -1,3 +1,4 @@
+
 ## How to setup Oracle Instant Client (on Linux, Windows or Mac)
 > This is a basic step-by-step guide to how to successfully install the Oracle Instant Client on your Ubuntu instance. The material provided by Ubuntu is good and well researched but recent upgrades to Oracle Instant Client appear to need some refinements as listed in this article.
 
@@ -158,6 +159,10 @@ The program should compile, make, run and land on that break point.
 		link_directories(BEFORE "${ORACLE_LIB}" )
 35. The above are cmake 3.21 instructions that allow the CMake to be able to find the Oracle installation. It is all based on the environment variable *$ORACLE_HOME*. 
 
+### Alternate Case
+> How to remove RED SQUIGGLY LINES in Visual Studio Code<br/>
+> Inside the editor press *Shift-Ctrl-P* and type in *CMake: Build*<br/>
+> This will cause the editor to rescan it's header includes and attempt to resolve the red squiggly lines (without having to restart the editor)
 
 ### Summary
 > This shows the Oracle Instant Client has been installed successfully however you still need to see if the development portion is setup correctly. These instructions would be great if the entire process could be automated, but for now being able to install Oracle Instant Client at all with just the instructions in this markdown file is a milestone (as material on this process is rather sporatric across the Internet at this point in time).
