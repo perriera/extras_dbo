@@ -108,9 +108,20 @@ Hit enter and repeat that for all the .rpm files you downloaded
 
 	target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} stdc++fs extras occi clntsh Threads::Threads)
 
-21. Execute **sudo vi /etc/ld.so.conf.d/oracle.conf** 
-22. Add a single line */usr/lib/oracle/(your version)/client64/lib/* 
-23. Execute **sudo chmod o+r /etc/ld.so.conf.d/oracle.conf**
+> Now register the libraries with ldconfig
+
+	sudo vi /etc/ld.so.conf.d/oracle.conf
+
+Add a single line 
+
+	/usr/lib/oracle/19.15/client64/lib/
+
+Change it's permissions 
+
+	sudo chmod o+r /etc/ld.so.conf.d/oracle.conf
+
+> Fix a missing link
+
 24. There is a quirk in the installation where by **libocci.so** has to be symbollically linked to the version that was actually installed, (oddly enough the symbolic link for **libchntsh.so** is already there)
 
 		sudo ln -s /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1 /usr/lib/oracle/(your version)/client64/lib/libocci.so
@@ -154,3 +165,6 @@ The program should compile, make, run and land on that break point.
 - How to setup a local Oracle database (for testing purposes)
 - How to setup JDBC connectivity to Oracle
 - How to setup ODBC connectivity to Oracle
+
+
+
