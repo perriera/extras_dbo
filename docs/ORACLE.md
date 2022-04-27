@@ -58,6 +58,19 @@
 		Version 19.15.0.0.0
 		Copyright (c) 1982, 2022, Oracle.  All rights reserved.
 		Enter user-name:
+21. Now to link up your C++ include path search:
+	
+		sudo ln -s /usr/include/oracle/19.15/client64/ $ORACLE_HOME/include
+
+22. Now to link up your C++ link  path search:
+23. In your CMakeLists.txt add **occi**  **chntsh** and **Threads::Threads** to any targets that need them
+
+24. Execute **sudo vi /etc/ld.so.conf.d/oracle.conf** 
+25. Add a single line */usr/lib/oracle/_version_/client64/lib/* 
+26. Execute **sudo chmod o+r /etc/ld.so.conf.d/oracle.conf**
+27. Execute **sudo ln -s /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1 /usr/lib/oracle/19.15/client64/lib/libocci.so**
+28. Execute **sudo ldconfig** 
+
 
 ### Summary
 > This shows the Oracle Instant Client has been installed successfully however you still need to see if the development portion is setup correctly.
