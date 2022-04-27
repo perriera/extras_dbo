@@ -81,6 +81,17 @@
 		sudo ln -s /usr/lib/oracle/(your version)/client64/lib/libocci.so.(your version major number).1 /usr/lib/oracle/(your version)/client64/lib/libocci.so
 		sudo ldconfig
 
+For example:
+
+	perry@ubuntu:~/Projects/extras_oci$ ls /usr/lib/oracle/19.15/client64/lib/libclntsh*
+	/usr/lib/oracle/19.15/client64/lib/libclntshcore.so       /usr/lib/oracle/19.15/client64/lib/libclntsh.so.11.1
+	/usr/lib/oracle/19.15/client64/lib/libclntshcore.so.19.1  /usr/lib/oracle/19.15/client64/lib/libclntsh.so.12.1
+	/usr/lib/oracle/19.15/client64/lib/libclntsh.so           /usr/lib/oracle/19.15/client64/lib/libclntsh.so.18.1
+	/usr/lib/oracle/19.15/client64/lib/libclntsh.so.10.1      /usr/lib/oracle/19.15/client64/lib/libclntsh.so.19.1
+
+	perry@ubuntu:~/Projects/extras_oci$ ls /usr/lib/oracle/19.15/client64/lib/libocci*
+	/usr/lib/oracle/19.15/client64/lib/libocci.so  /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1
+
 31. Now inside Visual Studio Code do a Ctrl-B and see a successful build
 32. Then inside Visual Studio Code put a break point on a test case that uses *occi.h* (see *test_OracleSDK.cpp* and place a break point on line 43) and run the interactive debugger (aka. the green arrow next to *run-unittests*)
 33. The program should compile, make, run and land on that break point.
