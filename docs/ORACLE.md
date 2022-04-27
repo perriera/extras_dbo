@@ -125,7 +125,7 @@ Change it's permissions
 
 24. There is a quirk in the installation where by **libocci.so** has to be symbollically linked to the version that was actually installed, (oddly enough the symbolic link for **libchntsh.so** is already there)
 
-		sudo ln -s /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1 /usr/lib/oracle/(your version)/client64/lib/libocci.so
+		sudo ln -s /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1 /usr/lib/oracle/19.15/client64/lib/libocci.so
 
 	Then when that is successful, commit it using *ldconfig*
 
