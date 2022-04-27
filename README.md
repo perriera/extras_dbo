@@ -18,6 +18,7 @@ Welcome to the **(perriera) / extras_oci** project.
  2. [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/extras_oci/blob/dev/docs/INSTALL.md)
  3. [How to clone your project (with this template)](https://github.com/perriera/extras_oci/blob/dev/docs/CLONE.md)
  4. [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
+ 5. [How to setup Oracle Instant Client (on Linux, Windows or Mac)](https://github.com/perriera/extras_oci/blob/dev/docs/ORACLE.md)
 
 ### Credits
 > Markup Language created/edited with [SlackEdit.io](https://stackedit.io/app#)<br/>
