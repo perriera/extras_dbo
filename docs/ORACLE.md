@@ -157,7 +157,7 @@ Now do the same for the -locci error:
  
 	ls $ORACLE_HOME/lib/libocci.so 
 
-It is missing:
+In 19.15 this symbolc link is missing:
 
 	ls: cannot access '/usr/lib/oracle/19.15/client64/lib/libocci.so': No such file or directory
 
