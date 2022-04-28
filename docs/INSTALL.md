@@ -52,7 +52,9 @@ Now that you have your project cloned we need to make sure you have the tools ne
 
 		code .
 
-	Visual Studio Code will detect whatever language you are using and offer to install extentions automatically. Feel free to allow all recommendations as they appear to the bottom right of the Visual Studio Code environment.
+### Alternate Case 
+> **Visual Studio Code Extensions** </br>
+>	Visual Studio Code will detect whatever language you are using and offer to install extentions automatically. Feel free to allow all recommendations as they appear to the bottom right of the Visual Studio Code environment.
 
 ### Summary 
 Now you have instaled the development environment and editor for a C++17 project (complete with cmake 3.21 support). The next steps are now to clone the project then setup your changelog.md (for accurate version control).
