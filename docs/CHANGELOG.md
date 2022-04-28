@@ -12,6 +12,11 @@
 ### Wish Case
 Now that you have your project compiles properly we need to setup your changelog.md with v0.1.0 (to support **neatly** all future versions).
 
+
+WORK IN PROGREE
+(ignore this page)
+
+
  - [ ] Open a Terminal box and be in your project's directory the do:
 
 		git add . 
