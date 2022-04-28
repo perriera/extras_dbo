@@ -145,7 +145,7 @@ Change it's permissions
 
 > Fix a missing link
 
-24. There is a quirk in the installation where by **libocci.so** has to be symbollically linked to the version that was actually installed, (oddly enough the symbolic link for **libclntsh.so** is already there)
+24. A mistep in version 19.15 does not include the symbolic link **libocci.so**, (oddly enough the symbolic link is provided in version 18.5). Therefore we have to inspect the lib directory to ensure the symbolic links are there. 
 
 		ls $ORACLE_HOME/lib/libclntsh.so
 
