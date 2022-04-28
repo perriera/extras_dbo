@@ -174,7 +174,7 @@ Then when that is successful, commit it using *ldconfig*
 	ls $ORACLE_HOME/bin
 	ls $ORACLE_HOME/include
 	ls $ORACLE_HOME/lib
-	ls $ORACLE_HOME/lib/libchntsh*
+	ls $ORACLE_HOME/lib/libclntsh*
 	ls $ORACLE_HOME/lib/libocci*
 
 > Now check the interactive debugging capabiltites of Visual Studio Code
