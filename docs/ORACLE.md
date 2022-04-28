@@ -187,7 +187,7 @@ Now inside Visual Studio Code do a **Ctrl-B** and see a successful build then pu
 The program should compile, make, run and land on that break point.
 
 > Review the contents of cmake/FindOracle.cmake
-34. In this project there is a file called *FileOracle.cmake* (which gets included in *CMakeLists.txt*. It may contain the following:
+34. In this project there is a file called *FileOracle.cmake* (which gets included in *CMakeLists.txt*). It originally contained the following:
 
 		set(ORACLE_HOME $ENV{ORACLE_HOME})
 		set(ORACLE_INCLUDE "${ORACLE_HOME}/include")
