@@ -1,12 +1,10 @@
 
-
-
-## How to setup Oracle Database Express Edition (on Linux, Windows or Mac)
+## How to setup Oracle Instant Client (on Linux, Windows or Mac)
 > This is a basic step-by-step guide to how to successfully install the Oracle Instant Client on your Ubuntu instance. The material provided by Ubuntu is good and well researched but recent upgrades to Oracle Instant Client appear to need some refinements as listed in this article.
 
-**GIVEN**  we need to install an Oracle database for development
-**WHEN**  we install Oracle Database Express Edition
-**THEN**  we can test the various features of that database
+ 1. GIVEN we need to support apps that need Oracle database support
+ 2. WHEN we install the Oracle Instant Client
+ 3. THEN we will have access to a Oracle database
 
 ### Prerequisites
 
@@ -16,147 +14,12 @@
 - [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
 
 ### Resources
-[How to install Oracle 11gR2 on Ubuntu 14.04?](https://askubuntu.com/questions/566734/how-to-install-oracle-11gr2-on-ubuntu-14-04)
-
-https://stackoverflow.com/questions/66830312/trying-to-install-oracle-xe-18c-in-linux-mint-but-getting-error-any-suggestions
-https://lignux.com/instalacion-y-configuracion-de-oracle-database-18c-express-edition/
-https://stackoverflow.com/questions/53580196/issue-in-installing-oracle-18cxe-on-ubuntu-18-04
-https://www.youtube.com/watch?v=RcZLD2l6WTw
-
-https://docs.oracle.com/en/database/oracle/oracle-database/18/xeinl/procedure-installing-oracle-database-xe.html
-
-
+[Ubuntu documentation: Oracle Instant Client](https://help.ubuntu.com/community/Oracle%20Instant%20Client)
 
 ### Wish Case
-
-This lab is done on Ubuntu 16.04 with Oracle Database 18c Express Edition.
-
-	wget https://download.oracle.com/otn-pub/otn_software/db-express/oracle-database-xe-18c-1.0-1.x86_64.rpm
-
-As you may have noticed, the installation file format is RPM which is used by Red Hat based distributions. But we are on Ubuntu based on Debian which uses the DEB format. So how can we install a package in a format that is incompatible with Debian-based distributions? It's simple, converting the package to DEB.
-
-To do this we first need: alien and its dependencies that are responsible for performing this task:
-
-	sudo apt install alien libaio1 unixodbc net-tools
-
-We convert the package:
-
-	sudo alien  --scripts  -d  oracle-database-xe-18c-1.0-1.x86_64.rpm
-
-English
-
-The conversion takes about 1h 30m depending on the power of your computer. When it's done, we save it.
-
-Before installing the package, we have to configure a few things. We start by creating a script:
-
-	sudo vi  /sbin/chkconfig
-
-And we copy these lines into the file:
-
-	#!/bin/bash
-	# Oracle XE installer chkconfig hack for Ubuntu
-	file=/etc/init.d/oracle-xe
-	if  [[  !  `tail  -n1  $file  |  grep  INIT`  ]];  then
-		echo  >>  $file
-		echo  '### BEGIN INIT INFO'  >>  $file
-		echo  '# Provides: OracleXE'  >>  $file
-		echo  '# Required-Start: $remote_fs $syslog'  >>  $file
-		echo  '# Required-Stop: $remote_fs $syslog'  >>  $file
-		echo  '# Default-Start: 2 3 4 5'  >>  $file
-		echo  '# Default-Stop: 0 1 6'  >>  $file
-		echo  '# Short-Description: Oracle 11g Express Edition'  >>  $file
-		echo  '### END INIT INFO'  >>  $file
-	fi
-	update-rc.d  oracle-xe defaults  80  01
-
-We give the necessary permissions to the file:
-
-	sudo chmod  755  /sbin/chkconfig
-
-Oracle 18c XE requires a special kernel configuration to work. So we need to add some parameters to it.
-
-	sudo vi  /etc/sysctl.d/60-oracle.conf
-
-We copy the following and save.
-
-	fs.file-max=6815744
-	net.ipv4.ip_local_port_range=9000 65000
-	kernel.sem=250 32000 100 128
-	kernel.shmmax=536870912
-
-To load kernel parameters without rebooting:
-
-	sudo service procps start
-
-### Installing Oracle 18c
-
-And now yes, we finally install the package that previously took us so long to convert:
-
-	sudo dpkg -i oracle-database-xe-18c_1.0-2_amd64.deb
-
-After about 10 minutes the process will end. We execute the following command to configure the database administrator password and other things:
-
-	sudo /etc/init.d/oracle-xe-18c configure
-
-We will see what is wrong. That's because the configure script is missing a parameter. 
-
-	Configuring Oracle Listener.
-	Listener configuration failed. Check log '/opt/oracle/cfgtoollogs/netca/netca_configure_out.log' for more details.
-
-To add it we enter the script with:
-
-	sudo vi /etc/init.d/oracle-xe-18c
-
-We look for the line the text:
-
-	-J-Doracle.assistants.dbca.validate.DBCredentials=false 
-
-And right after we add the parameter:
-
-	-J-Doracle.assistants.dbca.validate.ConfigurationParams=false
- 
- 
- Being this way:
-
-Now we try again:
-
-	sudo /etc/init.d/oracle-xe-18c configure
-
-We add the environment variables to bash:
-
-	vi ~/.bashrc
-
-We copy the following lines at the end of the file:
-
-	export ORACLE_HOME=/opt/oracle/product/18c/dbhomeXE
-	export ORACLE_SID=XE
-	export ORACLE_BASE=/opt/oracle
-	export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
-	export PATH=$ORACLE_HOME/bin:$PATH
-
-#### Verification
-
-To do this we first have to log in with SQL*Plus, or as in my case with Oracle SQL Developer. By command line (SQL*Plus) we enter with this command:
-
-	sql sys as sysdba
-
-We can verify that everything works correctly by making a query to the database.
-
-As I usually tell you, if you have any questions, ask in the comments or in the LiGNUx Telegram group @liGNUx.
-
-I hope it has been useful to you 🙂
-
-We read!
-
-
-
-
 > Download the RPM files
- 1. Go to [Oracle Database XE Downloads](https://www.oracle.com/database/technologies/xe-downloads.html) and download a specific version of Oracle Database Express Edition
- 2. Install the following:
-
-		sudo apt-get install alien libaio1 unixodbc # still works in 22.04
-
+ 1. Go to [Oracle Instant Client](https://help.ubuntu.com/community/Oracle%20Instant%20Client) and download a specific version of Oracle Instant Client
+ 2. Select either *Basic* or *Basic Lite* (just one)
  3. Download all supporting .rpm files for everything under that specific version (ignore the _Precompiler Downloads_)
 > Install the RPM files
  4. Open a Terminal box:
