@@ -1,5 +1,6 @@
 
 
+
 ## How to setup Oracle Database Express Edition (on Linux, Windows or Mac)
 > This is a basic step-by-step guide to how to successfully install the Oracle Instant Client on your Ubuntu instance. The material provided by Ubuntu is good and well researched but recent upgrades to Oracle Instant Client appear to need some refinements as listed in this article.
 
@@ -19,6 +20,11 @@
 
 https://stackoverflow.com/questions/66830312/trying-to-install-oracle-xe-18c-in-linux-mint-but-getting-error-any-suggestions
 https://lignux.com/instalacion-y-configuracion-de-oracle-database-18c-express-edition/
+https://stackoverflow.com/questions/53580196/issue-in-installing-oracle-18cxe-on-ubuntu-18-04
+https://www.youtube.com/watch?v=RcZLD2l6WTw
+
+https://docs.oracle.com/en/database/oracle/oracle-database/18/xeinl/procedure-installing-oracle-database-xe.html
+
 
 
 ### Wish Case
@@ -31,7 +37,7 @@ As you may have noticed, the installation file format is RPM which is used by Re
 
 To do this we first need: alien and its dependencies that are responsible for performing this task:
 
-	sudo apt install alien libaio1 unixodbc
+	sudo apt install alien libaio1 unixodbc net-tools
 
 We convert the package:
 
@@ -43,7 +49,7 @@ The conversion takes about 1h 30m depending on the power of your computer. When 
 
 Before installing the package, we have to configure a few things. We start by creating a script:
 
-	sudo nano  /sbin/chkconfig
+	sudo vi  /sbin/chkconfig
 
 And we copy these lines into the file:
 
@@ -69,7 +75,7 @@ We give the necessary permissions to the file:
 
 Oracle 18c XE requires a special kernel configuration to work. So we need to add some parameters to it.
 
-	sudo nano  /etc/sysctl.d/60-oracle.conf
+	sudo vi  /etc/sysctl.d/60-oracle.conf
 
 We copy the following and save.
 
@@ -92,13 +98,23 @@ After about 10 minutes the process will end. We execute the following command to
 
 	sudo /etc/init.d/oracle-xe-18c configure
 
+We will see what is wrong. That's because the configure script is missing a parameter. 
+
+	Configuring Oracle Listener.
+	Listener configuration failed. Check log '/opt/oracle/cfgtoollogs/netca/netca_configure_out.log' for more details.
+
+To add it we enter the script with:
+
+	sudo vi /etc/init.d/oracle-xe-18c
+
 We look for the line the text:
 
-	<span lang="es-ES"><i><b>Doracle.assistants.dbca.validate.DBCredentials=false</b></i></span>
+	-J-Doracle.assistants.dbca.validate.DBCredentials=false 
 
 And right after we add the parameter:
 
-	 <span lang="es-ES"><i><b>-</b></i></span><span lang="es-ES"><i><b>J-</b></i></span><span lang="es-ES"><i><b>Doracle.assistants.dbca.validate.ConfigurationParams=false</b></i></span>
+	-J-Doracle.assistants.dbca.validate.ConfigurationParams=false
+ 
  
  Being this way:
 
@@ -108,7 +124,7 @@ Now we try again:
 
 We add the environment variables to bash:
 
-	nano ~/.bashrc
+	vi ~/.bashrc
 
 We copy the following lines at the end of the file:
 
