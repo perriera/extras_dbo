@@ -185,6 +185,25 @@ With that successful run *ldconfig* in order sync everything up (with the Linux 
 	ls $ORACLE_HOME/lib/libclntsh*
 	ls $ORACLE_HOME/lib/libocci*
 
+You should see something like this:
+
+	perry@ubuntu:~/Projects/extras_oci$ ls $ORACLE_HOME/bin
+	adrci  exp  expdp  genezi  imp  impdp  odbc_update_ini.sh  sqlldr  sqlplus  wrc
+	perry@ubuntu:~/Projects/extras_oci$ ls $ORACLE_HOME/include
+	ldap.h     occiAQ.h       occiData.h     oci1.h    ociapr.h  ocidfn.h   ocikpr.h    ocixstream.h  orid.h  oro.h
+	nzerror.h  occiCommon.h   occi.h         oci8dp.h  ocidef.h  ociextp.h  ociver.h    odci.h        ori.h   ort.h
+	nzt.h      occiControl.h  occiObjects.h  ociap.h   ocidem.h  oci.h      ocixmldb.h  oratypes.h    orl.h   xa.h
+	perry@ubuntu:~/Projects/extras_oci$ ls $ORACLE_HOME/lib
+	glogin.sql             libclntsh.so.10.1  libclntsh.so.19.1  libnfsodm19.so   libociei.so       libsqlplus.so     orai18n.jar
+	libclntshcore.so       libclntsh.so.11.1  libheteroxa19.so   libnnz19.so      libocijdbc19.so   libsqora.so.19.1  orai18n-mapping.jar
+	libclntshcore.so.19.1  libclntsh.so.12.1  libipc1.so         libocci.so       liboramysql19.so  network           ottclasses.zip
+	libclntsh.so           libclntsh.so.18.1  libmql1.so         libocci.so.19.1  libsqlplusic.so   ojdbc8.jar        xstreams.jar
+	perry@ubuntu:~/Projects/extras_oci$ ls $ORACLE_HOME/lib/libclntsh*
+	/usr/lib/oracle/19.15/client64/lib/libclntshcore.so       /usr/lib/oracle/19.15/client64/lib/libclntsh.so.11.1
+	/usr/lib/oracle/19.15/client64/lib/libclntshcore.so.19.1  /usr/lib/oracle/19.15/client64/lib/libclntsh.so.12.1
+	/usr/lib/oracle/19.15/client64/lib/libclntsh.so           /usr/lib/oracle/19.15/client64/lib/libclntsh.so.18.1
+	/usr/lib/oracle/19.15/client64/lib/libclntsh.so.10.1      /usr/lib/oracle/19.15/client64/lib/libclntsh.so.19.1
+
 > Now check the interactive debugging capabiltites of Visual Studio Code
 
 	cd ~/Projects/extras_oci
