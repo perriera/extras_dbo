@@ -203,6 +203,8 @@ You should see something like this:
 	/usr/lib/oracle/19.15/client64/lib/libclntshcore.so.19.1  /usr/lib/oracle/19.15/client64/lib/libclntsh.so.12.1
 	/usr/lib/oracle/19.15/client64/lib/libclntsh.so           /usr/lib/oracle/19.15/client64/lib/libclntsh.so.18.1
 	/usr/lib/oracle/19.15/client64/lib/libclntsh.so.10.1      /usr/lib/oracle/19.15/client64/lib/libclntsh.so.19.1
+	perry@ubuntu:~/Projects/extras_oci$ ls $ORACLE_HOME/lib/libocci*
+	/usr/lib/oracle/19.15/client64/lib/libocci.so  /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1
 
 > Now check the interactive debugging capabiltites of Visual Studio Code
 
