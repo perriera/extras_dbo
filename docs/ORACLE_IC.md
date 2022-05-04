@@ -243,6 +243,7 @@ Now inside Visual Studio Code do a **Ctrl-B** and see a successful build and you
 	Terminal will be reused by tasks, press any key to close it.
 
 
+### Shared Library support
 **libextras_oci.so**</br>
 Any and all code (including header files) that you develop (and add on your branch) to this repository will go into this library and can be easily included in other GitHub projects via CPM or sudo checkinstall. 
 
