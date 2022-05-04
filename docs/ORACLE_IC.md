@@ -245,7 +245,7 @@ Now inside Visual Studio Code do a **Ctrl-B** and see a successful build and you
 
 ### Shared Library support
 **libextras_oci.so**</br>
-Any and all code (including header files) that you develop (and add on your branch) to this repository will go into this library and can be easily included in other GitHub projects via CPM or sudo checkinstall, (just include the following in your CMakeLists.txt). We recommend you either (perriera) exrtas_cpp as template project or use the CMakeLists.txt included in this project as a guide.
+Any and all code (including header files) that you develop (or add on a branch on this project) to this repository will go into this library and can be easily included in other GitHub projects via CPM or sudo checkinstall, (just include the following in your CMakeLists.txt). We recommend you either use (perriera) exrtas_cpp as template project or use the CMakeLists.txt included in this project as a guide.
 
 	#
 	# NOTE: "Include 3rd party libraries, Perry and I maintain an open-source extras C++ library, which
