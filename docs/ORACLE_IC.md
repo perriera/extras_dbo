@@ -165,7 +165,15 @@ So add it back:
 
 	sudo ln -s /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1 /usr/lib/oracle/19.15/client64/lib/libocci.so
 
-Then when that is successful, commit it using *ldconfig*
+Now test for **libocci.so** again:
+ 
+	ls $ORACLE_HOME/lib/libocci.so 
+
+It should show up as:
+
+/usr/lib/oracle/19.15/client64/lib/libocci.so
+
+With that successful run *ldconfig* in order sync everything up (with the Linux way of doing things)
 
 	sudo ldconfig
 
