@@ -56,19 +56,19 @@ Hit enter and repeat that for all the .rpm files you downloaded
 
 7. As soon as those are completed 
 
-		ls /usr/lib/oracle
+	ls /usr/lib/oracle
 
 8. You should see a number, (it should be the version number you selected for install). In this case the version number is 19.15:
 
-		ls /usr/lib/oracle/19.15
+	ls /usr/lib/oracle/19.15
 
 9. You should see a directory called **client64**
 
-		ls /usr/lib/oracle/19.15/client64
+	ls /usr/lib/oracle/19.15/client64
 
 10. That entire path is known as your ORACLE_HOME directory and you must declare this environment variable somewhere during your session initialization. The .bashrc is an idea place (other tools might use .profile, it's up to you).
 
-		vi ~/.bashrc
+	vi ~/.bashrc
 
 11. Append this to the end of the file:
 
