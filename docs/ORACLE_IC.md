@@ -211,7 +211,40 @@ You should see something like this:
 	cd ~/Projects/extras_oci
 	code .
 
-Now inside Visual Studio Code do a **Ctrl-B** and see a successful build then put a break point on a test case that uses *occi.h* (see *test_OracleSDK.cpp* and place a break point on line 43) and run the interactive debugger (aka. the green arrow next to *run-unittests*)
+Now inside Visual Studio Code do a **Ctrl-B** and see a successful build and you should see something like this:
+
+	-- ======================== CMAKE_BUILD_TYPE: Debug ===========================
+	-- CMAKE_CXX_FLAGS:  -Wall -Wextra -pedantic --std=c++17 -fPIC -g -Wall -Wextra -pedantic --std=c++17 -fPIC -pthread -g -O0
+	-- CMAKE_C_FLAGS:  -Wall -Wextra -pedantic -fPIC -g -Wall -Wextra -pedantic -fPIC -pthread -g -O0
+	-- CPM: adding package extras@5.26.0 (v5.26.0 at /home/perry/.cache/CPM/extras/d4c42783a675887008e79728d654420ec80ff550)
+	-- Configuring extras build properties
+	-- Building tests
+	-- Building extras_oci with Interprocedural Optimization
+	-- Configuring done
+	-- Generating done
+	-- Build files have been written to: /home/perry/Projects/extras_oci/build
+	Consolidate compiler generated dependencies of target extras
+	[  4%] Linking CXX shared library libextras.so
+	[ 62%] Built target extras
+	Consolidate compiler generated dependencies of target extras_oci
+	[ 66%] Building CXX object CMakeFiles/extras_oci.dir/src/game/ChessGame.cpp.o
+	[ 70%] Linking CXX shared library libextras_oci.so
+	[ 70%] Built target extras_oci
+	[ 75%] Building CXX object CMakeFiles/run-unittests-extras_oci.dir/test/chessgame/mock_ChessGame.cpp.o
+	[ 79%] Building CXX object CMakeFiles/run-unittests-extras_oci.dir/test/chessgame/test_ChessGame.cpp.o
+	[ 83%] Building CXX object CMakeFiles/run-unittests-extras_oci.dir/test/oracle/test_OracleSDK.cpp.o
+	[ 87%] Building CXX object CMakeFiles/run-unittests-extras_oci.dir/test/vendor/main.cpp.o
+	[ 91%] Linking CXX executable run-unittests-extras_oci
+	[ 91%] Built target run-unittests-extras_oci
+	[ 95%] Building CXX object CMakeFiles/extras_oci_app.dir/instances/main.cpp.o
+	[100%] Linking CXX executable extras_oci_app
+	[100%] Built target extras_oci_app
+
+	Terminal will be reused by tasks, press any key to close it.
+
+
+### Test gdb with Visual Studio Code on Oracle Instant Client:
+>Now put a break point on a test case that uses *occi.h* (see *test_OracleSDK.cpp* and place a break point on line 43) and run the interactive debugger (aka. the green arrow next to *run-unittests*)
 
 The program should compile, make, run and land on that break point.
 
