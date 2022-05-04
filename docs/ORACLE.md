@@ -25,6 +25,9 @@ https://www.youtube.com/watch?v=RcZLD2l6WTw
 
 https://docs.oracle.com/en/database/oracle/oracle-database/18/xeinl/procedure-installing-oracle-database-xe.html
 
+https://www.oracle.com/downloads/developer-vm/community-downloads.html#dbapp
+https://www.oracle.com/database/technologies/databaseappdev-vm.html
+https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html
 
 
 ### Wish Case
