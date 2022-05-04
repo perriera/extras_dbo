@@ -243,6 +243,9 @@ Now inside Visual Studio Code do a **Ctrl-B** and see a successful build and you
 	Terminal will be reused by tasks, press any key to close it.
 
 
+**libextras_oci.so**
+Any and all code (including header files) that you develop (and add on your branch) to this repository will go into this library and can be easily included in other GitHub projects via CPM or checkinstall. 
+
 ### Test gdb with Visual Studio Code on Oracle Instant Client:
 >Now put a break point on a test case that uses *occi.h* (see *test_OracleSDK.cpp* and place a break point on line 43) and run the interactive debugger (aka. the green arrow next to *run-unittests*)
 
