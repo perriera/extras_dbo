@@ -245,7 +245,32 @@ Now inside Visual Studio Code do a **Ctrl-B** and see a successful build and you
 
 ### Shared Library support
 **libextras_oci.so**</br>
-Any and all code (including header files) that you develop (and add on your branch) to this repository will go into this library and can be easily included in other GitHub projects via CPM or sudo checkinstall. 
+Any and all code (including header files) that you develop (and add on your branch) to this repository will go into this library and can be easily included in other GitHub projects via CPM or sudo checkinstall, (just include the following in your CMakeLists.txt). 
+
+	#
+	# NOTE: "Include 3rd party libraries, Perry and I maintain an open-source extras C++ library, which
+	# is used extensively in extras_oci, it comes bundled with spdlog, cpr, and nlohmann json. extras has
+	# project options that allow us to control how other libraries it includes are built. for example we
+	# can tell extras to build spdlog as a static library (for faster compile times) by settings
+	# MAKE_SPDLOG_SHARED OFF" -- Matt Williams, October, 2021
+	#
+	CPMAddPackage(
+		NAME extras_oci
+		GITHUB_REPOSITORY perriera/extras_oci
+		VERSION 0.4.0
+		OPTIONS "MAKE_SPDLOG_SHARED OFF"
+		OPTIONS "MAKE_EXTRAS_LIBRARY_ONLY ON"
+	)
+	if(extras_oci_ADDED)
+		#
+		# NOTE:  enable c++11 to avoid compilation errors, and force spdlog into release build
+		#
+		print(STATUS "Configuring extras_oci build properties")
+		set_target_properties(extras_oci PROPERTIES CMAKE_BUILD_TYPE Release)
+	else()
+		print(WARNING "extras_oci was not configured properly")
+	endif()
+
 
 ### Test gdb with Visual Studio Code on Oracle Instant Client:
 >Now put a break point on a test case that uses *occi.h* (see *test_OracleSDK.cpp* and place a break point on line 43) and run the interactive debugger (aka. the green arrow next to *run-unittests*)
