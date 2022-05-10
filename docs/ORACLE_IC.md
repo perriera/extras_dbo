@@ -302,4 +302,14 @@ The program should compile, make, run and land on that break point.
 - How to setup ODBC connectivity to Oracle
 
 
+York C++ Uodate
+export ORACLE_BASE=/Applications/oracleclient
+export ORACLE_HOME=${ORACLE_BASE}/product/instantclient_12_2
+export PATH=${ORACLE_HOME}:${PATH}
+export DYLD_LIBRARY_PATH=${ORACLE_HOME}/lib
+export TNS_ADMIN=${ORACLE_BASE}/admin/network
+export SQLPATH=${SQLPATH}:${ORACLE_HOME}/sqlplus/admin
+export NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1
+
+https://oracle-base.com/articles/misc/oracle-instant-client-installation
 

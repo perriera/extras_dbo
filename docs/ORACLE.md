@@ -10,6 +10,7 @@
 
 ### Prerequisites
 
+- [Oracle Cloud Free Tier](https://www.oracle.com/cloud/free/)
 - [How to setup a development environment (on Linux, Windows or Mac)](https://github.com/perriera/extras_oci/blob/dev/docs/ENVIRONMENT.md)
 - [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/extras_oci/blob/dev/docs/INSTALL.md)
 - [How to clone your project (with this template)](https://github.com/perriera/extras_oci/blob/dev/docs/CLONE.md)
