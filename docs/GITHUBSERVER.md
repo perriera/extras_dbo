@@ -31,11 +31,11 @@
 		
  - [ ] Log in as a git user
 		
-		su – git
+		su - git
 
  - [ ] Initiate a new empty repository using following command:
 
-		git init –bare ~/hostnextra.git
+		git init --bare ~/hostnextra.git
 
  - [ ] Enable post-update hook by copying the sample file as follows:
 
@@ -50,8 +50,8 @@
 
 - [ ] Configure for localhost
 
-		git config –global user.name “git”  
-		git config –global user.email “git@localhost”
+		git config --global user.name “git”  
+		git config --global user.email “git@localhost”
 
 - [ ] Create a key
 
@@ -69,7 +69,7 @@
 
  - [ ] Log in as a git user  (or switch to another terminal window)
 		
-		su – git
+		su -- git
 
 - [ ] To create the SSH directory and file for holding the authorized ssh key for git user, run the following commands:
 
@@ -121,7 +121,7 @@
 
 - [ ] Verify the changes, access the git server and run following command to check the logs
 
-		su – git
+		su -- git
 		cd ~/hostnextra.git
 		git log
 		
