@@ -59,7 +59,7 @@
 
 - [ ] Now copy the public key to where it can be copied
  
-		 cat ~/.ssh/id_ed25519.pub > ~/key.txt
+		 cat ~/.ssh/id_ed25519.pub > /tmp/key.txt
 
   
 #### configure server side ssh
@@ -77,7 +77,8 @@
 
 - [ ] now add the key.txt created above
  
-		 cat /home/**username**/key.txt >> ~/.ssh/authorized_keys
+		 cat /tmp/key.txt >> ~/.ssh/authorized_keys
+		 rm /tmp/key.txt
 
 - [ ] now exit (or open another terminal window)
 
@@ -86,8 +87,6 @@
 #### configure client side git
 
 - [ ] now restart ssh
-
-		rm key.txt
 
 		sudo systemctl restart ssh
 		sudo systemctl status sshd
