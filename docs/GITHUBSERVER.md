@@ -134,6 +134,10 @@
 
 			update
 
+- [ ] To see this in motion install GitKraken
+
+		sudo snap install gitkraken --classic 
+
 
 ### Alternate Case 
 > **Do you have a DNS A record for your server’s hostname?** </br>
