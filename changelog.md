@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v0.3.0 -m "GITHUBSERVER.md"</br>
-> > git push origin v0.3.0
+> > git tag -a v0.3.1 -m "GITHUBSERVER.md"</br>
+> > git push origin v0.3.1
 
 IMPORTANT:
 
@@ -31,6 +31,10 @@ Correct URL for github, (for source compare)</br>
 Adding mock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordingly</br>
+
+#### 0.3.1 (2021-05-10)
+### Added
+- GITHUBSERVER.md
 
 #### 0.3.0 (2021-05-03)
 ### Added
@@ -94,7 +98,8 @@ Updated README.md accordingly</br>
 ### Removed
 - Conan package manager deprecated
 
-[unreleased]: https://github.com/perriera/extras_oci/compare/v0.3.0...HEAD
+[unreleased]: https://github.com/perriera/extras_oci/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/perriera/extras_oci/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/perriera/extras_oci/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/perriera/extras_oci/compare/v1.0.1...v0.2.0
 [1.0.1]: https://github.com/perriera/extras_oci/compare/v1.0.0...v1.0.1
