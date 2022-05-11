@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v0.2.0 -m "GITHUBSERVER.md"</br>
-> > git push origin v0.2.0
+> > git tag -a v0.3.0 -m "GITHUBSERVER.md"</br>
+> > git push origin v0.3.0
 
 IMPORTANT:
 
