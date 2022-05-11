@@ -10,6 +10,9 @@
 
 ### Prerequisites
   - [How to install a Linux Platform (Ubuntu 20.04.4)](https://github.com/perriera/extras_oci/blob/dev/docs/UBUNTU.md)
+  - A Ubuntu 20.04 installed [dedicated server](https://www.hostnextra.com/dedicated-server.html) or [KVM VPS](https://www.hostnextra.com/vps-hosting.html).
+-   A root user access or normal user with administrative privileges.
+-   Add DNS A record of your server’s hostname. 
 
 #### External References
 - [How to install GITHUB on Ubuntu : Step by Step](https://linuxtechlab.com/how-to-install-github-on-ubuntu-step-by-step/)</br>
@@ -21,47 +24,78 @@
 
 ### Wish Case
 Now that you have your project cloned we need to make sure you have the tools necessary to compile properly:
-
-  - [ ] First put **sudo** into ready-to-accept mode
-	
-		sudo ls
-	
+#### install git
  - [ ] Now copy and paste the following for a Linux environment
 
-		sudo apt update
-		sudo apt install -y build-essential libtool autotools-dev automake pkg-config git clangd cppcheck clang-tidy python3-pip checkinstall
+		sudo apt update -y
+		sudo apt install git -y
 
- - [ ] Assuming that was successful, install CMake 3.21
+ - [ ] Verify it's installation
 
-		pip install clang-format
-		pip install cmake-format
-		pip install cmake
+		git --version
 
- - [ ] Now open the vi editor 
+#### configure server side
+ - [ ] Add user to handle the repositories:
 
-		vi ~/.bashrc
+		sudo adduser git
 		
- - [ ] APPEND these environment variables to `~/.bashrc `
+ - [ ] Log in as a git user
 		
-		export PATH=$HOME/.local/bin:${PATH}
-		export CPM_SOURCE_CACHE=$HOME/.cache/CPM
-		export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
+		su – git
 
- - [ ] Then source it ... 
+ - [ ] Initiate a new empty repository using following command:
 
-		source ~/.bashrc
+		git init –bare ~/hostnextra.git
 
- - [ ] Now install Visual Studio Code
+ - [ ] Enable post-update hook by copying the sample file as follows:
 
-		sudo snap install --classic code # or code-insiders
+		cd hostnextra.git/hooks/
+		cp post-update.sample post-update
 
- - [ ] Now start Visual Studio Code
+#### configure client side
 
-		code .
+ - [ ] Submit inflammation about yourself so that commit messages will be generated with correct information attached:
+
+		git config –global user.name “git”  
+		git config –global user.email “git@localhost”
+
+- [ ] Create a directory where you can keep all your projects
+
+		mkdir ~/dev
+		cd ~/dev
+		
+- [ ] Now, create a clone the hostnextra.git repository that we have created earlier in the server
+
+		git clone git@localhost:~/hostnextra.git hostnextra.git
+
+- [ ] Go to respository
+
+		cd hostnextra.git
+
+- [ ] You can see the repository is empty, so lets create some files
+
+		echo “my test file” > file1.txt
+
+- [ ] Add these file to our git repository
+
+		git add .
+		git commit -m "update"
+
+- [ ] Push these changes to the remote git repository at localhost
+
+		git push origin master
+
+- [ ] Verify the changes, access the git server and run following command to check the logs
+
+		cd ~/hostnextra.git
+		git log
+		
+
 
 ### Alternate Case 
-> **Visual Studio Code Extensions** </br>
->	Visual Studio Code will detect whatever language you are using and offer to install extentions automatically. Feel free to allow all recommendations as they appear to the bottom right of the Visual Studio Code environment.
+> **No DNS A record of your server’s hostname?** </br>
+>	Use your server IP address in the place of hub.hostnextra.com.</br>
+>(aka. *127.0.0.1* or *localhost*)
 
 ### Summary 
 Now you have instaled the development environment and editor for a C++17 project (complete with cmake 3.21 support). The next steps are now to clone the project then setup your changelog.md (for accurate version control).
