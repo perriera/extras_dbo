@@ -14,6 +14,15 @@
 
 
 ### Wish Case
+#### install ssh
+ - [ ] Test to see that you have SSH already installed
+
+		ssh -V 
+
+ - [ ] You should see something like 
+
+		OpenSSH_8.2p1 Ubuntu-4ubuntu0.4, OpenSSL 1.1.1f  31 Mar 2020 
+
 #### install git
  - [ ] Now copy and paste the following for a Linux environment
 
@@ -143,6 +152,11 @@
 > **Do you have a DNS A record for your server’s hostname?** </br>
 >	Use your DNS A record hostname wherever localhost is mentioned above. </br>
 >Additional information on firewalls can be found in the external reference section (below)
+
+### Alternate Case 
+> **You don't have SSH installed?** </br>
+>
+>		sudo apt install git openssh-server -y
 
 ### Summary 
 Now you have an operational GitHub server running locally on your Ubuntu box. This should address the issue being encountered with CPM and public URLs.
