@@ -61,9 +61,6 @@
  
 		 cat ~/.ssh/id_ed25519.pub > ~/key.txt
 
-- [ ] now exit (or open another terminal window)
-
-		exit 
   
 #### configure server side ssh
 
