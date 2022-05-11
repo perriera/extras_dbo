@@ -34,7 +34,7 @@ Now that you have your project cloned we need to make sure you have the tools ne
 
 		git --version
 
-#### configure server side
+#### configure server side git
  - [ ] Add user to handle the repositories:
 
 		sudo adduser git
@@ -51,6 +51,19 @@ Now that you have your project cloned we need to make sure you have the tools ne
 
 		cd hostnextra.git/hooks/
 		cp post-update.sample post-update
+
+#### configure server side ssh
+
+- [ ] To create the SSH directory and file for holding the authorized ssh key for git user, run the following commands:
+
+		mkdir -p ~/.ssh
+		chmod 700 ~/.ssh
+		touch ~/.ssh/authorized_keys
+		chmod 600 ~/.ssh/authorized_keys
+
+- [ ] now exit (or open another terminal window)
+
+		exit 
 
 #### configure client side
 
