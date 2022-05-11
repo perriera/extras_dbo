@@ -157,4 +157,6 @@ Now you have an operational GitHub server running locally on your Ubuntu box. Th
 - https://github.com/cpm-cmake/CPM.cmake/issues/132
 - https://github.com/cpm-cmake/CPM.cmake/wiki/More-Snippets
 - https://github.com/cpm-cmake/CPM.cmake
+- https://git-scm.com/download/gui/linux
+
 
