@@ -52,6 +52,10 @@ Now that you have your project cloned we need to make sure you have the tools ne
 		cd hostnextra.git/hooks/
 		cp post-update.sample post-update
 
+ [ ] now exit (or open another terminal window)
+
+		exit 
+
 #### configure client side ssh
 
 - [ ] Configure for localhost
