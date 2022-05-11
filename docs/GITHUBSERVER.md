@@ -178,5 +178,11 @@ Now you have an operational GitHub server running locally on your Ubuntu box. Th
 - https://git-scm.com/download/gui/linux
 - https://snapcraft.io/gitkraken
 
+- https://ubuntututorials.org/set-up-private-git-server-ubuntu-2004/
+- https://www.andrewhoog.com/post/howto-setup-a-private-git-server-on-ubuntu-18.04/
+- https://www.linux.com/training-tutorials/how-run-your-own-git-server/
+- https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server
+- https://git-scm.com/book/en/v2/Git-on-the-Server-Git-Daemon
+- https://linuxways.net/ubuntu/how-to-setup-git-server-on-ubuntu-20-04/
 
 
