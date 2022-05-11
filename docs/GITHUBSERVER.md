@@ -117,12 +117,22 @@
 
 		git push origin master
 
-- [ ] Verify the changes, access the git server and run following command to check the logs
+- [ ] Verify the changes, log back into the git user account
 
 		su -- git
+
+- [ ] access the git server and run following command to check the logs
+
 		cd ~/hostnextra.git
 		git log
 		
+- [ ] if you see the following your git server is operational (at the most basic level)
+
+		commit 53f5f0ec459bb5dc9b9107f0caf1fb9ca8c1466f (HEAD -> master)
+		Author: “git” <“git@localhost”>
+		Date:   Wed May 11 14:51:12 2022 -0700
+
+			update
 
 
 ### Alternate Case 
@@ -134,6 +144,7 @@
 Now you have an operational GitHub server running locally on your Ubuntu box. This should address the issue being encountered with CPM and public URLs.
 
 ### Next Steps
+ - [How to setup your localhost GitHub https:// access]((https://github.com/perriera/extras_oci/blob/dev/docs/GITHUBHTTPS.md))
  - [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
 
 #### External References
