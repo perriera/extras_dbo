@@ -52,6 +52,22 @@ Now that you have your project cloned we need to make sure you have the tools ne
 		cd hostnextra.git/hooks/
 		cp post-update.sample post-update
 
+#### configure client side ssh
+
+- [ ] Configure for localhost
+
+		git config –global user.name “git”  
+		git config –global user.email “git@localhost”
+
+- [ ] Create a key
+
+		ssh-keygen -t ed25519 -C “git@localhost”
+
+- [ ] Now copy the public key to where it can be copied
+ 
+		 cat ~/.ssh/id_ed25519.pub > ~/key.txt
+  
+
 #### configure server side ssh
 
 - [ ] To create the SSH directory and file for holding the authorized ssh key for git user, run the following commands:
@@ -61,16 +77,20 @@ Now that you have your project cloned we need to make sure you have the tools ne
 		touch ~/.ssh/authorized_keys
 		chmod 600 ~/.ssh/authorized_keys
 
+- [ ] now add the key.txt created above
+ 
+		 cat /home/**your home**/key.txt >> ~/.ssh/authorized_keys
+
+- [ ] now restart ssh
+
+		sudo systemctl restart ssh
+		sudo systemctl status sshd
+
 - [ ] now exit (or open another terminal window)
 
 		exit 
 
-#### configure client side
-
- - [ ] Submit inflammation about yourself so that commit messages will be generated with correct information attached:
-
-		git config –global user.name “git”  
-		git config –global user.email “git@localhost”
+#### configure client side git
 
 - [ ] Create a directory where you can keep all your projects
 
