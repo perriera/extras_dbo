@@ -80,7 +80,7 @@
 
 - [ ] now add the key.txt created above
  
-		 cat /home/**your home**/key.txt >> ~/.ssh/authorized_keys
+		 cat /home/**username**/key.txt >> ~/.ssh/authorized_keys
 
 - [ ] now exit (or open another terminal window)
 
@@ -89,6 +89,8 @@
 #### configure client side git
 
 - [ ] now restart ssh
+
+		rm key.txt
 
 		sudo systemctl restart ssh
 		sudo systemctl status sshd
