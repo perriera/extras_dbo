@@ -28,7 +28,7 @@ Now that you have your project cloned we need to make sure you have the tools ne
  - [ ] Now copy and paste the following for a Linux environment
 
 		sudo apt update -y
-		sudo apt install git -y
+		sudo apt install git openssh-server -y
 
  - [ ] Verify it's installation
 
