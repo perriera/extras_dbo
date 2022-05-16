@@ -1,3 +1,21 @@
+## How to install your own GitHub Server onto Ubuntu 20.04
+> Setting up a local git server requires an SSH server setup for two accounts setup first. One for the user and another for the server.
+
+ 1. **GIVEN** that a local GitHub server has better privacy capabilties
+ 2. **WHEN** we install the GitHub open source code
+ 3. **THEN** we can enjoy the benefits of a locally managed GitHub server
+
+### Prerequisites
+  - [How to install a Linux Platform (Ubuntu 20.04.4)](https://github.com/perriera/extras_oci/blob/dev/docs/UBUNTU.md)
+  - A Ubuntu 20.04 installed [dedicated server](https://www.hostnextra.com/dedicated-server.html) or [KVM VPS](https://www.hostnextra.com/vps-hosting.html).
+-   A root user access or normal user with administrative privileges.
+-   Add DNS A record of your server’s hostname. 
+- OpenSSH installed and running
+
+
+### Wish Case
+#### install git
+ - [ ] Now copy and paste the following for a Linux environment
 
 	sudo apt update
 	sudo apt upgrade 
@@ -106,4 +124,28 @@
 	cd sisutil.git/
 	git log
 
+
+
+
+### Alternate Case 
+> **Do you have a DNS A record for your server’s hostname?** </br>
+>	Use your DNS A record hostname wherever localhost is mentioned above. </br>
+>Additional information on firewalls can be found in the external reference section (below)
+
+### Summary 
+Now you have an operational GitHub server running locally on your Ubuntu box. This should address the issue being encountered with CPM and public URLs.
+
+### Next Steps
+ - [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
+
+#### External References
+- [How to install GITHUB on Ubuntu : Step by Step](https://linuxtechlab.com/how-to-install-github-on-ubuntu-step-by-step/)</br>
+- [How to Setup Git Server on Ubuntu 20.04](https://linuxways.net/ubuntu/how-to-setup-git-server-on-ubuntu-20-04/)
+- [How To Install and Enable SSH Server on Ubuntu 20.04](https://devconnected.com/how-to-install-and-enable-ssh-server-on-ubuntu-20-04/)
+- [Ubuntu 20.04 SSH Server](https://linuxconfig.org/ubuntu-20-04-ssh-server)
+- [How To Install and Configure GitLab on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-18-04)
+- [Install and Configure Git Server on Ubuntu 20.04](https://www.hostnextra.com/kb/install-and-configure-git-server-on-ubuntu/)
+https://github.com/cpm-cmake/CPM.cmake/issues/132
+https://github.com/cpm-cmake/CPM.cmake/wiki/More-Snippets
+https://github.com/cpm-cmake/CPM.cmake
 
