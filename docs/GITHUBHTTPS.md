@@ -99,7 +99,7 @@
 
 		cd /srv/git
 		git init --bare xyzutil.git
-		cd xyzutil/hooks
+		cd xyzutil.git/hooks
 		cp post-update.sample post-update
 		exit
 
