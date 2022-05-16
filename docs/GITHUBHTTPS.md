@@ -106,38 +106,7 @@
 		cd ../..
 		rm -rf test
 		
-
-		git@gitserver:~$ cat .bash_history 
-		cd
-		mkdir .ssh && chmod 700 .ssh
-		touch .ssh/authorized_keys && chmod 600 .ssh/authorized_keys
-		ls -la
-		exit
-		cat /tmp/key.txt >> ~/.ssh/authorized_keys
-		cat ~/.ssh/authorized_keys
-		exit
-		cat /tmp/key.txt > ~/.ssh/authorized_keys
-		cat ~/.ssh/authorized_keys
-		exit
-		ls /srv
-		ls /srv/git/
-		ls /srv/git/ -la
-		cd /srv/git/
-		git init --bare ~/sisutil.git
-		rm -rf ~/sisutil.git
-		git init --bare sisutil.git
-		cd sisutil.git/
-		cd hooks/
-		cp post-update.sample post-update
-		exit
-		cd
-		cd /srv/git
-		ls -la
-		cd sisutil.git/
-		git log
-
-
-
+ - [ ] You now have an operational private GitHub server.
 
 ### Alternate Case 
 > **Do you have a DNS A record for your server’s hostname?** </br>
