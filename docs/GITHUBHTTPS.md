@@ -82,7 +82,11 @@
 		exit
 		rm /tmp/key.txt 
 
- - [ ] Now restart ssh
+- [ ] Now activate sudo mode again
+
+		sudo ls
+
+- [ ] Now restart ssh
 
 		sudo systemctl restart ssh
 		sudo systemctl status sshd
