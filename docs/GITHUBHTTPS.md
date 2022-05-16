@@ -15,6 +15,10 @@
 
 ### Wish Case
 #### install git
+ - [ ] First order of business activate sudo mode
+
+		sudo ls
+
  - [ ] Update/upgrade the system & add necessary support
 
 		sudo apt update
@@ -56,7 +60,13 @@
  - [ ] Now add that key to the **git** user account
 
 		cat ~/.ssh/id_ed25519.pub > /tmp/key.txt
+
+ - [ ] Now log into the **git** user account
+
 		su git
+
+ - [ ] Now configure the **git** user account
+
 		cd
 		mkdir .ssh && chmod 700 .ssh
 		touch .ssh/authorized_keys 
@@ -65,12 +75,18 @@
 		cat ~/.ssh/authorized_keys
 		exit
 		rm /tmp/key.txt 
+
+ - [ ] Now restart ssh
+
 		sudo systemctl restart ssh
 		sudo systemctl status sshd
 
- - [ ] Now create your first project on your private git server
+ - [ ] Now log into the **git** user account
 
 		su git
+
+ - [ ] Now create your first project on your private git server
+
 		cd /srv/git
 		git init --bare xyzutil.git
 		cd xyzutil/hooks
@@ -91,9 +107,12 @@
 		git push
 		cd ..
 
- - [ ] Now check the git log for that project
+ - [ ] Now log into the **git** user account
 
 		su git
+
+ - [ ] Now check the git log for that project
+
 		cd /srv/git/xyzutil.git
 		git log
 		exit
