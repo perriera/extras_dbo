@@ -71,7 +71,7 @@
  - [ ] Now create your first project on your private git server
 
 		su git
-		cd /svr/git
+		cd /srv/git
 		git init --bare xyzutil
 		cd sample/hooks
 		cp post-update.sample post-update
