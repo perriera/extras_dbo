@@ -31,6 +31,9 @@
  - [ ] Create your very own **git** account (and add a server directory)
 
 		sudo adduser git
+
+ - [ ] Added a dedicated git server directory
+
 		sudo mkdir -p /srv/git
 		sudo chown git:git /srv/git
 
