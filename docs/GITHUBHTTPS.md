@@ -27,7 +27,7 @@
  - [ ] Create your very own **git** account (and add a server directory)
 
 		sudo adduser git
-		sudo mkdir /srv/git
+		sudo mkdir -p /srv/git
 		sudo chown git:git /srv/git
 
  - [ ] Now change the name of your Ubuntu box to **gitserver**
@@ -73,7 +73,7 @@
 		su git
 		cd /srv/git
 		git init --bare xyzutil
-		cd sample/hooks
+		cd xyzutil/hooks
 		cp post-update.sample post-update
 		exit
 
