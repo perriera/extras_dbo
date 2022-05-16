@@ -157,7 +157,8 @@ Now you have an operational GitHub server running locally on your Ubuntu box. Th
 - [Ubuntu 20.04 SSH Server](https://linuxconfig.org/ubuntu-20-04-ssh-server)
 - [How To Install and Configure GitLab on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-18-04)
 - [Install and Configure Git Server on Ubuntu 20.04](https://www.hostnextra.com/kb/install-and-configure-git-server-on-ubuntu/)
-https://github.com/cpm-cmake/CPM.cmake/issues/132
-https://github.com/cpm-cmake/CPM.cmake/wiki/More-Snippets
-https://github.com/cpm-cmake/CPM.cmake
+- https://github.com/cpm-cmake/CPM.cmake/issues/132
+- https://github.com/cpm-cmake/CPM.cmake/wiki/More-Snippets
+- https://github.com/cpm-cmake/CPM.cmake
+- [Verifying the Authenticity of a Remote Server through Its SSH Key Fingerprint](https://www.linode.com/docs/guides/verifying-the-authenticity-of-remote-host/)
 
