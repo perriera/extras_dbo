@@ -94,7 +94,7 @@
  - [ ] Now check the git log for that project
 
 		su git
-		cd /srv/git/xyzutil
+		cd /srv/git/xyzutil.git
 		git log
 		exit
 
