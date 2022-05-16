@@ -81,7 +81,6 @@
 
 		mkdir ~/dev
 		cd ~/dev
-		su git
 		git clone git@gitserver:/srv/git/xyzutil.git
 
  - [ ] Now a file to it and push it into your private server
