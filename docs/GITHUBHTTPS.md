@@ -45,6 +45,9 @@
  - [ ] Now in /etc/hosts change **ubuntu** to **gitserver**
 
 		sudo vi /etc/hosts
+
+ - [ ] Now reboot to make sure the changes were made
+
 		sudo reboot
 
  - [ ] When your back make sure the name was changed
