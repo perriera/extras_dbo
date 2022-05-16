@@ -72,7 +72,7 @@
 
 		su git
 		cd /srv/git
-		git init --bare xyzutil
+		git init --bare xyzutil.git
 		cd xyzutil/hooks
 		cp post-update.sample post-update
 		exit
