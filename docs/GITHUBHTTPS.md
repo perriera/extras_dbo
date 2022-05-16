@@ -15,45 +15,52 @@
 
 ### Wish Case
 #### install git
- - [ ] Now copy and paste the following for a Linux environment
+ - [ ] Update/upgrade the system & add necessary support
 
 		sudo apt update
 		sudo apt upgrade 
 		sudo apt autoremove
 		sudo apt update
+		sudo apt install git openssh-server -y
 		sudo reboot 
 
-		sudo apt update
-		sudo apt upgrade
-		sudo apt update
-		sudo apt upgrade 
-		sudo apt update
-		sudo apt upgrade 
-		sudo apt update
-		sudo apt upgrade 
-		sudo apt upgrade
-		sudo apt update
-		sudo apt upgrade
-		git
+ - [ ] Create your very own **git** account (and add a server directory)
+
 		sudo adduser git
-		ls /home
-		ls /home/git
-		ls /home/git -la
-		su git
 		sudo mkdir /srv/git
 		sudo chown git:git /srv/git
-		sudo hostname gitserver
+
+ - [ ] Now change the name of your Ubuntu box to **gitserver**
+
+		hostnamectl
 		hostname
+		sudo hostnamectl set-hostname gitserver
+
+ - [ ] Now in /etc/hosts change **ubuntu** to **gitserver**
+
+		sudo vi /etc/hosts
+		sudo reboot
+
+ - [ ] When your back make sure the name was changed
+
+		hostname
+
+ - [ ] Now setup your client account to access your private server
+
 		git config --global user.name “git”
 		git config --global user.email “git@gitserver”
+
+ - [ ] Now create an **.ssh** key and share it with the server
+
 		ssh-keygen -t ed25519 -C “git@localhost”
+		cat ~/.ssh/id_ed25519.pub > /tmp/key.txt
 		su git
 		cat ~/.ssh/id_ed25519.pub > /tmp/key.txt
 		su git
-		ssh-keygen -t ed25519 -C “git@gitserver”
-		su git
-		cat ~/.ssh/id_ed25519.pub > /tmp/key.txt
-		su git
+		cat /tmp/key.txt > ~/.ssh/authorized_keys
+		cat ~/.ssh/authorized_keys
+
+
 		sudo systemctl restart ssh
 		sudo systemctl status sshd
 		mkdir ~/dev
