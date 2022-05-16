@@ -33,7 +33,6 @@
  - [ ] Now change the name of your Ubuntu box to **gitserver**
 
 		hostnamectl
-		hostname
 		sudo hostnamectl set-hostname gitserver
 
  - [ ] Now in /etc/hosts change **ubuntu** to **gitserver**
@@ -52,55 +51,61 @@
 
  - [ ] Now create an **.ssh** key and share it with the server
 
-		ssh-keygen -t ed25519 -C “git@localhost”
+		ssh-keygen -t ed25519 -C “git@gitserver”
 		cat ~/.ssh/id_ed25519.pub > /tmp/key.txt
 		su git
-		cat ~/.ssh/id_ed25519.pub > /tmp/key.txt
-		su git
+		cd
+		mkdir .ssh && chmod 700 .ssh
+		touch .ssh/authorized_keys 
+		chmod 600 .ssh/authorized_keys
 		cat /tmp/key.txt > ~/.ssh/authorized_keys
 		cat ~/.ssh/authorized_keys
-
-
+		exit
+		rm /tmp/key.txt 
 		sudo systemctl restart ssh
 		sudo systemctl status sshd
+
+ - [ ] Now create your first project on your private git server
+
+		su git
+		cd /svr/git
+		git init --bare xyzutil
+		cd sample/hooks
+		cp post-update.sample post-update
+		exit
+
+ - [ ] Now create an **dev** folder and clone your first project
+
 		mkdir ~/dev
 		cd ~/dev
 		su git
-		git clone git@gitserver:/srv/git/sisutil.git 
-		hostname
-		sudo hostname gitserver
-		hostname
-		git clone git@gitserver:/srv/git/sisutil.git 
-		hostname
-		sudo hostname gitserver
-		hostname
-		sudo hostname gitserver
-		hostname
-		git clone git@gitserver:/srv/git/sisutil.git 
-		hostnamectl
-		hostname
-		sudo hostnamectl set-hostname gitserver
-		sudo vi /etc/hosts
-		sudo reboot
-		hostname
-		cd dev
-		ls
-		cd sisutil/
-		ls -la
-		echo “my test file” > file1.txt
-		git add .; git commit -m "Initial content"; git push
-		cd ..
-		mkdir t1
-		cd t1
-		git clone git@gitserver:/srv/git/sisutil.git 
-		ls
-		cd sisutil/
-		ls
-		cd ..
-		rm -rf t1
-		ls -la
-		su git
+		git clone git@gitserver:/srv/git/xyzutil.git
 
+ - [ ] Now a file to it and push it into your private server
+		 
+		cd xyzutil
+		echo “my test file” > file1.txt
+		git add .; git commit -m "initial content"; 
+		git push
+		cd ..
+
+ - [ ] Now check the git log for that project
+
+		su git
+		cd /srv/git/xyzutil
+		git log
+		exit
+
+ - [ ] Now create a test directory and clone your project
+
+		mkdir test
+		cd test
+		git clone git@gitserver:/srv/git/xyzutil.git
+		cd xyzutil
+		ls -la
+		cd ../..
+		rm -rf test
+		
 
 		git@gitserver:~$ cat .bash_history 
 		cd
