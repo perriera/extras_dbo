@@ -15,7 +15,7 @@
 #### install git
  - [ ] Install Apache2 and apache utils 
 
-		sudo apt-get install apache2 apache2-utils
+		sudo apt-get install apache2 apache2-utils -y
 
  - [ ] Activate special hooks in apache to support git protocol **[i]**
 
