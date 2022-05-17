@@ -38,6 +38,7 @@
 
 		cd /etc/apache2/sites-available
 		sudo cp 000-default.conf gitserver.com.conf
+		sudo vi  gitserver.com.conf
 
  - [ ] Change gitserver.com.conf to this:
 
