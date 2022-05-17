@@ -81,6 +81,18 @@
 		cp file1.txt file1b.txt 
 		git add .; git commit -m "test"; git push
 
+ - [ ] Now if you prefer to use ssh format (do it this way)
+
+		git clone git@gitserver:/srv/git/xyzutil.git
+
+ - [ ] Test from client side (using ssh format):
+
+		cd ~/dev
+		rm -rf test
+		mkdir test
+		cd test
+		git clone git@gitserver:/srv/git/xyzutil.git
+
  - [ ] You now have an operational private GitHub server (operating over http).
 
 #### Footnotes
