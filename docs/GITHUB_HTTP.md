@@ -92,14 +92,14 @@
 > **Want to add more projects?** </br>
 >	Just like in the real github.com you need to create the project on the server first, (but the major difference here is that you do not specify the directory information).</br>
 
-		sh git
-		cd /srv/git
-		git init --bare (new project name).git
-		cd (new project name).git/hooks
-		cp post-update.sample post-update
-		exit
-		cd dev
-		git clone http://gitserver/git/(new project name).git
+	sh git
+	cd /srv/git
+	git init --bare (new project name).git
+	cd (new project name).git/hooks
+	cp post-update.sample post-update
+	exit
+	cd dev
+	git clone http://gitserver/git/(new project name).git
 
 ### Summary 
 Now that you have an operational GitHub server running locally on your Ubuntu box (as a standard Ubuntu service) you no longer have to add additional directory information. Hence, it now acts a lot more like the actual GitHub.com server (complete with a host name of your choosing).   
