@@ -32,8 +32,6 @@
 
 		sudo chgrp -R www-data /srv/git 
 
-*** THIS MAY REQUIRE adding user git to group 
-
  - [ ] Apache2 virtual host set up
 
 		cd /etc/apache2/sites-available
@@ -101,6 +99,18 @@
 	cd dev
 	git clone http://gitserver/git/(new project name).git
 
+### Alternate Case 
+> **Want to clone using ssh format?** </br>
+>	When adding users to .htaccess to not specify a password and change for the format of the git clone request:. You will also have to add back in directory information</br>
+
+		git clone http://gitserver/git/xyzutil.git
+
+Becomes:
+
+		git clone git@gitserver:/srv/git/xyzutil.git
+
+> Mind you, if you use the home directory of the user git instead of a seperate directory you might not need to specify directory information here, (too be tested).
+> 
 ### Summary 
 Now that you have an operational GitHub server running locally on your Ubuntu box (as a standard Ubuntu service) you no longer have to add additional directory information. Hence, it now acts a lot more like the actual GitHub.com server (complete with a host name of your choosing).   
 

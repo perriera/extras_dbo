@@ -109,6 +109,9 @@ Now that you have an operational GitHub server running locally on your Ubuntu bo
  - [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
 - https://cloud.redhat.com/blog/private-git-repositories-part-2a-repository-ssh-keys
 - https://nurdletech.com/linux-notes/ssh/via-http.html
+- https://infra.apache.org/user-ssh
+- http://www.beginninglinux.com/home/server-administration/apache/enable-ssh-after-fresh-apache2-or-lamp-install
+
 
 
 
