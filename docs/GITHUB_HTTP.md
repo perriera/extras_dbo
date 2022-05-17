@@ -101,7 +101,7 @@
 
 ### Alternate Case 
 > **Want to clone using ssh format?** </br>
->	When adding users to .htaccess to not specify a password and change for the format of the git clone request:. You will also have to add back in directory information</br>
+>	When adding users to .htaccess to not specify a password and change for the format of the git clone request. You will also have to add back in directory information</br>
 
 		git clone http://gitserver/git/xyzutil.git
 
