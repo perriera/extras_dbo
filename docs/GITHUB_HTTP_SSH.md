@@ -1,6 +1,6 @@
 
 
-## How to set up your own GitHub server using http protocol (on Ubuntu 20.04)
+## How to set up your own GitHub server to use ssh over http protocol (on Ubuntu 20.04)
 > Now we have authenticated access through SSH and unauthenticated access through `git://`, but there is also a protocol that can do both at the same time. Setting up Smart HTTP is basically just enabling a CGI script that is provided with Git called `git-http-backend` on the server. This CGI will read the path and headers sent by a `git fetch` or `git push` to an HTTP URL and determine if the client can communicate over HTTP.
 
  1. **GIVEN** that your private GitHub server should be accessible via http
@@ -105,7 +105,7 @@
 Now that you have an operational GitHub server running locally on your Ubuntu box (as a standard Ubuntu service) you no longer have to add additional directory information. Hence, it now acts a lot more like the actual GitHub.com server (complete with a host name of your choosing).   
 
 ### Next Steps
-- [How to set up your own GitHub server to use ssh over http protocol (on Ubuntu 20.04)](https://github.com/perriera/extras_oci/blob/dev/docs/GITHUB_HTTP_SSH.md)
+- [How to set up your own GitHub server to use ssh over http protocol on Ubuntu 20.04](https://github.com/perriera/extras_oci/blob/dev/docs/GITHUB_HTTP_SSH.md)
  - [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
 - https://cloud.redhat.com/blog/private-git-repositories-part-2a-repository-ssh-keys
 - 
