@@ -25,146 +25,58 @@
 		cd dev
 		mkdir test
 		cd test
-		git clone git://gitserver/project.git
+		git clone git://gitserver/xyzutil.git
 
-xxx
+ - [ ] That should have resulted in:
 
-		sudo apt update
-		sudo apt upgrade 
-		sudo apt autoremove
-		sudo apt update
-		sudo apt install git openssh-server -y
-		sudo reboot 
+		Cloning into 'xyzutil'...
+		remote: Enumerating objects: 3, done.
+		remote: Counting objects: 100% (3/3), done.
+		remote: Total 3 (delta 0), reused 0 (delta 0)
+		Receiving objects: 100% (3/3), done.
 
- - [ ] Create your very own **git** account (and add a server directory)
+ - [ ] Now to add this as a service (stop the other terminal) and add this to **systemd**:
 
-		sudo adduser git
+		sudo vi /etc/systemd/system/git-daemon.service
 
- - [ ] Added a dedicated git server directory
+ - [ ] In that file add the following (if you had to modify the daemon parameters adjust as necessary):
 
-		sudo mkdir -p /srv/git
-		sudo chown git:git /srv/git
+		[Unit]
+		Description=Start Git Daemon
 
- - [ ] Now change the name of your Ubuntu box to **gitserver**
+		[Service]
+		ExecStart=/usr/bin/git daemon --base-path=/srv/git --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
 
-		hostnamectl
-		sudo hostnamectl set-hostname gitserver
+		Restart=always
+		RestartSec=500ms
 
- - [ ] Now in /etc/hosts change **ubuntu** to **gitserver**
+		StandardOutput=syslog
+		StandardError=syslog
+		SyslogIdentifier=git-daemon
 
-		sudo vi /etc/hosts
+		User=git
+		Group=git
 
- - [ ] Now reboot to make sure the changes were made
+		[Install]
+		WantedBy=multi-user.target
 
+ - [ ] Now enter the following to enable the service:
+
+		sudo systemctl enable git-daemon
 		sudo reboot
 
- - [ ] When your back make sure the name was changed
-
-		hostname
-
- - [ ] Now setup your client account to access your private server
-
-		git config --global user.name “git”
-		git config --global user.email “git@gitserver”
-
- - [ ] Now create an **.ssh** key and share it with the server
-
-		ssh-keygen -t ed25519 -C “git@gitserver”
-
- - [ ] Now add that key to the **git** user account
-
-		cat ~/.ssh/id_ed25519.pub > /tmp/key.txt
-
- - [ ] Now log into the **git** user account
-
-		su git
-
- - [ ] Now configure the **git** user account
-
-		cd
-		mkdir .ssh && chmod 700 .ssh
-		touch .ssh/authorized_keys 
-		chmod 600 .ssh/authorized_keys
-		cat /tmp/key.txt > ~/.ssh/authorized_keys
-		cat ~/.ssh/authorized_keys
-		exit
-		rm /tmp/key.txt 
-
-- [ ] Now activate sudo mode again
-
-		sudo ls
-
-- [ ] Now restart ssh
-
-		sudo systemctl restart ssh
-		sudo systemctl status sshd
-
- - [ ] Now log into the **git** user account
-
-		su git
-
- - [ ] Now create your first project on your private git server
-
-		cd /srv/git
-		git init --bare xyzutil.git
-		cd xyzutil.git/hooks
-		cp post-update.sample post-update
-		exit
-
- - [ ] Now create an **dev** folder and clone your first project
-
-		mkdir ~/dev
-		cd ~/dev
-		git clone git@gitserver:/srv/git/xyzutil.git
-
- - [ ] Now a file to it and push it into your private server
-		 
-		cd xyzutil
-		echo “my test file” > file1.txt
-		git add .; git commit -m "initial content"; 
-		git push
-		cd ..
-
- - [ ] Now log into the **git** user account
-
-		su git
-
- - [ ] Now check the git log for that project
-
-		cd /srv/git/xyzutil.git
-		git log
-		exit
-
- - [ ] Now create a test directory and clone your project
-
-		mkdir test
-		cd test
-		git clone git@gitserver:/srv/git/xyzutil.git
-		cd xyzutil
-		ls -la
-		cd ../..
-		rm -rf test
 		
  - [ ] You now have an operational private GitHub server.
 
 ### Alternate Case 
-> **The words "Ready to rumble" didn't appear**</br>
->	Check your parameters and look up on the Internet for possible reasons why. But if you followed the directions from the previous How-to and you are using the same version, the given parameters should world </br>
+> **Starting and stopping the daemon manually**</br>
+>	As per standard Ubuntu/Linux service commands: </br>
 
-### Alternate Case 
-> **Wanna add more users?** </br>
->	Just get the ssh pub key of others , then append it to /home/git/.ssh/authorized_keys</br>
-
-	cat Jack_id_rsa.pub | ssh git@gitserver "cat >> /home/git/.ssh/authorized_keys"
-
-### Alternate Case 
-> **Wanna disable shell login for user account git?** </br>
->	You should note that currently all these users can also log into the server and get a shell as the `git` user. If you want to restrict that, run below command on git server.</br>
-
-	sudo chsh git -s $(which git-shell)
+	sudo systemctl start git-daemon
+	sudo systemctl stop git-daemon
 
 ### Summary 
-Now you have an operational GitHub server running locally on your Ubuntu box. This should address the issue being encountered with CPM and public URLs.
+Now you have an operational GitHub server running locally on your Ubuntu box (as a standard Ubuntu service). 
 
 ### Next Steps
 - [How to set up your own GitHub server using git protocol on Ubuntu 20.04](https://github.com/perriera/extras_oci/blob/dev/docs/GITHUB_GIT.md)

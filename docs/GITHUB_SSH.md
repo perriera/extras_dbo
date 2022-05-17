@@ -157,6 +157,19 @@
 
 	sudo chsh git -s $(which git-shell)
 
+### Alternate Case 
+> **Want to add more projects?** </br>
+>	Just like in the real github.com you need to create the project on the server first.</br>
+
+		sh git
+		cd /srv/git
+		git init --bare (new project name).git
+		cd (new project name).git/hooks
+		cp post-update.sample post-update
+		exit
+		cd dev
+		git clone git@gitserver:/srv/git/(new project name).git
+
 ### Summary 
 Now you have an operational GitHub server running locally on your Ubuntu box. This should address the issue being encountered with CPM and public URLs.
 
