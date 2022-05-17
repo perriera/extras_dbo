@@ -93,6 +93,12 @@
 		cd test
 		git clone git@gitserver:/srv/git/xyzutil.git
 
+ - [ ] Go ahead and test it again (with modifications):
+
+		cd xyzutil/
+		cp file1.txt file1b.txt 
+		git add .; git commit -m "test"; git push
+
  - [ ] You now have an operational private GitHub server (operating over http).
 
 #### Footnotes
@@ -115,7 +121,7 @@
 
 ### Alternate Case 
 > **Want to clone using ssh format?** </br>
->	When adding users to .htaccess to not specify a password and change for the format of the git clone request. You will also have to add back in directory information</br>
+>	As you are using a private GitHub repository we might assume no need for passwords. Hence, when adding users to .htaccess there is no need to specify a password. Also, you just need to change the format of the url for a ssh git clone request. However, (in this case) you will also have to add back in directory information</br>
 
 		git clone http://gitserver/git/xyzutil.git
 
