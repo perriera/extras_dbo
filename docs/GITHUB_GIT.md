@@ -100,7 +100,7 @@
 > **Want to clone using ssh format?** </br>
 >	You just need to change the format of the url for a ssh git clone request. However, (in this case) you will also have to add back in directory information</br>
 
-		git clone http://gitserver/git/xyzutil.git
+		git clone git://gitserver/xyzutil.git
 
 Becomes:
 
