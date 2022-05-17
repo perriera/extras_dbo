@@ -1,4 +1,5 @@
 
+
 ## How to set up your own GitHub server using git protocol (on Ubuntu 20.04)
 > Now let’s set up a daemon serving repositories using the “Git” protocol. This is a common choice for fast, unauthenticated access to your Git data. Remember that since this is not an authenticated service, anything you serve over this protocol is public within its network.
 
@@ -81,6 +82,19 @@
 
 	sudo systemctl start git-daemon
 	sudo systemctl stop git-daemon
+
+### Alternate Case 
+> **Want to add more projects?** </br>
+>	Just like in the real github.com you need to create the project on the server first, (but the major difference here is that you do not specify the directory information).</br>
+
+		sh git
+		cd /srv/git
+		git init --bare (new project name).git
+		cd (new project name).git/hooks
+		cp post-update.sample post-update
+		exit
+		cd dev
+		git clone git@gitserver/(new project name).git
 
 ### Summary 
 Now that you have an operational GitHub server running locally on your Ubuntu box (as a standard Ubuntu service) you no longer have to add additional directory information. Hence, it now acts a lot more like the actual GitHub.com server (complete with a host name of your choosing).   
