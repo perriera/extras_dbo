@@ -57,7 +57,7 @@
 			</Files>
 		</VirtualHost>
 
- - [ ] Add whatever usernames necessary to access the server over http:
+ - [ ] Add whatever usernames necessary to access the server over http (leave the password blank):
 
 		sudo htpasswd -c /srv/git/.htpasswd perry
 
