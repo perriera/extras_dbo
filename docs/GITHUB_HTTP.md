@@ -13,9 +13,12 @@
 
 ### Wish Case
 #### install git
- - [ ] Install Apache2 and apache utils [i]
+ - [ ] Install Apache2 and apache utils 
 
 		sudo apt-get install apache2 apache2-utils
+
+ - [ ] Activate special hooks in apache to support git protocol [i]
+
 		sudo a2enmod cgi alias env
 
  - [ ] Give www-data access to /srv/git
