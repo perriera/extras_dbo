@@ -90,7 +90,7 @@
 
 ### Alternate Case 
 > **Want to add more projects?** </br>
->	Just like in the real github.com you need to create the project on the server first, (but the major difference here is that you do not specify the directory information).</br>
+>	Just like in the real github.com you need to create the project on the server first, (but the major difference here is that you use http protocol).</br>
 
 	sh git
 	cd /srv/git
