@@ -1,16 +1,13 @@
-## How to set up your own GitHub server using ssh protocol (on Ubuntu 20.04)
-> Setting up a local git server requires an SSH server setup for two accounts setup first. One for the user and another for the server.
 
- 1. **GIVEN** that a local GitHub server has better privacy capabilties
- 2. **WHEN** we install the GitHub open source code
- 3. **THEN** we can enjoy the benefits of a locally managed GitHub server
+## How to set up your own GitHub server using git protocol (on Ubuntu 20.04)
+> Now let’s set up a daemon serving repositories using the “Git” protocol. This is a common choice for fast, unauthenticated access to your Git data. Remember that since this is not an authenticated service, anything you serve over this protocol is public within its network.
+
+ 1. **GIVEN** that your private GitHub server should be a service
+ 2. **WHEN** we configure Ubuntu to load the git server as a service
+ 3. **THEN** we can support other features such as git over http 
 
 ### Prerequisites
-  - [How to install a Linux Platform (Ubuntu 20.04.4)](https://github.com/perriera/extras_oci/blob/dev/docs/UBUNTU.md)
-  - A Ubuntu 20.04 installed [dedicated server](https://www.hostnextra.com/dedicated-server.html) or [KVM VPS](https://www.hostnextra.com/vps-hosting.html).
--   A root user access or normal user with administrative privileges.
--   Add DNS A record of your server’s hostname. 
-- OpenSSH installed and running
+- [How to set up your own GitHub server using ssh protocol (on Ubuntu 20.04)](https://github.com/perriera/extras_oci/blob/dev/docs/GITHUB_SSH.md)
 
 
 ### Wish Case
