@@ -101,7 +101,7 @@
 
  - [ ] With the ssh approach (assuming no password is set) you are able to clone without the need for username/password request getting in the way. Feel free to modify the cp operation above, commit the changes and then reclone to see all this in action.
 
- - [ ] You now have an operational private GitHub server (operating over http).
+ - [ ] You now have an operational private GitHub server (operating over http using ssh).
 
 #### Footnotes
 >**[i]** These 2 commands will install apache2 and also enables the `mod_cgi`, `mod_alias`, and `mod_env` modules, which are all needed for this to work properly.<br/>
