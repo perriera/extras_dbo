@@ -1,4 +1,4 @@
-## How to install your own GitHub Server onto Ubuntu 20.04
+## How to set up your own GitHub server using ssh protocol on Ubuntu 20.04
 > Setting up a local git server requires an SSH server setup for two accounts setup first. One for the user and another for the server.
 
  1. **GIVEN** that a local GitHub server has better privacy capabilties
@@ -142,12 +142,27 @@
 ### Alternate Case 
 > **Do you have a DNS A record for your server’s hostname?** </br>
 >	Use your DNS A record hostname wherever localhost is mentioned above. </br>
+	>
 >Additional information on firewalls can be found in the external reference section (below)
+
+### Alternate Case 
+> **Wanna add more users?** </br>
+>	Just get the ssh pub key of others , then append it to /home/git/.ssh/authorized_keys</br>
+
+	cat Jack_id_rsa.pub | ssh git@gitserver "cat >> /home/git/.ssh/authorized_keys"
+
+### Alternate Case 
+> **Wanna disable shell login for user account git?** </br>
+>	You should note that currently all these users can also log into the server and get a shell as the `git` user. If you want to restrict that, run below command on git server.</br>
+
+	sudo chsh git -s $(which git-shell)
 
 ### Summary 
 Now you have an operational GitHub server running locally on your Ubuntu box. This should address the issue being encountered with CPM and public URLs.
 
 ### Next Steps
+- [How to set up your own GitHub server using git protocol on Ubuntu 20.04](https://github.com/perriera/extras_oci/blob/dev/docs/GITHUB_GIT.md)
+- [How to set up your own GitHub server using http protocol on Ubuntu 20.04](https://github.com/perriera/extras_oci/blob/dev/docs/GITHUB_HTTP.md)
  - [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
 
 #### External References
@@ -161,4 +176,18 @@ Now you have an operational GitHub server running locally on your Ubuntu box. Th
 - https://github.com/cpm-cmake/CPM.cmake/wiki/More-Snippets
 - https://github.com/cpm-cmake/CPM.cmake
 - [Verifying the Authenticity of a Remote Server through Its SSH Key Fingerprint](https://www.linode.com/docs/guides/verifying-the-authenticity-of-remote-host/)
+- https://ubuntututorials.org/set-up-private-git-server-ubuntu-2004/
 
+- https://www.andrewhoog.com/post/howto-setup-a-private-git-server-on-ubuntu-18.04/
+
+- https://www.linux.com/training-tutorials/how-run-your-own-git-server/
+
+- https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server
+
+- https://git-scm.com/book/en/v2/Git-on-the-Server-Git-Daemon
+
+- https://linuxways.net/ubuntu/how-to-setup-git-server-on-ubuntu-20-04/
+
+  
+
+- https://yunwuxin1.gitbooks.io/git/content/en/17950f608975b8c96cebaaa17b3904d1/a5209e0c593176dd3285b76799bafb1f.html
