@@ -84,7 +84,7 @@
  - [ ] You now have an operational private GitHub server (operating over http).
 
 #### Footnotes
->[i] These 2 commands will install apache2 and also enables the `mod_cgi`, `mod_alias`, and `mod_env` modules, which are all needed for this to work properly.
+>[i] These 2 commands will install apache2 and also enables the `mod_cgi`, `mod_alias`, and `mod_env` modules, which are all needed for this to work properly.<br/>
 >[ii] In the case preferring ssh urls (over http urls) leave the password blank (see below)
 
 
