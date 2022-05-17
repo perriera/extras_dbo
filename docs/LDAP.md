@@ -133,7 +133,7 @@ Secure your LDAP Server and access from LDAP Client with TLS/SSL:
 
 Summary 
 
-Wrapping Up
+Wrapping Up ... 
 
 Thanks for using our guide to install and configure OpenLDAP server on your Ubuntu. I recommend installing and using LDAP Account Manager to administer your LDAP server through a web interface.
 
@@ -145,5 +145,5 @@ If you need an advanced centralized user management platform, see
     How to Configure FreeIPA Client on Ubuntu / CentOS 7
     How to Configure FreeIPA replication on Ubuntu / CentOS
 
-    
+
 
