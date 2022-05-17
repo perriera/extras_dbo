@@ -17,7 +17,7 @@
 
 		sudo apt-get install apache2 apache2-utils
 
- - [ ] Activate special hooks in apache to support git protocol [i]
+ - [ ] Activate special hooks in apache to support git protocol **[i]**
 
 		sudo a2enmod cgi alias env
 		sudo systemctl start apache2
@@ -57,7 +57,7 @@
 			</Files>
 		</VirtualHost>
 
- - [ ] Add whatever usernames necessary to access the server over http: [ii]
+ - [ ] Add whatever usernames necessary to access the server over http: **[ii]**
 
 		sudo htpasswd -c /srv/git/.htpasswd perry
 
@@ -84,8 +84,8 @@
  - [ ] You now have an operational private GitHub server (operating over http).
 
 #### Footnotes
->[i] These 2 commands will install apache2 and also enables the `mod_cgi`, `mod_alias`, and `mod_env` modules, which are all needed for this to work properly.<br/>
->[ii] In the case preferring ssh urls (over http urls) leave the password blank (see below)
+>**[i]** These 2 commands will install apache2 and also enables the `mod_cgi`, `mod_alias`, and `mod_env` modules, which are all needed for this to work properly.<br/>
+>**[ii]** In the case preferring ssh urls (over http urls) leave the password blank (see below)
 
 
 ### Alternate Case 
