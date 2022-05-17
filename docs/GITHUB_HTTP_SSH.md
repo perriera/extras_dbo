@@ -108,7 +108,8 @@ Now that you have an operational GitHub server running locally on your Ubuntu bo
 - [How to set up your own GitHub server to use ssh over http protocol on Ubuntu 20.04](https://github.com/perriera/extras_oci/blob/dev/docs/GITHUB_HTTP_SSH.md)
  - [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
 - https://cloud.redhat.com/blog/private-git-repositories-part-2a-repository-ssh-keys
-- 
+- https://nurdletech.com/linux-notes/ssh/via-http.html
+
 
 
 
