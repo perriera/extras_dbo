@@ -12,11 +12,22 @@
 
 ### Wish Case
 #### install git
- - [ ] First order of business activate sudo mode
+ - [ ] First, run gitserver directly to see if it works
 
-		sudo ls
+		git daemon --base-path=/srv/git --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
 
- - [ ] Update/upgrade the system & add necessary support
+ - [ ] The words "Ready to rumble" should appear:
+
+		[XXXX] Ready to rumble
+
+ - [ ] Now open another terminal box and test it:
+
+		cd dev
+		mkdir test
+		cd test
+		git clone git://gitserver/project.git
+
+xxx
 
 		sudo apt update
 		sudo apt upgrade 
@@ -137,10 +148,8 @@
  - [ ] You now have an operational private GitHub server.
 
 ### Alternate Case 
-> **Do you have a DNS A record for your server’s hostname?** </br>
->	Use your DNS A record hostname wherever localhost is mentioned above. </br>
-	>
->Additional information on firewalls can be found in the external reference section (below)
+> **The words "Ready to rumble" didn't appear**</br>
+>	Check your parameters and look up on the Internet for possible reasons why. But if you followed the directions from the previous How-to and you are using the same version, the given parameters should world </br>
 
 ### Alternate Case 
 > **Wanna add more users?** </br>
