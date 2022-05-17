@@ -83,67 +83,10 @@
 		cp file1.txt file1b.txt 
 		git add .; git commit -m "test"; git push
 
+ - [ ] You now have an operational private GitHub server (operating over http).
+
 #### Footnotes
 >[i] These 2 commands will install apache2 and also enables the `mod_cgi`, `mod_alias`, and `mod_env` modules, which are all needed for this to work properly.
-
- - [ ] The words "Ready to rumble" should appear:
-
-		[XXXX] Ready to rumble
-
- - [ ] Now open another terminal box and test it:
-
-		cd dev
-		mkdir test
-		cd test
-		git clone git://gitserver/xyzutil.git
-
- - [ ] That should have resulted in:
-
-		Cloning into 'xyzutil'...
-		remote: Enumerating objects: 3, done.
-		remote: Counting objects: 100% (3/3), done.
-		remote: Total 3 (delta 0), reused 0 (delta 0)
-		Receiving objects: 100% (3/3), done.
-
- - [ ] Now to add this as a service (stop the other terminal) and add this to **systemd**:
-
-		sudo vi /etc/systemd/system/git-daemon.service
-
- - [ ] In that file add the following (if you had to modify the daemon parameters adjust as necessary):
-
-		[Unit]
-		Description=Start Git Daemon
-
-		[Service]
-		ExecStart=/usr/bin/git daemon --base-path=/srv/git --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
-
-		Restart=always
-		RestartSec=500ms
-
-		StandardOutput=syslog
-		StandardError=syslog
-		SyslogIdentifier=git-daemon
-
-		User=git
-		Group=git
-
-		[Install]
-		WantedBy=multi-user.target
-
- - [ ] Now enter the following to enable the service:
-
-		sudo systemctl enable git-daemon
-		sudo reboot
-
- - [ ] Now test your private GitHub server (using git protocol):
-
-		cd dev
-		rm -rf test
-		mkdir test
-		cd test
-		git clone git://gitserver/xyzutil.git
-		
- - [ ] You now have an operational private GitHub server (as a standard Ubuntu service).
 
 ### Alternate Case 
 > **Starting and stopping the daemon manually**</br>
