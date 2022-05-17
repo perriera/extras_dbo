@@ -66,7 +66,7 @@
 		sudo reboot
 
 		
- - [ ] You now have an operational private GitHub server.
+ - [ ] You now have an operational private GitHub server (as a standard Ubuntu service).
 
 ### Alternate Case 
 > **Starting and stopping the daemon manually**</br>
