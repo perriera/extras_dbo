@@ -65,6 +65,13 @@
 		sudo systemctl enable git-daemon
 		sudo reboot
 
+ - [ ] Now test your private GitHub server (using git protocol):
+
+		cd dev
+		rmdir -rf test
+		mkdir test
+		cd test
+		git clone git://gitserver/xyzutil.git
 		
  - [ ] You now have an operational private GitHub server (as a standard Ubuntu service).
 
