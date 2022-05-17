@@ -75,11 +75,13 @@
 		rm -rf test
 		mkdir test
 		cd test
-		git clone http://gitserver.com/git/xyzutil.git
+		git clone http://gitserver/git/xyzutil.git
 
  - [ ] Do some modifications and push the updates using the credential of new created user
 
-		git push origin master
+		cd xyzutil/
+		cp file1.txt file1b.txt 
+		git add .; git commit -m "test"; git push
 
 #### Footnotes
 >[i] These 2 commands will install apache2 and also enables the `mod_cgi`, `mod_alias`, and `mod_env` modules, which are all needed for this to work properly.
