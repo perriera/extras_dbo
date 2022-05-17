@@ -83,7 +83,7 @@
 	sudo systemctl stop git-daemon
 
 ### Summary 
-Now you have an operational GitHub server running locally on your Ubuntu box (as a standard Ubuntu service). 
+Now that you have an operational GitHub server running locally on your Ubuntu box (as a standard Ubuntu service) you no longer have to add additional directory information. Hence, it now acts a lot more like the actual GitHub.com server (complete with a host name of your choosing).   
 
 ### Next Steps
 - [How to set up your own GitHub server using http protocol on Ubuntu 20.04](https://github.com/perriera/extras_oci/blob/dev/docs/GITHUB_HTTP.md)
