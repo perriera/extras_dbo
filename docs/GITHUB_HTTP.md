@@ -99,6 +99,8 @@
 		cp file1.txt file1b.txt 
 		git add .; git commit -m "test"; git push
 
+ - [ ] With the ssh approach (assuming no password is set) you are able to clone without the need for username/password request getting in the way. Feel free to modify the cp operation above, commit the changes and then reclone to see all this in action.
+
  - [ ] You now have an operational private GitHub server (operating over http).
 
 #### Footnotes
