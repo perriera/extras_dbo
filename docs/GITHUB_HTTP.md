@@ -20,6 +20,7 @@
  - [ ] Activate special hooks in apache to support git protocol [i]
 
 		sudo a2enmod cgi alias env
+		sudo systemctl restart apache2
 
  - [ ] Give www-data access to /srv/git
 
