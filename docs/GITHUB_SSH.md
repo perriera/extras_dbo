@@ -1,4 +1,4 @@
-## How to set up your own GitHub server using ssh protocol on Ubuntu 20.04
+## How to set up your own GitHub server using ssh protocol (on Ubuntu 20.04)
 > Setting up a local git server requires an SSH server setup for two accounts setup first. One for the user and another for the server.
 
  1. **GIVEN** that a local GitHub server has better privacy capabilties
