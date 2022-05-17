@@ -68,7 +68,7 @@
  - [ ] Now test your private GitHub server (using git protocol):
 
 		cd dev
-		rmdir -rf test
+		rm -rf test
 		mkdir test
 		cd test
 		git clone git://gitserver/xyzutil.git
@@ -86,33 +86,8 @@
 Now you have an operational GitHub server running locally on your Ubuntu box (as a standard Ubuntu service). 
 
 ### Next Steps
-- [How to set up your own GitHub server using git protocol on Ubuntu 20.04](https://github.com/perriera/extras_oci/blob/dev/docs/GITHUB_GIT.md)
 - [How to set up your own GitHub server using http protocol on Ubuntu 20.04](https://github.com/perriera/extras_oci/blob/dev/docs/GITHUB_HTTP.md)
  - [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
 
-#### External References
-- [How to install GITHUB on Ubuntu : Step by Step](https://linuxtechlab.com/how-to-install-github-on-ubuntu-step-by-step/)</br>
-- [How to Setup Git Server on Ubuntu 20.04](https://linuxways.net/ubuntu/how-to-setup-git-server-on-ubuntu-20-04/)
-- [How To Install and Enable SSH Server on Ubuntu 20.04](https://devconnected.com/how-to-install-and-enable-ssh-server-on-ubuntu-20-04/)
-- [Ubuntu 20.04 SSH Server](https://linuxconfig.org/ubuntu-20-04-ssh-server)
-- [How To Install and Configure GitLab on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-gitlab-on-ubuntu-18-04)
-- [Install and Configure Git Server on Ubuntu 20.04](https://www.hostnextra.com/kb/install-and-configure-git-server-on-ubuntu/)
-- https://github.com/cpm-cmake/CPM.cmake/issues/132
-- https://github.com/cpm-cmake/CPM.cmake/wiki/More-Snippets
-- https://github.com/cpm-cmake/CPM.cmake
-- [Verifying the Authenticity of a Remote Server through Its SSH Key Fingerprint](https://www.linode.com/docs/guides/verifying-the-authenticity-of-remote-host/)
-- https://ubuntututorials.org/set-up-private-git-server-ubuntu-2004/
 
-- https://www.andrewhoog.com/post/howto-setup-a-private-git-server-on-ubuntu-18.04/
 
-- https://www.linux.com/training-tutorials/how-run-your-own-git-server/
-
-- https://git-scm.com/book/en/v2/Git-on-the-Server-Setting-Up-the-Server
-
-- https://git-scm.com/book/en/v2/Git-on-the-Server-Git-Daemon
-
-- https://linuxways.net/ubuntu/how-to-setup-git-server-on-ubuntu-20-04/
-
-  
-
-- https://yunwuxin1.gitbooks.io/git/content/en/17950f608975b8c96cebaaa17b3904d1/a5209e0c593176dd3285b76799bafb1f.html
