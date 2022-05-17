@@ -30,7 +30,7 @@
 
  - [ ] Give www-data access to /srv/git
 
-		sudo chgrp -R www-data /srv/git www-data
+		sudo chgrp -R www-data /srv/git 
 
 *** THIS MAY REQUIRE adding user git to group 
 
