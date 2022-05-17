@@ -89,13 +89,6 @@
 >[i] These 2 commands will install apache2 and also enables the `mod_cgi`, `mod_alias`, and `mod_env` modules, which are all needed for this to work properly.
 
 ### Alternate Case 
-> **Starting and stopping the daemon manually**</br>
->	As per standard Ubuntu/Linux service commands: </br>
-
-	sudo systemctl start git-daemon
-	sudo systemctl stop git-daemon
-
-### Alternate Case 
 > **Want to add more projects?** </br>
 >	Just like in the real github.com you need to create the project on the server first, (but the major difference here is that you do not specify the directory information).</br>
 
@@ -106,7 +99,7 @@
 		cp post-update.sample post-update
 		exit
 		cd dev
-		git clone git@gitserver/(new project name).git
+		git clone http://gitserver/git/(new project name).git
 
 ### Summary 
 Now that you have an operational GitHub server running locally on your Ubuntu box (as a standard Ubuntu service) you no longer have to add additional directory information. Hence, it now acts a lot more like the actual GitHub.com server (complete with a host name of your choosing).   
