@@ -20,7 +20,12 @@
  - [ ] Activate special hooks in apache to support git protocol [i]
 
 		sudo a2enmod cgi alias env
-		sudo systemctl restart apache2
+		sudo systemctl start apache2
+
+ - [ ] Now see if the server is running, open a browser (Firefox or better) and type as the url:
+
+	 http://gitserver/
+
 
  - [ ] Give www-data access to /srv/git
 
