@@ -21,10 +21,10 @@
 
  - [ ] Update/upgrade the system & add necessary support
 
-		sudo apt update
-		sudo apt upgrade 
+		sudo apt update -y
+		sudo apt upgrade -y
 		sudo apt autoremove
-		sudo apt update
+		sudo apt update -y
 		sudo apt install git openssh-server -y
 		sudo reboot 
 
