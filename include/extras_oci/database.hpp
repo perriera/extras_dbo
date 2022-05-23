@@ -37,6 +37,12 @@ namespace extras {
     namespace oci {
 
         /**
+         * @brief DatabaseParameters
+         *
+         */
+        using DatabaseParameters = std::string;
+
+        /**
          * @brief DatabaseInterface
          *
          */
@@ -47,7 +53,7 @@ namespace extras {
              * @brief connect()
              * @return connect to a database
              */
-            virtual void connect() const pure;
+            virtual void connect(const DatabaseParameters&) const pure;
 
             /**
              * @brief disconnect()
@@ -68,7 +74,7 @@ namespace extras {
             /**
              * @brief DatabaseInterface
              */
-            virtual void connect() const override;
+            virtual void connect(const DatabaseParameters&) const override;
             virtual void disconnect() const override;
 
         };

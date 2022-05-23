@@ -26,15 +26,47 @@
 using namespace extras;
 using namespace fakeit;
 
-SCENARIO("Dock Database: connect/disconnect", "[CHES-9]") {
+SCENARIO("Dock DatabaseInteface: connect/disconnect", "[SISPJCLA22-26]") {
 
-    Dock<oci::DatabaseInterface> mock;
-    When(Method(mock, connect)).Return();
-    When(Method(mock, disconnect)).Return();
+    Dock<oci::DatabaseInterface> dock;
+    When(Method(dock, connect)).AlwaysDo([](const oci::DatabaseParameters&) {
+        return;
+        });
+    When(Method(dock, disconnect)).Return();
 
-    oci::DatabaseInterface& i = mock.get();
-    i.connect();
+    oci::DatabaseInterface& i = dock.get();
+    oci::DatabaseParameters params;
+    i.connect(params);
     i.disconnect();
-    Verify(Method(mock, connect));
-    Verify(Method(mock, disconnect));
+    Verify(Method(dock, connect));
+    Verify(Method(dock, disconnect));
+}
+
+SCENARIO("Dock DatabaseInteface: parameters", "[SISPJCLA22-26]") {
+    /**
+     * @brief Simulate a class and class members here
+     *
+     * An octal number has a range of 0 to 7, (which is
+     * ideal for chess positions for either row or col).
+     *
+     * In this case we will setup two char values to hold
+     * the octal values for a chess piecee, row & col.
+     */
+    Dock<oci::DatabaseInterface> dock;
+    When(Method(dock, connect)).AlwaysDo([](const oci::DatabaseParameters&) {
+        return;
+        });
+    When(Method(dock, disconnect)).Return();
+    oci::DatabaseInterface& i = dock.get();
+
+    /**
+     * @brief Test a value of a1 in octal
+     *
+     */
+    oci::DatabaseParameters params = "localhost:8080";
+    i.connect(params);
+    i.disconnect();
+
+    Verify(Method(dock, connect));
+    Verify(Method(dock, disconnect));
 }
