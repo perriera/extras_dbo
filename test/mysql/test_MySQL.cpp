@@ -23,6 +23,11 @@
 #include <extras_oci/game/ChessGame.hpp>
 #include <pthread.h>
 
+#include <cppconn/driver.h>
+#include <cppconn/exception.h>
+#include <cppconn/resultset.h>
+#include <cppconn/statement.h>
+
 #include "../vendor/catch.hpp"
 
 using namespace oracle::occi;
@@ -61,16 +66,42 @@ SCENARIO("Verify MySQL Instant Client SDK can be compiled", "[OracleSDK]")
 
 SCENARIO("Verify MySQL", "[OracleSDK]")
 {
-    string user = "scott";
-    string passwd = "tiger";
-    string db = "";
+    cout << endl;
+    cout << "Running 'SELECT 'Hello World!' AS _message'..." << endl;
+
     try {
-        cout << "occidml - Exhibiting simple insert, delete & update operations"
-            << endl;
-        occidml demo(user, passwd, db);
-        cout << "Displaying all records before any operation" << endl;
+        sql::Driver* driver;
+        sql::Connection* con;
+        sql::Statement* stmt;
+        sql::ResultSet* res;
+
+        /* Create a connection */
+        driver = get_driver_instance();
+        con = driver->connect("tcp://127.0.0.1:3306", "sammy", "password");
+        /* Connect to the MySQL test database */
+        con->setSchema("test");
+
+        stmt = con->createStatement();
+        res = stmt->executeQuery("SELECT 'Hello World!' AS _message");
+        while (res->next()) {
+            cout << "\t... MySQL replies: ";
+            /* Access column data by alias or column name */
+            cout << res->getString("_message") << endl;
+            cout << "\t... MySQL says it again: ";
+            /* Access column data by numeric offset, 1 is the first column */
+            cout << res->getString(1) << endl;
+        }
+        delete res;
+        delete stmt;
+        delete con;
+
     }
-    catch (SQLException& ex) {
-        cout << ex.getMessage() << endl;
+    catch (sql::SQLException& e) {
+        cout << "# ERR: SQLException in " << __FILE__;
+        cout << "(" << __FUNCTION__ << ") on line " << __LINE__ << endl;
+        cout << "# ERR: " << e.what();
+        cout << " (MySQL error code: " << e.getErrorCode();
+        cout << ", SQLState: " << e.getSQLState() << " )" << endl;
     }
+
 }
