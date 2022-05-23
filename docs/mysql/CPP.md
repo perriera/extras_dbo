@@ -11,12 +11,6 @@
  
 ### Wish Case
 Setting up mysql C++ support onto Ubuntu is not that difficult. It basically consists of adding a dev package and running ldconfig.
-
-  - [ ] First update your Ubuntu
-	
-		sudo apt update -y
-		sudo apt upgrade -y
-		sudo reboot
 	
  - [ ] Now add mysql C++ support 
 
