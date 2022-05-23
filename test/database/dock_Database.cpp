@@ -42,6 +42,11 @@ SCENARIO("Dock DatabaseInteface: connect/disconnect", "[SISPJCLA22-26]") {
     Verify(Method(dock, disconnect));
 }
 
+// https://exerror.com/failed-error-set-password-has-no-significance-for-user-rootlocalhost-as-the-authentication-method-used-doesnt-store-authentication-data-in-the-mysql-server/
+// https://exerror.com/failed-error-set-password-has-no-significance-for-user-rootlocalhost-as-the-authentication-method-used-doesnt-store-authentication-data-in-the-mysql-server/
+// https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
+
+
 SCENARIO("Dock DatabaseInteface: parameters", "[SISPJCLA22-26]") {
     /**
      * @brief Simulate a class and class members here
