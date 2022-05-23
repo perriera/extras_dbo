@@ -33,14 +33,14 @@ Setting up mysql C++ support onto Ubuntu is not that difficult. It basically con
 
  - [ ] In your CMakeLists.txt you need to add **mysqlcppconn**:
 		
-      set(EXTRAS_OCI_LIBS_NEEDED stdc++fs extras occi clntsh mysqlcppconn Threads::Threads)
+        set(EXTRAS_OCI_LIBS_NEEDED stdc++fs extras occi clntsh mysqlcppconn Threads::Threads)
 
  - [ ] In your header includes you need to add:
 		
-      #include <cppconn/driver.h>
-      #include <cppconn/exception.h>
-      #include <cppconn/resultset.h>
-      #include <cppconn/statement.h>
+        #include <cppconn/driver.h>
+        #include <cppconn/exception.h>
+        #include <cppconn/resultset.h>
+        #include <cppconn/statement.h>
 
  - [ ] Now open your Visual Studio Code editor and add this as a test case
 
