@@ -16,7 +16,11 @@
 ### Wish Case
 Setting up mysql software onto Ubuntu is not that difficult. However, there are a variety of options available for more advanced purposes. In our case we just want to use myself for database testing purposes. So, we'll will stick witht the most basic instructions here.
 
-  - [ ] First update your Ubuntu
+  - [ ] First go into sudo mode
+
+		sudo ls
+
+  - [ ] Then update your Ubuntu
 	
 		sudo apt update -y
 		sudo apt upgrade -y
