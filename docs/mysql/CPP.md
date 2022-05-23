@@ -89,5 +89,13 @@ You have just accessed a mysql from C++ and a record was retrieved.
 
 ### Next Steps
  - [How to install mysql C++ support onto Ubuntu](https://github.com/perriera/extras_oci/blob/dev/docs/mysql/CPP.md)
+ - https://www.learnsqlonline.org/en/Hello,_World!
+ - https://blog.devart.com/creating-a-new-database-in-mysql-tutorial-with-examples.html
+ - https://aaronxu17.github.io/blog/install-mysql-connector/
+ - https://askubuntu.com/questions/165868/installing-mysql-connector-c
+ - https://dev.mysql.com/doc/connector-cpp/1.1/en/connector-cpp-examples-complete-example-1.html
+ - https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04
+ 
+
 
 
