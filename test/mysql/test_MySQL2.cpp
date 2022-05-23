@@ -24,22 +24,22 @@
 #include <cppconn/statement.h>
 #include <cppconn/prepared_statement.h>
 
-
 #include "../vendor/catch.hpp"
 
 using namespace std;
 
 
-SCENARIO("Verify MySQL", "[OracleSDK]")
+SCENARIO("Verify MySQL2", "[OracleSDK]")
 {
     cout << endl;
-    cout << "Running 'SELECT 'Hello World!' AS _message'..." << endl;
+    cout << "Let's have MySQL count from 10 to 1..." << endl;
 
     try {
         sql::Driver* driver;
         sql::Connection* con;
         sql::Statement* stmt;
         sql::ResultSet* res;
+        sql::PreparedStatement* pstmt;
 
         /* Create a connection */
         driver = get_driver_instance();
@@ -48,17 +48,29 @@ SCENARIO("Verify MySQL", "[OracleSDK]")
         con->setSchema("test");
 
         stmt = con->createStatement();
-        res = stmt->executeQuery("SELECT 'Hello World!' AS _message");
-        while (res->next()) {
-            cout << "\t... MySQL replies: ";
-            /* Access column data by alias or column name */
-            cout << res->getString("_message") << endl;
-            cout << "\t... MySQL says it again: ";
-            /* Access column data by numeric offset, 1 is the first column */
-            cout << res->getString(1) << endl;
-        }
-        delete res;
+        stmt->execute("DROP TABLE IF EXISTS test");
+        stmt->execute("CREATE TABLE test(id INT)");
         delete stmt;
+
+        /* '?' is the supported placeholder syntax */
+        pstmt = con->prepareStatement("INSERT INTO test(id) VALUES (?)");
+        for (int i = 1; i <= 10; i++) {
+            pstmt->setInt(1, i);
+            pstmt->executeUpdate();
+        }
+        delete pstmt;
+
+        /* Select in ascending order */
+        pstmt = con->prepareStatement("SELECT id FROM test ORDER BY id ASC");
+        res = pstmt->executeQuery();
+
+        /* Fetch in reverse = descending order! */
+        res->afterLast();
+        while (res->previous())
+            cout << "\t... MySQL counts: " << res->getInt("id") << endl;
+        delete res;
+
+        delete pstmt;
         delete con;
 
     }
@@ -69,5 +81,7 @@ SCENARIO("Verify MySQL", "[OracleSDK]")
         cout << " (MySQL error code: " << e.getErrorCode();
         cout << ", SQLState: " << e.getSQLState() << " )" << endl;
     }
+
+    cout << endl;
 
 }
