@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v0.4.0 -m "ServerInterface"</br>
-> > git push origin v0.4.0
+> > git tag -a v0.5.0 -m "MySQLServer"</br>
+> > git push origin v0.5.0
 
 IMPORTANT:
 
@@ -31,6 +31,10 @@ Correct URL for github, (for source compare)</br>
 Adding mock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordingly</br>
+
+#### 0.5.0 (2021-05-23)
+### Added
+- MySQLServer
 
 #### 0.4.0 (2021-05-23)
 ### Added
