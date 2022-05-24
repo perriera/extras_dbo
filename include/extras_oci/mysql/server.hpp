@@ -9,8 +9,8 @@
  *
  */
 
-#ifndef _SERVER_HPP
-#define _SERVER_HPP
+#ifndef _MYSQLSERVER_HPP
+#define _MYSQLSERVER_HPP
 
  /**
   * @brief the "MIT/X Consortium License", (adapted for EXPARX.COM)
@@ -31,43 +31,16 @@
   */
 
 #include <iostream>
-#include <extras/interfaces.hpp>
+#include <extras_oci/server.hpp>
 
 namespace extras {
     namespace oci {
 
         /**
-         * @brief ServerParameters
-         *
-         */
-        using ServerParameters = std::string;
-
-        /**
-         * @brief ServerInterface
-         *
-         */
-        interface ServerInterface
-        {
-
-            /**
-             * @brief connect()
-             * @return connect to a database
-             */
-            virtual void connect(const ServerParameters&) const pure;
-
-            /**
-             * @brief disconnect()
-             * @return disconnect from a database
-             */
-            virtual void disconnect() const pure;
-
-        };
-
-        /**
          * @brief ChessGame
          *
          */
-        concrete class Server implements ServerInterface
+        concrete class MySQLServer implements ServerInterface
         {
         public:
 
@@ -79,27 +52,8 @@ namespace extras {
 
         };
 
-        /**
-         * @brief EndOfGameReachedException
-         *
-         */
-
-        concrete class ServerException
-            extends extras::AbstractCustomException {
-        public:
-            ServerException(
-                const std::string& msg,
-                const extras::WhereAmI& whereAmI)
-                : AbstractCustomException(msg.c_str(),
-                    whereAmI._file.c_str(),
-                    whereAmI._func.c_str(), whereAmI._line) {}
-            static void assertion(
-                int sizePGN, int sizeFEN,
-                const std::string& msg,
-                const extras::WhereAmI& ref);
-        };
 
     } // end namespace 
 }
 
-#endif // _SERVER_HPP
+#endif // _MYSQLSERVER_HPP

@@ -16,25 +16,12 @@
  *
  */
 
-#include <iostream>
 #include <extras_oci/mysql/server.hpp>
-
-#include "../vendor/catch.hpp"
+#include <iostream>
 
 using namespace std;
 using namespace extras;
 
-SCENARIO("Verify MySQLServer", "[SISPJCLA22-26]")
-{
-    oci::MySQLServer server;
-    oci::ServerInterface& i = server;
-    /**
-     * @brief Test a value of a1 in octal
-     *
-     */
-    oci::ServerParameters params = "localhost:8080";
-    i.connect(params);
-    i.disconnect();
+void oci::MySQLServer::connect(const ServerParameters&) const {}
 
-}
-
+void oci::MySQLServer::disconnect() const {}

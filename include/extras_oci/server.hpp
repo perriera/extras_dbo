@@ -64,22 +64,6 @@ namespace extras {
         };
 
         /**
-         * @brief ChessGame
-         *
-         */
-        concrete class Server implements ServerInterface
-        {
-        public:
-
-            /**
-             * @brief ServerInterface
-             */
-            virtual void connect(const ServerParameters&) const override;
-            virtual void disconnect() const override;
-
-        };
-
-        /**
          * @brief EndOfGameReachedException
          *
          */
