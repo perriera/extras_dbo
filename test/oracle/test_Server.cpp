@@ -16,18 +16,25 @@
  *
  */
 
-#include <extras_oci/mysql/server.hpp>
 #include <iostream>
+#include <extras_oci/oracle/server.hpp>
+
+#include "../vendor/catch.hpp"
 
 using namespace std;
 using namespace extras;
 
-void oci::MySQLServer::connect(const ServerParameters& params) {
-    sql::Driver* driver = get_driver_instance();
-    _con = driver->connect(params[0], params[1], params[2]);
+SCENARIO("Verify OracleServer", "[SISPJCLA22-28]")
+{
+    oci::OracleServer server;
+    oci::ServerInterface& i = server;
+    /**
+     * @brief Test a value of a1 in octal
+     *
+     */
+    oci::ServerParameters params = { "tcp://127.0.0.1:3306", "sammy", "password" };
+    i.connect(params);
+    i.disconnect();
+
 }
 
-void oci::MySQLServer::disconnect() {
-    delete _con;
-    _con = nullptr;
-}
