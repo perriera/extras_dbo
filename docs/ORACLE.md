@@ -1,4 +1,5 @@
 
+- https://www.nakivo.com/blog/how-to-install-oracle-on-ubuntu-linux-waltkhrough/
 
 
 ## How to setup Oracle Database Express Edition (on Linux, Windows or Mac)

@@ -1,18 +1,4 @@
 /**
-* @file version.hpp
-* @author Matt Williams (mattltf@protonmail.com)
-* @brief Adds version support for Cmake script
-* @version 3.2.0
-* @date 2021-08-08
-*
-* @copyright (C) August 8, 2021 Matt Williams
-*
-*/
-
-#ifndef _EXTRAS_OCI_VERSION_HPP
-#define _EXTRAS_OCI_VERSION_HPP
-
-/**
  * @brief the "MIT/X Consortium License", (adapted for EXPARX.COM)
  *
  * Copyright (C) November 22, 2021 EXPARX INCORPORATED
@@ -30,11 +16,12 @@
  *
  */
 
-#define EXTRAS_OCI_VER_MAJOR 0
-#define EXTRAS_OCI_VER_MINOR 4
-#define EXTRAS_OCI_VER_PATCH 0
+#include <extras_oci/mysql/server.hpp>
+#include <iostream>
 
-#define EXTRAS_OCI_VERSION \
-  (EXTRAS_OCI_VER_MAJOR * 10000 + EXTRAS_OCI_VER_MINOR * 100 + EXTRAS_OCI_VER_PATCH)
+using namespace std;
+using namespace extras;
 
-#endif// _EXTRAS_OCI_VERSION_HPP
+void oci::MySQLServer::connect(const ServerParameters&) const {}
+
+void oci::MySQLServer::disconnect() const {}
