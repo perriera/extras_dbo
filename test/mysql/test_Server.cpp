@@ -32,7 +32,7 @@ SCENARIO("Verify MySQLServer", "[SISPJCLA22-26]")
      * @brief Test a value of a1 in octal
      *
      */
-    oci::ServerParameters params = { "localhost:8080" };
+    oci::ServerParameters params = { "tcp://127.0.0.1:3306", "sammy", "password" };
     i.connect(params);
     i.disconnect();
 

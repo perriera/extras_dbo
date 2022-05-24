@@ -9,8 +9,8 @@
  *
  */
 
-#ifndef _MYSQLSERVER_HPP
-#define _MYSQLSERVER_HPP
+#ifndef _ORACLESERVER_HPP
+#define _ORACLESERVER_HPP
 
  /**
   * @brief the "MIT/X Consortium License", (adapted for EXPARX.COM)
@@ -45,7 +45,7 @@ namespace extras {
          * @brief ChessGame
          *
          */
-        concrete class MySQLServer implements ServerInterface
+        concrete class OracleServer implements ServerInterface
         {
         private:
             sql::Connection* _con = nullptr;
@@ -64,4 +64,4 @@ namespace extras {
     } // end namespace 
 }
 
-#endif // _MYSQLSERVER_HPP
+#endif // _ORACLESERVER_HPP

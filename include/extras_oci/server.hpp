@@ -53,13 +53,13 @@ namespace extras {
              * @brief connect()
              * @return connect to a database
              */
-            virtual void connect(const ServerParameters&) const pure;
+            virtual void connect(const ServerParameters&) pure;
 
             /**
              * @brief disconnect()
              * @return disconnect from a database
              */
-            virtual void disconnect() const pure;
+            virtual void disconnect() pure;
 
         };
 
