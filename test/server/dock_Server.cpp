@@ -58,7 +58,9 @@ SCENARIO("Dock ServerInterface: parameters", "[SISPJCLA22-26]") {
      * the octal values for a chess piecee, row & col.
      */
     Dock<oci::ServerInterface> dock;
-    When(Method(dock, connect)).AlwaysDo([](const oci::ServerParameters&) {
+    When(Method(dock, connect)).AlwaysDo([](const oci::ServerParameters& params) {
+        for (auto param : params)
+            std::cout << param << std::endl;
         return;
         });
     When(Method(dock, disconnect)).Return();
