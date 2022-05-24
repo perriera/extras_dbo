@@ -40,7 +40,7 @@ namespace extras {
          * @brief ServerParameters
          *
          */
-        using ServerParameters = std::string;
+        using ServerParameters = std::vector<std::string>;
 
         /**
          * @brief ServerInterface
