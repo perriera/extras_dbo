@@ -102,7 +102,8 @@ Updated README.md accordingly</br>
 ### Removed
 - Conan package manager deprecated
 
-[unreleased]: https://github.com/perriera/extras_oci/compare/v0.4.0...HEAD
+[unreleased]: https://github.com/perriera/extras_oci/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/perriera/extras_oci/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/perriera/extras_oci/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/perriera/extras_oci/compare/v0.2.0...v0.3.1
 [0.2.0]: https://github.com/perriera/extras_oci/compare/v1.0.1...v0.2.0
