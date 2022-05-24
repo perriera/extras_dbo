@@ -63,6 +63,7 @@ SCENARIO("Verify MySQL2", "[OracleSDK]")
         /* Select in ascending order */
         pstmt = con->prepareStatement("SELECT id FROM test ORDER BY id ASC");
         res = pstmt->executeQuery();
+        REQUIRE(res->rowsCount() == 10);
 
         /* Fetch in reverse = descending order! */
         res->afterLast();
