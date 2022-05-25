@@ -18,7 +18,7 @@
 
 #include <iostream>
 #include <extras/docking/DockIt.hpp>
-#include <extras_oci/database.hpp>
+#include <extras_dbo/database.hpp>
 
 #include "../vendor/catch.hpp"
 #include "../vendor/fakeit.hpp"

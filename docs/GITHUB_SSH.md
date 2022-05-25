@@ -6,7 +6,7 @@
  3. **THEN** we can enjoy the benefits of a locally managed GitHub server
 
 ### Prerequisites
-  - [How to install a Linux Platform (Ubuntu 20.04.4)](https://github.com/perriera/extras_oci/blob/dev/docs/UBUNTU.md)
+  - [How to install a Linux Platform (Ubuntu 20.04.4)](https://github.com/perriera/extras_dbo/blob/dev/docs/UBUNTU.md)
   - A Ubuntu 20.04 installed [dedicated server](https://www.hostnextra.com/dedicated-server.html) or [KVM VPS](https://www.hostnextra.com/vps-hosting.html).
 -   A root user access or normal user with administrative privileges.
 -   Add DNS A record of your server’s hostname. 
@@ -174,9 +174,9 @@
 Now you have an operational GitHub server running locally on your Ubuntu box. This should address the issue being encountered with CPM and public URLs.
 
 ### Next Steps
-- [How to set up your own GitHub server using git protocol (on Ubuntu 20.04)](https://github.com/perriera/extras_oci/blob/dev/docs/GITHUB_GIT.md)
-- [How to set up your own GitHub server using http protocol (on Ubuntu 20.04)](https://github.com/perriera/extras_oci/blob/dev/docs/GITHUB_HTTP.md)
- - [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
+- [How to set up your own GitHub server using git protocol (on Ubuntu 20.04)](https://github.com/perriera/extras_dbo/blob/dev/docs/GITHUB_GIT.md)
+- [How to set up your own GitHub server using http protocol (on Ubuntu 20.04)](https://github.com/perriera/extras_dbo/blob/dev/docs/GITHUB_HTTP.md)
+ - [How to setup your changelog.md](https://github.com/perriera/extras_dbo/blob/dev/docs/CHANGELOG.md)
 
 #### External References
 - [How to install GITHUB on Ubuntu : Step by Step](https://linuxtechlab.com/how-to-install-github-on-ubuntu-step-by-step/)</br>

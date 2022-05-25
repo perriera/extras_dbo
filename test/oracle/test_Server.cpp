@@ -17,7 +17,7 @@
  */
 
 #include <iostream>
-#include <extras_oci/oracle/server.hpp>
+#include <extras_dbo/oracle/server.hpp>
 
 #include "../vendor/catch.hpp"
 

@@ -16,7 +16,7 @@
  *
  */
 
-#include <extras_oci/mysql/server.hpp>
+#include <extras_dbo/mysql/server.hpp>
 #include <iostream>
 
 using namespace std;

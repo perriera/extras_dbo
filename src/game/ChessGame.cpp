@@ -16,7 +16,7 @@
  *
  */
 
-#include <extras_oci/game/ChessGame.hpp>
+#include <extras_dbo/game/ChessGame.hpp>
 #include <extras/interfaces.hpp>
 #include <iostream>
 

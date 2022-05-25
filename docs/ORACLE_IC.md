@@ -8,10 +8,10 @@
 
 ### Prerequisites
 
-- [How to setup a development environment (on Linux, Windows or Mac)](https://github.com/perriera/extras_oci/blob/dev/docs/ENVIRONMENT.md)
-- [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/extras_oci/blob/dev/docs/INSTALL.md)
-- [How to clone your project (with this template)](https://github.com/perriera/extras_oci/blob/dev/docs/CLONE.md)
-- [How to setup your changelog.md](https://github.com/perriera/extras_oci/blob/dev/docs/CHANGELOG.md)
+- [How to setup a development environment (on Linux, Windows or Mac)](https://github.com/perriera/extras_dbo/blob/dev/docs/ENVIRONMENT.md)
+- [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/extras_dbo/blob/dev/docs/INSTALL.md)
+- [How to clone your project (with this template)](https://github.com/perriera/extras_dbo/blob/dev/docs/CLONE.md)
+- [How to setup your changelog.md](https://github.com/perriera/extras_dbo/blob/dev/docs/CHANGELOG.md)
 
 ### Resources
 [Ubuntu documentation: Oracle Instant Client](https://help.ubuntu.com/community/Oracle%20Instant%20Client)
@@ -187,28 +187,28 @@ With that successful run *ldconfig* in order sync everything up (with the Linux 
 
 You should see something like this:
 
-	perry@ubuntu:~/Projects/extras_oci$ ls $ORACLE_HOME/bin
+	perry@ubuntu:~/Projects/extras_dbo$ ls $ORACLE_HOME/bin
 	adrci  exp  expdp  genezi  imp  impdp  odbc_update_ini.sh  sqlldr  sqlplus  wrc
-	perry@ubuntu:~/Projects/extras_oci$ ls $ORACLE_HOME/include
+	perry@ubuntu:~/Projects/extras_dbo$ ls $ORACLE_HOME/include
 	ldap.h     occiAQ.h       occiData.h     oci1.h    ociapr.h  ocidfn.h   ocikpr.h    ocixstream.h  orid.h  oro.h
 	nzerror.h  occiCommon.h   occi.h         oci8dp.h  ocidef.h  ociextp.h  ociver.h    odci.h        ori.h   ort.h
 	nzt.h      occiControl.h  occiObjects.h  ociap.h   ocidem.h  oci.h      ocixmldb.h  oratypes.h    orl.h   xa.h
-	perry@ubuntu:~/Projects/extras_oci$ ls $ORACLE_HOME/lib
+	perry@ubuntu:~/Projects/extras_dbo$ ls $ORACLE_HOME/lib
 	glogin.sql             libclntsh.so.10.1  libclntsh.so.19.1  libnfsodm19.so   libociei.so       libsqlplus.so     orai18n.jar
 	libclntshcore.so       libclntsh.so.11.1  libheteroxa19.so   libnnz19.so      libocijdbc19.so   libsqora.so.19.1  orai18n-mapping.jar
 	libclntshcore.so.19.1  libclntsh.so.12.1  libipc1.so         libocci.so       liboramysql19.so  network           ottclasses.zip
 	libclntsh.so           libclntsh.so.18.1  libmql1.so         libocci.so.19.1  libsqlplusic.so   ojdbc8.jar        xstreams.jar
-	perry@ubuntu:~/Projects/extras_oci$ ls $ORACLE_HOME/lib/libclntsh*
+	perry@ubuntu:~/Projects/extras_dbo$ ls $ORACLE_HOME/lib/libclntsh*
 	/usr/lib/oracle/19.15/client64/lib/libclntshcore.so       /usr/lib/oracle/19.15/client64/lib/libclntsh.so.11.1
 	/usr/lib/oracle/19.15/client64/lib/libclntshcore.so.19.1  /usr/lib/oracle/19.15/client64/lib/libclntsh.so.12.1
 	/usr/lib/oracle/19.15/client64/lib/libclntsh.so           /usr/lib/oracle/19.15/client64/lib/libclntsh.so.18.1
 	/usr/lib/oracle/19.15/client64/lib/libclntsh.so.10.1      /usr/lib/oracle/19.15/client64/lib/libclntsh.so.19.1
-	perry@ubuntu:~/Projects/extras_oci$ ls $ORACLE_HOME/lib/libocci*
+	perry@ubuntu:~/Projects/extras_dbo$ ls $ORACLE_HOME/lib/libocci*
 	/usr/lib/oracle/19.15/client64/lib/libocci.so  /usr/lib/oracle/19.15/client64/lib/libocci.so.19.1
 
 > Now check the interactive debugging capabiltites of Visual Studio Code
 
-	cd ~/Projects/extras_oci
+	cd ~/Projects/extras_dbo
 	code .
 
 Now inside Visual Studio Code do a **Ctrl-B** and see a successful build and you should see something like this:
@@ -219,56 +219,56 @@ Now inside Visual Studio Code do a **Ctrl-B** and see a successful build and you
 	-- CPM: adding package extras@5.26.0 (v5.26.0 at /home/perry/.cache/CPM/extras/d4c42783a675887008e79728d654420ec80ff550)
 	-- Configuring extras build properties
 	-- Building tests
-	-- Building extras_oci with Interprocedural Optimization
+	-- Building extras_dbo with Interprocedural Optimization
 	-- Configuring done
 	-- Generating done
-	-- Build files have been written to: /home/perry/Projects/extras_oci/build
+	-- Build files have been written to: /home/perry/Projects/extras_dbo/build
 	Consolidate compiler generated dependencies of target extras
 	[  4%] Linking CXX shared library libextras.so
 	[ 62%] Built target extras
-	Consolidate compiler generated dependencies of target extras_oci
-	[ 66%] Building CXX object CMakeFiles/extras_oci.dir/src/game/ChessGame.cpp.o
-	[ 70%] Linking CXX shared library libextras_oci.so
-	[ 70%] Built target extras_oci
-	[ 75%] Building CXX object CMakeFiles/run-unittests-extras_oci.dir/test/chessgame/mock_ChessGame.cpp.o
-	[ 79%] Building CXX object CMakeFiles/run-unittests-extras_oci.dir/test/chessgame/test_ChessGame.cpp.o
-	[ 83%] Building CXX object CMakeFiles/run-unittests-extras_oci.dir/test/oracle/test_OracleSDK.cpp.o
-	[ 87%] Building CXX object CMakeFiles/run-unittests-extras_oci.dir/test/vendor/main.cpp.o
-	[ 91%] Linking CXX executable run-unittests-extras_oci
-	[ 91%] Built target run-unittests-extras_oci
-	[ 95%] Building CXX object CMakeFiles/extras_oci_app.dir/instances/main.cpp.o
-	[100%] Linking CXX executable extras_oci_app
-	[100%] Built target extras_oci_app
+	Consolidate compiler generated dependencies of target extras_dbo
+	[ 66%] Building CXX object CMakeFiles/extras_dbo.dir/src/game/ChessGame.cpp.o
+	[ 70%] Linking CXX shared library libextras_dbo.so
+	[ 70%] Built target extras_dbo
+	[ 75%] Building CXX object CMakeFiles/run-unittests-extras_dbo.dir/test/chessgame/mock_ChessGame.cpp.o
+	[ 79%] Building CXX object CMakeFiles/run-unittests-extras_dbo.dir/test/chessgame/test_ChessGame.cpp.o
+	[ 83%] Building CXX object CMakeFiles/run-unittests-extras_dbo.dir/test/oracle/test_OracleSDK.cpp.o
+	[ 87%] Building CXX object CMakeFiles/run-unittests-extras_dbo.dir/test/vendor/main.cpp.o
+	[ 91%] Linking CXX executable run-unittests-extras_dbo
+	[ 91%] Built target run-unittests-extras_dbo
+	[ 95%] Building CXX object CMakeFiles/extras_dbo_app.dir/instances/main.cpp.o
+	[100%] Linking CXX executable extras_dbo_app
+	[100%] Built target extras_dbo_app
 
 	Terminal will be reused by tasks, press any key to close it.
 
 
 ### Shared Library support
-**libextras_oci.so**</br>
+**libextras_dbo.so**</br>
 Any and all code (including header files) that you develop (or add on a branch on this project) to this repository will go into this library and can be easily included in other GitHub projects via CPM or sudo checkinstall, (just include the following in your CMakeLists.txt). We recommend you either use (perriera) exrtas_cpp as template project or use the CMakeLists.txt included in this project as a guide.
 
 	#
 	# NOTE: "Include 3rd party libraries, Perry and I maintain an open-source extras C++ library, which
-	# is used extensively in extras_oci, it comes bundled with spdlog, cpr, and nlohmann json. extras has
+	# is used extensively in extras_dbo, it comes bundled with spdlog, cpr, and nlohmann json. extras has
 	# project options that allow us to control how other libraries it includes are built. for example we
 	# can tell extras to build spdlog as a static library (for faster compile times) by settings
 	# MAKE_SPDLOG_SHARED OFF" -- Matt Williams, October, 2021
 	#
 	CPMAddPackage(
-		NAME extras_oci
-		GITHUB_REPOSITORY perriera/extras_oci
+		NAME extras_dbo
+		GITHUB_REPOSITORY perriera/extras_dbo
 		VERSION 0.4.0
 		OPTIONS "MAKE_SPDLOG_SHARED OFF"
 		OPTIONS "MAKE_EXTRAS_LIBRARY_ONLY ON"
 	)
-	if(extras_oci_ADDED)
+	if(extras_dbo_ADDED)
 		#
 		# NOTE:  enable c++11 to avoid compilation errors, and force spdlog into release build
 		#
-		print(STATUS "Configuring extras_oci build properties")
-		set_target_properties(extras_oci PROPERTIES CMAKE_BUILD_TYPE Release)
+		print(STATUS "Configuring extras_dbo build properties")
+		set_target_properties(extras_dbo PROPERTIES CMAKE_BUILD_TYPE Release)
 	else()
-		print(WARNING "extras_oci was not configured properly")
+		print(WARNING "extras_dbo was not configured properly")
 	endif()
 
 

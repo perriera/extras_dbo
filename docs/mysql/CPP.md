@@ -6,7 +6,7 @@
  3. **THEN** we can access a mysql database from C++
 
 ### Prerequisites
-  - [How to install mysql onto Ubuntu)](https://github.com/perriera/extras_oci/blob/dev/docs/mysql/INSTALL.md)
+  - [How to install mysql onto Ubuntu)](https://github.com/perriera/extras_dbo/blob/dev/docs/mysql/INSTALL.md)
 
  
 ### Wish Case
@@ -33,7 +33,7 @@ Setting up mysql C++ support onto Ubuntu is not that difficult. It basically con
 
  - [ ] In your CMakeLists.txt you need to add **mysqlcppconn**:
 		
-        set(EXTRAS_OCI_LIBS_NEEDED stdc++fs extras occi clntsh mysqlcppconn Threads::Threads)
+        set(EXTRAS_DBO_LIBS_NEEDED stdc++fs extras occi clntsh mysqlcppconn Threads::Threads)
 
  - [ ] In your header includes you need to add:
 		
@@ -93,7 +93,7 @@ Setting up mysql C++ support onto Ubuntu is not that difficult. It basically con
 You have just accessed a mysql from C++ and a record was retrieved.
 
 ### Next Steps
- - [How to install mysql C++ support onto Ubuntu](https://github.com/perriera/extras_oci/blob/dev/docs/mysql/CPP.md)
+ - [How to install mysql C++ support onto Ubuntu](https://github.com/perriera/extras_dbo/blob/dev/docs/mysql/CPP.md)
  - https://www.learnsqlonline.org/en/Hello,_World!
  - https://blog.devart.com/creating-a-new-database-in-mysql-tutorial-with-examples.html
  - https://aaronxu17.github.io/blog/install-mysql-connector/

@@ -16,7 +16,7 @@
  *
  */
 
-#include <extras_oci/oracle/server.hpp>
+#include <extras_dbo/oracle/server.hpp>
 #include <iostream>
 
 using namespace std;

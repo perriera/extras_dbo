@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v0.6.0 -m "Oracle OCI"</br>
-> > git push origin v0.6.0
+> > git tag -a v0.7.0 -m "Renamed to extras_dbo"</br>
+> > git push origin v0.7.0
 
 IMPORTANT:
 
@@ -31,6 +31,10 @@ Correct URL for github, (for source compare)</br>
 Adding mock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordingly</br>
+
+#### 0.7.0 (2021-05-25)
+### Added
+- Renamed to extras_dbo
 
 #### 0.6.0 (2021-05-25)
 ### Added
@@ -58,7 +62,7 @@ Updated README.md accordingly</br>
 
 #### 1.0.0 (2021-04-26)
 ### Changed
-- extras_oci created from template
+- extras_dbo created from template
 
 #### 0.1.0 (2021-09-03)
 ### Added
@@ -80,7 +84,7 @@ Updated README.md accordingly</br>
 - spdlog is now used as a shared library, (libspdlog.so)
 - cpr is now used as a shared library, (libcpr.so)
 - placed all source into /src
-- placed all headers into /include/extras_oci
+- placed all headers into /include/extras_dbo
 ### Added
 - Fetch_Content support
 - changelog.md
@@ -106,12 +110,13 @@ Updated README.md accordingly</br>
 ### Removed
 - Conan package manager deprecated
 
-[unreleased]: https://github.com/perriera/extras_oci/compare/v0.6.0...HEAD
-[0.6.0]: https://github.com/perriera/extras_oci/compare/v0.5.0...v0.6.0
-[0.5.0]: https://github.com/perriera/extras_oci/compare/v0.4.0...v0.5.0
-[0.4.0]: https://github.com/perriera/extras_oci/compare/v0.3.1...v0.4.0
-[0.3.1]: https://github.com/perriera/extras_oci/compare/v0.2.0...v0.3.1
-[0.2.0]: https://github.com/perriera/extras_oci/compare/v1.0.1...v0.2.0
-[1.0.1]: https://github.com/perriera/extras_oci/compare/v1.0.0...v1.0.1
-[1.0.0]: https://github.com/perriera/extras_oci/compare/v0.1.0...v1.0.0
-[0.1.0]: https://github.com/perriera/extras_oci/releases/tag/v0.1.0
+[unreleased]: https://github.com/perriera/extras_dbo/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/perriera/extras_dbo/compare/v0.6.0...v0.7.0
+[0.6.0]: https://github.com/perriera/extras_dbo/compare/v0.5.0...v0.6.0
+[0.5.0]: https://github.com/perriera/extras_dbo/compare/v0.4.0...v0.5.0
+[0.4.0]: https://github.com/perriera/extras_dbo/compare/v0.3.1...v0.4.0
+[0.3.1]: https://github.com/perriera/extras_dbo/compare/v0.2.0...v0.3.1
+[0.2.0]: https://github.com/perriera/extras_dbo/compare/v1.0.1...v0.2.0
+[1.0.1]: https://github.com/perriera/extras_dbo/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/perriera/extras_dbo/compare/v0.1.0...v1.0.0
+[0.1.0]: https://github.com/perriera/extras_dbo/releases/tag/v0.1.0

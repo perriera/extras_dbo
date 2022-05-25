@@ -17,7 +17,7 @@
  */
 
 #include <iostream>
-#include <extras_oci/game/ChessGame.hpp>
+#include <extras_dbo/game/ChessGame.hpp>
 
 #include "../vendor/catch.hpp"
 #include "../vendor/fakeit.hpp"

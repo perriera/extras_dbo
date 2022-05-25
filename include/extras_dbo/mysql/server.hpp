@@ -9,8 +9,8 @@
  *
  */
 
-#ifndef _ORACLESERVER_HPP
-#define _ORACLESERVER_HPP
+#ifndef _MYSQLSERVER_HPP
+#define _MYSQLSERVER_HPP
 
  /**
   * @brief the "MIT/X Consortium License", (adapted for EXPARX.COM)
@@ -31,7 +31,7 @@
   */
 
 #include <iostream>
-#include <extras_oci/server.hpp>
+#include <extras_dbo/server.hpp>
 #include <cppconn/driver.h>
 #include <cppconn/exception.h>
 #include <cppconn/resultset.h>
@@ -45,7 +45,7 @@ namespace extras {
          * @brief ChessGame
          *
          */
-        concrete class OracleServer implements ServerInterface
+        concrete class MySQLServer implements ServerInterface
         {
         private:
             sql::Connection* _con = nullptr;
@@ -64,4 +64,4 @@ namespace extras {
     } // end namespace 
 }
 
-#endif // _ORACLESERVER_HPP
+#endif // _MYSQLSERVER_HPP
