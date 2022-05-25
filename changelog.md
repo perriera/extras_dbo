@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v0.8.0 -m "Oracle Connector/C++"</br>
-> > git push origin v0.8.0
+> > git tag -a v0.8.1 -m "test database"</br>
+> > git push origin v0.8.1
 
 IMPORTANT:
 
@@ -32,9 +32,13 @@ Adding mock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordingly</br>
 
+#### 0.8.1 (2021-05-25)
+### Added
+- test database
+
 #### 0.8.0 (2021-05-25)
 ### Added
-- Oracle Connector/C++
+- Oracle OCI connect/disconnect code
 
 #### 0.7.1 (2021-05-25)
 ### Added
@@ -118,7 +122,8 @@ Updated README.md accordingly</br>
 ### Removed
 - Conan package manager deprecated
 
-[unreleased]: https://github.com/perriera/extras_dbo/compare/v0.8.0...HEAD
+[unreleased]: https://github.com/perriera/extras_dbo/compare/v0.8.1...HEAD
+[0.8.1]: https://github.com/perriera/extras_dbo/compare/v0.8.0...v0.8.1
 [0.8.0]: https://github.com/perriera/extras_dbo/compare/v0.7.1...v0.8.0
 [0.7.1]: https://github.com/perriera/extras_dbo/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/perriera/extras_dbo/compare/v0.6.0...v0.7.0

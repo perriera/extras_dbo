@@ -68,6 +68,10 @@ Setting up mysql software onto Ubuntu is not that difficult. However, there are 
 
 		mysql> 
 
+ - [ ] While you are there add a 'test' database
+
+		create database test;
+		
  - [ ] You have just installed mysql and setup a user account successfully
 
 		exit
