@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v0.5.0 -m "MySQLServer"</br>
-> > git push origin v0.5.0
+> > git tag -a v0.6.0 -m "Oracle occi.h"</br>
+> > git push origin v0.6.0
 
 IMPORTANT:
 
@@ -31,6 +31,10 @@ Correct URL for github, (for source compare)</br>
 Adding mock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordingly</br>
+
+#### 0.6.0 (2021-05-25)
+### Added
+- Oracle occi.h
 
 #### 0.5.0 (2021-05-23)
 ### Added
@@ -102,7 +106,9 @@ Updated README.md accordingly</br>
 ### Removed
 - Conan package manager deprecated
 
-[unreleased]: https://github.com/perriera/extras_oci/compare/v0.4.0...HEAD
+[unreleased]: https://github.com/perriera/extras_oci/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/perriera/extras_oci/compare/v0.5.0...v0.6.0
+[0.5.0]: https://github.com/perriera/extras_oci/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/perriera/extras_oci/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/perriera/extras_oci/compare/v0.2.0...v0.3.1
 [0.2.0]: https://github.com/perriera/extras_oci/compare/v1.0.1...v0.2.0
