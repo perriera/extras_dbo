@@ -32,11 +32,7 @@
 
 #include <iostream>
 #include <extras_dbo/server.hpp>
-#include <cppconn/driver.h>
-#include <cppconn/exception.h>
-#include <cppconn/resultset.h>
-#include <cppconn/statement.h>
-#include <cppconn/prepared_statement.h>
+#include <occi.h>
 
 namespace extras {
     namespace dbo {
@@ -48,7 +44,8 @@ namespace extras {
         concrete class OracleServer implements ServerInterface
         {
         private:
-            sql::Connection* _con = nullptr;
+            oracle::occi::Environment* _env = nullptr;
+            oracle::occi::Connection* _conn = nullptr;
 
         public:
 

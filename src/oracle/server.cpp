@@ -21,13 +21,16 @@
 
 using namespace std;
 using namespace extras;
+using namespace oracle::occi;
 
 void dbo::OracleServer::connect(const ServerParameters& params) {
-    sql::Driver* driver = get_driver_instance();
-    _con = driver->connect(params[0], params[1], params[2]);
+    _env = Environment::createEnvironment(Environment::DEFAULT);
+    _conn = _env->createConnection(params[1], params[2], params[0]);
 }
 
 void dbo::OracleServer::disconnect() {
-    delete _con;
-    _con = nullptr;
+    _env->terminateConnection(_conn);
+    Environment::terminateEnvironment(_env);
+    _conn = nullptr;
+    _env = nullptr;
 }

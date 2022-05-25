@@ -17,11 +17,7 @@
  */
 
 #include <iostream>
- // #include <oracle/19.14/client64/occi.h>
-#include <occi.h>
-#include <bits/c++config.h>
-#include <extras_dbo/game/ChessGame.hpp>
-#include <pthread.h>
+#include <extras_dbo/oracle/server.hpp>
 
 #include "../vendor/catch.hpp"
 
@@ -29,48 +25,26 @@ using namespace oracle::occi;
 using namespace std;
 using namespace extras;
 
-class  occidml
-{
-private:
-
-    Environment* env = nullptr;
-    // Connection* conn = nullptr;
-    // Statement* stmt = nullptr;
-public:
-
-    occidml(string, string, string)
-    {
-        env = Environment::createEnvironment(Environment::DEFAULT);
-        // conn = env->createConnection(user, passwd, db);
-    }
-
-    ~occidml()
-    {
-        // env->terminateConnection(conn);
-        Environment::terminateEnvironment(env);
-    }
-};
-
-SCENARIO("Verify Oracle Instant Client SDK can be compiled", "[OracleSDK]")
-{
-    dbo::ChessGame game;
-    dbo::ChessGameInterface& i = game;
-    i.moves();
-    REQUIRE(true);
-}
-
 SCENARIO("Verify occidml", "[OracleSDK]")
 {
-    string user = "scott";
-    string passwd = "tiger";
-    string db = "";
-    try {
-        cout << "occidml - Exhibiting simple insert, delete & update operations"
-            << endl;
-        occidml demo(user, passwd, db);
-        cout << "Displaying all records before any operation" << endl;
+    const string userName = "perryand";
+    const string password = "tiger";
+    const string connectString = "";
+
+    Environment* env = Environment::createEnvironment();
+    {
+        // Connection* conn = env->createConnection(
+        //     userName, password, connectString);
+        // Statement* stmt = conn->createStatement(
+        //     "SELECT blobcol FROM mytable");
+        // ResultSet* rs = stmt->executeQuery();
+        // rs->next();
+        // Blob b = rs->getBlob(1);
+        // cout << "Length of BLOB : " << b.length();
+        // stmt->closeResultSet(rs);
+        // conn->terminateStatement(stmt);
+        // env->terminateConnection(conn);
     }
-    catch (SQLException& ex) {
-        cout << ex.getMessage() << endl;
-    }
+    Environment::terminateEnvironment(env);
+
 }

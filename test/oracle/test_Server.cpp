@@ -33,8 +33,8 @@ SCENARIO("Verify OracleServer", "[SISPJCLA22-28]")
      *
      */
     dbo::ServerParameters params = { "tcp://127.0.0.1:3306", "sammy", "password" };
-    i.connect(params);
-    i.disconnect();
+    // i.connect(params);
+    // i.disconnect();
 
 }
 
