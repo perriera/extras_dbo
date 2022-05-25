@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v0.7.0 -m "Renamed to extras_dbo"</br>
-> > git push origin v0.7.0
+> > git tag -a v0.7.1 -m "Renamed namespace"</br>
+> > git push origin v0.7.1
 
 IMPORTANT:
 
@@ -31,6 +31,10 @@ Correct URL for github, (for source compare)</br>
 Adding mock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordingly</br>
+
+#### 0.7.1 (2021-05-25)
+### Added
+- Renamed namespace
 
 #### 0.7.0 (2021-05-25)
 ### Added
@@ -110,7 +114,8 @@ Updated README.md accordingly</br>
 ### Removed
 - Conan package manager deprecated
 
-[unreleased]: https://github.com/perriera/extras_dbo/compare/v0.7.0...HEAD
+[unreleased]: https://github.com/perriera/extras_dbo/compare/v0.7.1...HEAD
+[0.7.1]: https://github.com/perriera/extras_dbo/compare/v0.7.0...v0.7.1
 [0.7.0]: https://github.com/perriera/extras_dbo/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/perriera/extras_dbo/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/perriera/extras_dbo/compare/v0.4.0...v0.5.0
