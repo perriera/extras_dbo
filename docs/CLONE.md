@@ -46,9 +46,9 @@ As you already using github.com it therefore perfectly logical for you to merely
  24. (You will see a small icon to the right of the replace field)
  25. Replace *EXTRAS_DBO* with *<YOUR_PROJECT_NAME>* (all caps)
  26. Click the replace icon again
- 27. Replace *oci::* with *<your projects three letter acronym>* (lowercase)
+ 27. Replace *dbo::* with *<your projects three letter acronym>* (lowercase)
  28. Click the replace icon again
- 29. Replace *namespace oci* with *namespace <your projects three letter acronym>* (lowercase)
+ 29. Replace *namespace dbo* with *namespace <your projects three letter acronym>* (lowercase)
  30. Click the replace icon again
  31. Now click on the Visual Studio Code Explorer window 
  32. Open up the include directory

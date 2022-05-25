@@ -28,14 +28,14 @@ using namespace fakeit;
 
 SCENARIO("Dock ServerInterface: connect/disconnect", "[SISPJCLA22-26]") {
 
-    Dock<oci::ServerInterface> dock;
-    When(Method(dock, connect)).AlwaysDo([](const oci::ServerParameters&) {
+    Dock<dbo::ServerInterface> dock;
+    When(Method(dock, connect)).AlwaysDo([](const dbo::ServerParameters&) {
         return;
         });
     When(Method(dock, disconnect)).Return();
 
-    oci::ServerInterface& i = dock.get();
-    oci::ServerParameters params;
+    dbo::ServerInterface& i = dock.get();
+    dbo::ServerParameters params;
     i.connect(params);
     i.disconnect();
     Verify(Method(dock, connect));
@@ -57,20 +57,20 @@ SCENARIO("Dock ServerInterface: parameters", "[SISPJCLA22-26]") {
      * In this case we will setup two char values to hold
      * the octal values for a chess piecee, row & col.
      */
-    Dock<oci::ServerInterface> dock;
-    When(Method(dock, connect)).AlwaysDo([](const oci::ServerParameters& params) {
+    Dock<dbo::ServerInterface> dock;
+    When(Method(dock, connect)).AlwaysDo([](const dbo::ServerParameters& params) {
         for (auto param : params)
             std::cout << param << std::endl;
         return;
         });
     When(Method(dock, disconnect)).Return();
-    oci::ServerInterface& i = dock.get();
+    dbo::ServerInterface& i = dock.get();
 
     /**
      * @brief Test a value of a1 in octal
      *
      */
-    oci::ServerParameters params = { "tcp://127.0.0.1:3306", "sammy", "password" };
+    dbo::ServerParameters params = { "tcp://127.0.0.1:3306", "sammy", "password" };
     i.connect(params);
     i.disconnect();
 

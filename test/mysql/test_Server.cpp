@@ -26,13 +26,13 @@ using namespace extras;
 
 SCENARIO("Verify MySQLServer", "[SISPJCLA22-26]")
 {
-    oci::MySQLServer server;
-    oci::ServerInterface& i = server;
+    dbo::MySQLServer server;
+    dbo::ServerInterface& i = server;
     /**
      * @brief Test a value of a1 in octal
      *
      */
-    oci::ServerParameters params = { "tcp://127.0.0.1:3306", "sammy", "password" };
+    dbo::ServerParameters params = { "tcp://127.0.0.1:3306", "sammy", "password" };
     i.connect(params);
     i.disconnect();
 

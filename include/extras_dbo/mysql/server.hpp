@@ -39,7 +39,7 @@
 #include <cppconn/prepared_statement.h>
 
 namespace extras {
-    namespace oci {
+    namespace dbo {
 
         /**
          * @brief ChessGame

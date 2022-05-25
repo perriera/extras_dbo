@@ -28,14 +28,14 @@ using namespace fakeit;
 
 SCENARIO("Dock DatabaseInteface: connect/disconnect", "[SISPJCLA22-26]") {
 
-    Dock<oci::DatabaseInterface> dock;
-    When(Method(dock, connect)).AlwaysDo([](const oci::DatabaseParameters&) {
+    Dock<dbo::DatabaseInterface> dock;
+    When(Method(dock, connect)).AlwaysDo([](const dbo::DatabaseParameters&) {
         return;
         });
     When(Method(dock, disconnect)).Return();
 
-    oci::DatabaseInterface& i = dock.get();
-    oci::DatabaseParameters params;
+    dbo::DatabaseInterface& i = dock.get();
+    dbo::DatabaseParameters params;
     i.connect(params);
     i.disconnect();
     Verify(Method(dock, connect));
@@ -57,18 +57,18 @@ SCENARIO("Dock DatabaseInteface: parameters", "[SISPJCLA22-26]") {
      * In this case we will setup two char values to hold
      * the octal values for a chess piecee, row & col.
      */
-    Dock<oci::DatabaseInterface> dock;
-    When(Method(dock, connect)).AlwaysDo([](const oci::DatabaseParameters&) {
+    Dock<dbo::DatabaseInterface> dock;
+    When(Method(dock, connect)).AlwaysDo([](const dbo::DatabaseParameters&) {
         return;
         });
     When(Method(dock, disconnect)).Return();
-    oci::DatabaseInterface& i = dock.get();
+    dbo::DatabaseInterface& i = dock.get();
 
     /**
      * @brief Test a value of a1 in octal
      *
      */
-    oci::DatabaseParameters params = "localhost:8080";
+    dbo::DatabaseParameters params = "localhost:8080";
     i.connect(params);
     i.disconnect();
 

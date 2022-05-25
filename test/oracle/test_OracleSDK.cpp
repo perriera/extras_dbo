@@ -53,8 +53,8 @@ public:
 
 SCENARIO("Verify Oracle Instant Client SDK can be compiled", "[OracleSDK]")
 {
-    oci::ChessGame game;
-    oci::ChessGameInterface& i = game;
+    dbo::ChessGame game;
+    dbo::ChessGameInterface& i = game;
     i.moves();
     REQUIRE(true);
 }

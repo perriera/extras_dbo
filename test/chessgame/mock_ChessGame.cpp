@@ -27,10 +27,10 @@ using namespace fakeit;
 
 SCENARIO("Mock ChessGameInterface: toOctal", "[CHES-9]") {
 
-    Mock<oci::ChessGameInterface> mock;
+    Mock<dbo::ChessGameInterface> mock;
     When(Method(mock, moves)).Return();
 
-    oci::ChessGameInterface& i = mock.get();
+    dbo::ChessGameInterface& i = mock.get();
     i.moves();
     Verify(Method(mock, moves));
 }

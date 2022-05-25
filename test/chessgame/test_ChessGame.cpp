@@ -26,8 +26,8 @@ using namespace extras;
 
 SCENARIO("Verify ChessGameInterface can be read PGN file", "[ChessGame]")
 {
-    oci::ChessGame game;
-    oci::ChessGameInterface& i = game;
+    dbo::ChessGame game;
+    dbo::ChessGameInterface& i = game;
     i.moves();
     REQUIRE(true);
 }

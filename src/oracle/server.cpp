@@ -22,12 +22,12 @@
 using namespace std;
 using namespace extras;
 
-void oci::OracleServer::connect(const ServerParameters& params) {
+void dbo::OracleServer::connect(const ServerParameters& params) {
     sql::Driver* driver = get_driver_instance();
     _con = driver->connect(params[0], params[1], params[2]);
 }
 
-void oci::OracleServer::disconnect() {
+void dbo::OracleServer::disconnect() {
     delete _con;
     _con = nullptr;
 }

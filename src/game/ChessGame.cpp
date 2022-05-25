@@ -23,5 +23,5 @@
 using namespace std;
 using namespace extras;
 
-void oci::ChessGame::moves() const {}
+void dbo::ChessGame::moves() const {}
 
