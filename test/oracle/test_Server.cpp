@@ -26,15 +26,15 @@ using namespace extras;
 
 SCENARIO("Verify OracleServer", "[SISPJCLA22-28]")
 {
-    dbo::OracleServer server;
-    dbo::ServerInterface& i = server;
+    // dbo::OracleServer server;
+    // dbo::ServerInterface& i = server;
     /**
      * @brief Test a value of a1 in octal
      *
      */
-    dbo::ServerParameters params = { "tcp://127.0.0.1:3306", "sammy", "password" };
-    // i.connect(params);
-    // i.disconnect();
+     // dbo::ServerParameters params = { "tcp://127.0.0.1:3306", "sammy", "password" };
+     // i.connect(params);
+     // i.disconnect();
 
 }
 
