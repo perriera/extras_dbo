@@ -140,6 +140,11 @@
  - [ ] You now have an operational private GitHub server.
 
 ### Alternate Case 
+> **How can we change the default branch name?** </br>
+>	[How to change git default branch from master](https://gitbetter.substack.com/p/how-to-change-git-default-branch?s=r). </br>
+	>
+
+### Alternate Case 
 > **Do you have a DNS A record for your server’s hostname?** </br>
 >	Use your DNS A record hostname wherever localhost is mentioned above. </br>
 	>

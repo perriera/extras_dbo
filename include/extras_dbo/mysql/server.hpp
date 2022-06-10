@@ -1,7 +1,7 @@
 /**
  * @file Server.hpp
  * @author Perry Anderson (perry@exparx.com)
- * @brief Sample Server
+ * @brief MySQLServer
  * @version 0.1
  * @date 2021-11-30
  *
