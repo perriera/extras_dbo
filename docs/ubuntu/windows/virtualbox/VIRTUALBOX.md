@@ -19,6 +19,7 @@
 #### External Resources
 	•	Download Ubuntu Desktop (for 18.04) 
 	•	VDI Vs VHD Vs VMDK: Learn the Different Virtual Disk Formats
+	•	[Index of /virtualbox/6.1.32](http://download.virtualbox.org/virtualbox/6.1.32/)
 
 ### Wish Case ([Download Ubuntu 20.04.4 LTS](https://releases.ubuntu.com/20.04/))
 	•	On Windows Download Ubuntu 20.04.4 LTS to Downloads folder
