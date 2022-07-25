@@ -103,6 +103,13 @@
 		cp post-update.sample post-update
 		exit
 
+ - [ ] Now before you clone you must setup ssh keys
+
+		the exact instructions to do so are not supplied here (yet)
+		but if you are familiar with setting up ssh keys do so now
+		if not do SSHKEY.md (and setup keys from there)
+		[TODO: to updated shortly]
+
  - [ ] Now create an **dev** folder and clone your first project
 
 		mkdir ~/dev
