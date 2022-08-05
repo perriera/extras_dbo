@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 3.21)
 include(cmake/CPM.cmake)
 include(cmake/print.cmake)
 include(cmake/utils.cmake)
-include(cmake/FindOracle.cmake)
+include(cmake/Find32or64bit.cmake)
 extras_dbo_get_version()
 project(
   extras_dbo
@@ -117,7 +117,6 @@ print(STATUS "export LD_LIBRARY_PATH=/usr/local/lib")
 print(STATUS "CMAKE_CXX_FLAGS: ${CMAKE_CXX_FLAGS}")
 print(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 
-
 #
 # NOTE: "Include 3rd party libraries, Perry and I maintain an open-source extras C++ library, which
 # is used extensively in extras_dbo, it comes bundled with spdlog, cpr, and nlohmann json. extras has
@@ -128,7 +127,7 @@ print(STATUS "CMAKE_C_FLAGS: ${CMAKE_C_FLAGS}")
 CPMAddPackage(
   NAME extras
   GITHUB_REPOSITORY perriera/extras
-  VERSION 5.26.0
+  VERSION 7.4.0
   OPTIONS "MAKE_SPDLOG_SHARED OFF"
   OPTIONS "MAKE_EXTRAS_LIBRARY_ONLY ON"
 )
@@ -137,7 +136,7 @@ if(extras_ADDED)
   # NOTE:  enable c++11 to avoid compilation errors, and force spdlog into release build
   #
   print(STATUS "Configuring extras build properties")
-  set_target_properties(extras PROPERTIES CMAKE_BUILD_TYPE Release)
+  # set_target_properties(extras PROPERTIES CMAKE_BUILD_TYPE Release)
 else()
   print(WARNING "extras was not configured properly")
 endif()
@@ -155,9 +154,21 @@ file(GLOB_RECURSE EXTRAS_DBO_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
 
 set(EXTRAS_DBO_LIBS_NEEDED stdc++fs extras occi clntsh mysqlcppconn Threads::Threads)
 
+if (MAKE32BIT)
+set(EXTRAS_DBO_LIBS_NEEDED_i386 extras_i386 ${EXTRAS_DBO_LIBS_COMMON})
+add_library(${PROJECT_NAME}_i386 SHARED ${EXTRAS_DBO_HEADERS} ${EXTRAS_DBO_SOURCE})
+target_include_directories(${PROJECT_NAME}_i386 PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${ORACLE_INCLUDE})
+target_link_libraries(${PROJECT_NAME}_i386 PRIVATE ${EXTRAS_DBO_LIBS_NEEDED_i386})
+target_compile_options(${PROJECT_NAME}_i386 PUBLIC -m32)
+target_link_options(${PROJECT_NAME}_i386 PRIVATE -m32)
+endif()
+
+if (MAKE64BIT)
+set(EXTRAS_DBO_LIBS_NEEDED extras  ${EXTRAS_DBO_LIBS_COMMON})
 add_library(${PROJECT_NAME} SHARED ${EXTRAS_DBO_HEADERS} ${EXTRAS_DBO_SOURCE})
 target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include" ${ORACLE_INCLUDE})
 target_link_libraries(${PROJECT_NAME} PRIVATE ${EXTRAS_DBO_LIBS_NEEDED})
+endif()
 
 #
 # NOTE: declare unit test cases here all source should have adequate test cases whether they be mock
@@ -168,9 +179,20 @@ if (NOT MAKE_EXTRAS_DBO_LIBRARY_ONLY)
     print(STATUS "Building tests")
     file(GLOB_RECURSE EXTRAS_DBO_TESTS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/test/*.cpp")
     set(TEST_EXEC "run-unittests-${PROJECT_NAME}")
-    add_executable(${TEST_EXEC} ${EXTRAS_DBO_TESTS})
-    target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
-    target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} ${EXTRAS_DBO_LIBS_NEEDED})
+
+    if (MAKE32BIT)
+      add_executable(${TEST_EXEC}_i386 ${EXTRAS_DBO_TESTS})
+      target_include_directories(${TEST_EXEC}_i386 PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
+      target_link_libraries(${TEST_EXEC}_i386 ${PROJECT_NAME}_i386 ${EXTRAS_DBO_LIBS_NEEDED_i386})
+      target_compile_options(${TEST_EXEC}_i386 PUBLIC -m32)
+      target_link_options(${TEST_EXEC}_i386 PRIVATE -m32)
+    endif()
+    if (MAKE64BIT)
+      add_executable(${TEST_EXEC} ${EXTRAS_DBO_TESTS})
+      target_include_directories(${TEST_EXEC} PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
+      target_link_libraries(${TEST_EXEC} PRIVATE ${PROJECT_NAME} ${EXTRAS_DBO_LIBS_NEEDED})
+    endif()
+
   endif()
 endif()
 
@@ -181,15 +203,30 @@ endif()
 # declarations seperate, we place any sources that have a main() in the instances/ folder
 #
 if( NOT MAKE_EXTRAS_DBO_LIBRARY_ONLY OR MAKE_EXTRAS_DBO_LIBRARY_TOOLS)
-add_executable(extras_dbo_app instances/main.cpp) 
-target_include_directories(extras_dbo_app PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
-target_link_libraries(extras_dbo_app PRIVATE ${PROJECT_NAME} ${EXTRAS_DBO_LIBS_NEEDED})
+
+  if (MAKE32BIT)
+    add_executable(extras_dbo_app_i386 instances/main.cpp) 
+    target_include_directories(extras_dbo_app_i386 PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
+    target_link_libraries(extras_dbo_app_i386 PRIVATE ${PROJECT_NAME}_i386 ${EXTRAS_DBO_LIBS_NEEDED_i386})
+    target_compile_options(extras_dbo_app_i386 PUBLIC -m32)
+    target_link_options(extras_dbo_app_i386 PRIVATE -m32)
+  endif()
+
+  if (MAKE64BIT)
+    add_executable(extras_dbo_app instances/main.cpp) 
+    target_include_directories(extras_dbo_app PUBLIC ${INCLUDES} ${ORACLE_INCLUDE})
+    target_link_libraries(extras_dbo_app PRIVATE ${PROJECT_NAME} ${EXTRAS_DBO_LIBS_NEEDED})
+  endif()
+
 endif()
 
 #
 # NOTE: Install all shared libraries
 #
+# install(TARGETS ${PROJECT_NAME}_i386 LIBRARY DESTINATION lib)
+if (MAKE32BIT||MAKE64BIT)
 install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION lib)
+endif()
 install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
 
 #
@@ -214,12 +251,27 @@ install(DIRECTORY ${PROJECT_SOURCE_DIR}/include/ DESTINATION include)
 check_ipo_supported(RESULT result OUTPUT output)
 if(result)
   print(STATUS "Building ${PROJECT_NAME} with Interprocedural Optimization")
-  set_target_properties(${PROJECT_NAME} PROPERTIES INTERPROCEDURAL_OPTIMIZATION TRUE)
+  if (MAKE32BIT||MAKE64BIT)
+    set_target_properties(${PROJECT_NAME} PROPERTIES INTERPROCEDURAL_OPTIMIZATION TRUE)
+  endif()
 else()
   print(WARNING "IPO is not supported: ${output}")
 endif()
 
-set_target_properties(
-  ${PROJECT_NAME} PROPERTIES VERSION ${${PROJECT_NAME}_VERSION} SOVERSION
-                                                                ${${PROJECT_NAME}_VERSION_MAJOR}
-)
+if (MAKE32BIT)
+  set_target_properties(
+    ${PROJECT_NAME}_i386 
+    PROPERTIES VERSION 
+    ${${PROJECT_NAME}_VERSION} SOVERSION
+    ${${PROJECT_NAME}_VERSION_MAJOR}
+  )
+endif()
+
+if (MAKE64BIT)
+  set_target_properties(
+    ${PROJECT_NAME} 
+    PROPERTIES VERSION 
+    ${${PROJECT_NAME}_VERSION} SOVERSION
+    ${${PROJECT_NAME}_VERSION_MAJOR}
+  )
+endif()
