@@ -16,10 +16,8 @@ Welcome to the **(perriera) / extras_dbo** project.
 
  1. [How to setup a development environment (on Linux, Windows or Mac)](https://github.com/perriera/extras_dbo/blob/dev/docs/ENVIRONMENT.md)
  2. [How to install the tools necessary for C++11/17 projects](https://github.com/perriera/extras_dbo/blob/dev/docs/INSTALL.md)
- 3. [How to generate a new SSH key for your GitHub.com account](https://github.com/perriera/extras_dbo/blob/dev/docs/SSHKEY.md)
- 4. [How to clone your project (with this template)](https://github.com/perriera/extras_dbo/blob/dev/docs/CLONE.md)
- 5. [How to setup your changelog.md](https://github.com/perriera/extras_dbo/blob/dev/docs/CHANGELOG.md)
- 6. [How to setup Oracle Instant Client (on Linux, Windows or Mac)](https://github.com/perriera/extras_dbo/blob/dev/docs/ORACLE.md)
+ 3. [How to clone your project (with this template)](https://github.com/perriera/extras_dbo/blob/dev/docs/CLONE.md)
+ 4. [How to setup your changelog.md](https://github.com/perriera/extras_dbo/blob/dev/docs/CHANGELOG.md)
 
 ### Credits
 > Markup Language created/edited with [SlackEdit.io](https://stackedit.io/app#)<br/>

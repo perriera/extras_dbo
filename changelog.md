@@ -5,8 +5,8 @@
 > and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).</br>
 > To add a tag to the git repository do:
 >
-> > git tag -a v0.8.2 -m "removed warning"</br>
-> > git push origin v0.8.2
+> > git tag -a v1.0.0 -m "using extras v7.4.0"</br>
+> > git push origin v1.0.0
 
 IMPORTANT:
 
@@ -31,6 +31,12 @@ Correct URL for github, (for source compare)</br>
 Adding mock test cases </br>
 Adding unit test cases </br>
 Updated README.md accordingly</br>
+
+#### 1.0.0 (2022-08-05)
+### Added
+- gaping holes in the oci and mysql support
+- massive changes in CMakeLists.txt 
+- nothing working until oci and mysql can install properly
 
 #### 0.8.2 (2021-05-25)
 ### Added
@@ -126,7 +132,8 @@ Updated README.md accordingly</br>
 ### Removed
 - Conan package manager deprecated
 
-[unreleased]: https://github.com/perriera/extras_dbo/compare/v0.8.2...HEAD
+[unreleased]: https://github.com/perriera/extras_dbo/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/perriera/extras_dbo/compare/v0.8.2...v1.0.0
 [0.8.2]: https://github.com/perriera/extras_dbo/compare/v0.8.1...v0.8.2
 [0.8.1]: https://github.com/perriera/extras_dbo/compare/v0.8.0...v0.8.1
 [0.8.0]: https://github.com/perriera/extras_dbo/compare/v0.7.1...v0.8.0

@@ -141,6 +141,66 @@ else()
   print(WARNING "extras was not configured properly")
 endif()
 
+CPMAddPackage(
+  NAME libgcrypt
+  GIT_REPOSITORY https://github.com/gpg/libgcrypt.git
+  VERSION 1.8.8
+)
+if(libgcrypt_ADDED)
+  #
+  # NOTE:  enable c++11 to avoid compilation errors, and force spdlog into release build
+  #
+  print(STATUS "Configuring libgcrypt build properties")
+  # set_target_properties(libgcrypt PROPERTIES CMAKE_BUILD_TYPE Release)
+else()
+  print(WARNING "libgcrypt was not configured properly")
+endif()
+
+CPMAddPackage(
+  NAME libmicrohttpd
+  GIT_REPOSITORY https://github.com/scottjg/libmicrohttpd.git
+  VERSION 0.9.34
+)
+if(libmicrohttpd_ADDED)
+  #
+  # NOTE:  enable c++11 to avoid compilation errors, and force spdlog into release build
+  #
+  print(STATUS "Configuring libmicrohttpd build properties")
+  # set_target_properties(libmicrohttpd PROPERTIES CMAKE_BUILD_TYPE Release)
+else()
+  print(WARNING "libmicrohttpd was not configured properly")
+endif()
+
+CPMAddPackage(
+  NAME gnutls
+  GIT_REPOSITORY https://github.com/gnutls/gnutls.git
+  VERSION 3.7.3
+)
+if(gnutls_ADDED)
+  #
+  # NOTE:  enable c++11 to avoid compilation errors, and force spdlog into release build
+  #
+  print(STATUS "Configuring gnutls build properties")
+  # set_target_properties(libmicrohttpd PROPERTIES CMAKE_BUILD_TYPE Release)
+else()
+  print(WARNING "gnutls was not configured properly")
+endif()
+
+CPMAddPackage(
+  NAME openldap
+  GIT_REPOSITORY https://github.com/openldap/openldap.git
+  VERSION 2.6.3
+)
+if(openldap_ADDED)
+  #
+  # NOTE:  enable c++11 to avoid compilation errors, and force spdlog into release build
+  #
+  print(STATUS "Configuring openldap build properties")
+  # set_target_properties(openldap PROPERTIES CMAKE_BUILD_TYPE Release)
+else()
+  print(WARNING "openldap was not configured properly")
+endif()
+
 #
 # HACK: glob src files and header files
 #
@@ -152,7 +212,7 @@ file(GLOB_RECURSE EXTRAS_DBO_SOURCE CONFIGURE_DEPENDS "${SOURCES}/*.cpp")
 # shared or static)
 #
 
-set(EXTRAS_DBO_LIBS_NEEDED stdc++fs extras occi clntsh mysqlcppconn Threads::Threads)
+set(EXTRAS_DBO_LIBS_COMMON stdc++fs ldap gcrypt gnutls uuid microhttpd Threads::Threads)
 
 if (MAKE32BIT)
 set(EXTRAS_DBO_LIBS_NEEDED_i386 extras_i386 ${EXTRAS_DBO_LIBS_COMMON})
